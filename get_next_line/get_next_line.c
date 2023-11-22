@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:47:42 by nstacia           #+#    #+#             */
-/*   Updated: 2023/11/22 15:27:36 by nstacia          ###   ########.fr       */
+/*   Updated: 2023/11/22 15:48:19 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,15 @@
 
 char *get_next_line(int fd)
 {
-		
+		read(fd, buf, nbyte);
 }
+
+// ssize_t read(int fildes, void *buf, size_t nbyte);
+// The read() function shall attempt to read nbyte bytes from the file associated 
+// with the open file descriptor, fildes, into the buffer pointed to by buf. 
+// return value: number of bytes it was able to read.
+// https://www.youtube.com/watch?v=-Mt2FdJjVno
+
 int main (void)
 {
 	open();
