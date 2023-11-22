@@ -1,0 +1,84 @@
+///////////////////////////////////////////////////////////////////////
+
+File Descriptor:
+- Integer value that identifies an open file of a process.
+- Used for reading, writing and manipulating files.
+
+File descriptors are typically represented by non-negative integers, and they provide a way for programs to interact with files or input/output devices.
+
+
+Here are the standard file descriptors in Unix-like systems:
+0 (stdin): Standard input, where the program reads input.
+1 (stdout): Standard output, where the program writes normal output.
+2 (stderr): Standard error, where the program writes error messages.
+
+file descriptor 1: standard output.
+write(1, "Hello World\n", 14)
+the 1 is file descriptor 1?
+
+Everything behaves as a file (within unix/linux).
+When a process is launched:
+0 --> where it gets its input.
+1 --> where it sends its output
+2 --> where it reports errors.
+
+
+ If your code doesn't explicitly use functions like open, read, write, or other I/O-related functions that return file descriptors, then you won't be working directly with file descriptors in that code.
+
+
+when reading next line we dont know the buffer.
+
+https://www.youtube.com/watch?v=8E9siq7apUU
+
+////////////////////////////////////////////////////////////////////////
+
+Kernel:
+The kernel acts as an intermediary between the hardware and the software, managing resources and ensuring that different software components can interact with the hardware in a controlled and efficient manner.
+
+
+///////////////////////////////////////////////////////////////////////
+
+Static Variables
+
+- A variable that has been allocated "statically": meaning that its lifetime (or "extent") is the entire run of the program.
+- a type of variable that retains its value between function calls.
+
+local variables are created and destroyed each time a function is called. 
+static variables persist throughout the program's execution.
+
+two main uses:
+1. within functions
+2. outside functions (global static variables)
+
+
+////// Example code: ////////////////////////////////////////////////
+#include <stdio.h>
+
+void exampleFunction() {
+    // Static variable within the function
+    static int count = 0;
+    
+    // Increment the static variable
+    count++;
+    
+    // Print the value of the static variable
+    printf("Count: %d\n", count);
+}
+
+int main() {
+    // Call the function multiple times
+    exampleFunction();
+    exampleFunction();
+    exampleFunction();
+
+    return 0;
+}
+
+Output:
+Count: 1
+Count: 2
+Count: 3
+
+In this example, the static variable count retains its value between calls to exampleFunction(). If count were a regular local variable, it would be re-initialized to 0 each time the function is called. The static keyword here ensures that the variable persists.
+
+////////////////////////////////////////////////////////////////////////
