@@ -6,13 +6,13 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:19:35 by Naomi             #+#    #+#             */
-/*   Updated: 2023/11/29 13:05:37 by nstacia          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:24:32 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*process_buffer(char **remaining) // Function returns a pointer to a character. **changing the location of the original pointer
+char	*process_buffer(char **remaining) // Function returns a pointer to a character. **double pointer because we want to change what remaining points to.
 {
 	char	*line;              // line we need to return
 	char	*newline_char;      // newline_char we need to find in remaining
@@ -99,6 +99,20 @@ gives a positive result,  indicating the number of elements between them.
 if (!*remaining || !**remaining):
 1. checks if the pointer remaining itself is NULL.
 2. checks if the string that remaining points to is empty.
+
+n the read_and_buffer function, remaining is passed as a single pointer because 
+the function does not need to modify the original remaining variable. 
+It only needs to read from and write to the memory location that remaining points to.
+
+- If you want to adjust the data a pointer is pointing to, 
+	you need to dereference the pointer using the * operator.
+- If you want to read/access the data a pointer is pointing to, 
+	you also dereference the pointer using the * operator.
+- If you want to adjust the memory address of a pointer, 
+	you need double pointers (**).
+- To get the address of a variable, 
+	you use the & operator.
+
 
 
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 
