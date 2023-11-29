@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:53:43 by nstacia           #+#    #+#             */
-/*   Updated: 2023/11/29 11:56:32 by nstacia          ###   ########.fr       */
+/*   Updated: 2023/11/29 13:05:37 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*get_next_line(int fd)
 	line = process_buffer(&remaining);
 	return (line);
 }
-
+/*
 int main(void)
 {
     int fd = open("test_file.txt", O_WRONLY | O_CREAT | O_TRUNC, 0644);
@@ -105,29 +105,9 @@ int main(void)
     }
     close(fd);
     return (0);
-}
+}*/
 
 /*
-In the read_and_buffer function, remaining is used to store any 
-unprocessed data from the previous read operation. 
-This is the data that comes before the next newline character.
-
-In the process_buffer function, remaining is used to store any
-data that comes after the  first newline character in the buffer. 
-This is the data that will be processed in the next call to get_next_line.
-
-Pointer to a pointer in a function: often done to modify the 
-original pointer by updating its memory address.
-
-line = ft_strndup(*remaining, newline_char - *remaining)
-Subtracting the "earlier" pointer from the "further" pointer 
-gives a positive result,  indicating the number of elements between them.
-
-if (!*remaining || !**remaining):
-1. checks if the pointer remaining itself is NULL.
-2. checks if the string that remaining points to is empty.
-
-
 cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 
 get_next_line.c get_next_line_utils.c -o gnl
 
