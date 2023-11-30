@@ -16,7 +16,7 @@ char	*process_buffer(char **remaining)
 {
 	char	*line;
 	char	*newline_char;
-	char	*old_remaining;
+	char	*placeholder_remaining;
 
 	if (!*remaining || !**remaining)
 		return (NULL);
@@ -24,9 +24,9 @@ char	*process_buffer(char **remaining)
 	if (newline_char)
 	{
 		line = ft_strndup(*remaining, newline_char - *remaining + 1);
-		old_remaining = *remaining;
+		placeholder_remaining = *remaining;
 		*remaining = ft_strdup(newline_char + 1);
-		free(old_remaining);
+		free(placeholder_remaining);
 	}
 	else
 	{
@@ -41,7 +41,7 @@ char	*read_and_buffer(int fd, char *remaining)
 {
 	char	buffer[BUFFER_SIZE + 1];
 	ssize_t	read_bytes;
-	char	*temp;
+	char	*placeholder_line;
 
 	if (!remaining)
 		remaining = NULL;
@@ -56,9 +56,9 @@ char	*read_and_buffer(int fd, char *remaining)
 			return (NULL);
 		}
 		buffer[read_bytes] = '\0';
-		temp = ft_strjoin(remaining, buffer);
+		placeholder_line = ft_strjoin(remaining, buffer);
 		free(remaining);
-		remaining = temp;
+		remaining = placeholder_line;
 		if (ft_strchr(buffer, '\n'))
 			break ;
 	}

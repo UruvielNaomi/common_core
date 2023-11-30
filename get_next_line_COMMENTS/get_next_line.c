@@ -55,7 +55,7 @@ char	*read_and_buffer(int fd, char *remaining)
 		{
 			if (read_bytes == 0 && remaining && *remaining) // if 0 read && remaining is not null and points to a valid character
 				return (remaining); // return remaining: a pointer to a character string that contains the part of the file that has been read but not yet processed, in this case the whole text.
-			free(remaining); //free the memory because read has failed
+			free(remaining); //free the memory because there could have been memory allocated in a previous call of the function
 			return (NULL); //return NULL to indicate fail
 		}
 		buffer[read_bytes] = '\0'; // null terminate buffer

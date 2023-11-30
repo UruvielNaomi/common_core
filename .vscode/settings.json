@@ -5,6 +5,7 @@
 		"fcntl.h": "c",
 		"stdlib.h": "c",
 		"get_next_line.h": "c",
-		"istream": "c"
+		"istream": "c",
+		"gnl-practice": "c"
 	}
 }
