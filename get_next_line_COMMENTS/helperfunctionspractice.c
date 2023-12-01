@@ -10,11 +10,11 @@ int	ft_strlen(const char *string)
 	return (a);
 }
 
-char	*ft_strchr(const char *string, int a)
+char	*ft_strchr(const char *string, int c)
 {
 	if (!string) //if there is no string, we cant do shit
 		return (NULL); // so return NULL
-	while (*string != (char)a) // typecast int to char
+	while (*string != (char)c) // typecast int to char
 	{
 		if (*string == '\0')
 			return (NULL); // not found
@@ -23,15 +23,44 @@ char	*ft_strchr(const char *string, int a)
 	return ((char *)string); // typecast it because we get a const char, which we cant modify, so we need to typecast it to a char.
 }
 
-char	*ft_strndup(char *src, int a)
+char	*ft_strndup(char *src, int c)
 {
+	char	*dest;
+	ssize_t	length;
+	ssize_t	i;
 
+	length = ft_strlen(src); // length is calculated based on both src and c to ensure that we don’t try to access beyond the end of src and we don’t copy more than c characters.
+	if (c < length)
+		length = c;
+	dest = (char *)malloc(sizeof(char) * length + 1);
+	if (!dest)
+		return (NULL);
+	while (i < length)
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 // use malloc
 
 char	*ft_strdup(char *src)
 {
+	char	*dest;
+	ssize_t	i;
 
+	i = 0;
+	dest = (char *)malloc(sizeof(char) * ft_strlen(src) + 1);
+	if (!dest)
+		return (NULL);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
 // use malloc
 
