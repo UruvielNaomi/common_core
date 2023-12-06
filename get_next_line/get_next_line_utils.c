@@ -6,11 +6,21 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 13:48:02 by nstacia           #+#    #+#             */
-/*   Updated: 2023/11/29 11:29:54 by nstacia          ###   ########.fr       */
+/*   Updated: 2023/12/06 12:20:34 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
+static int	ft_strlen(const char *str)
+{
+	int	a;
+
+	a = 0;
+	while (str && str[a])
+		a++;
+	return (a);
+}
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -92,14 +102,5 @@ char	*ft_strndup(const char *src, size_t n)
 	return (dest);
 }
 
-int	ft_strlen(const char *str)
-{
-	int	a;
-
-	a = 0;
-	while (str && str[a])
-		a++;
-	return (a);
-}
 // By checking str && str[a], we’re making sure that str is not 
 // null before we try to access str[a].

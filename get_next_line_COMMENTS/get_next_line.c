@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 11:19:35 by Naomi             #+#    #+#             */
-/*   Updated: 2023/11/29 13:24:32 by nstacia          ###   ########.fr       */
+/*   Updated: 2023/12/06 08:16:08 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	*read_and_buffer(int fd, char *remaining)
 
 char	*get_next_line(int fd)
 {
-	static char	*remaining;
+	static char	*remaining; // using a static pointer so we can move the pointer and it retains its modified position.
 	char		*line;
 
 	remaining = read_and_buffer(fd, remaining); //send file and remaining text.

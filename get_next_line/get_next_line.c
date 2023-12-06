@@ -6,13 +6,13 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:53:43 by nstacia           #+#    #+#             */
-/*   Updated: 2023/11/29 14:04:31 by nstacia          ###   ########.fr       */
+/*   Updated: 2023/12/06 12:18:56 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*process_buffer(char **remaining)
+static char	*process_buffer(char **remaining)
 {
 	char	*line;
 	char	*newline_char;
@@ -37,7 +37,7 @@ char	*process_buffer(char **remaining)
 	return (line);
 }
 
-char	*read_and_buffer(int fd, char *remaining)
+static char	*read_and_buffer(int fd, char *remaining)
 {
 	char	buffer[BUFFER_SIZE + 1];
 	ssize_t	read_bytes;

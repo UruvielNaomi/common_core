@@ -6,6 +6,7 @@
 		"stdlib.h": "c",
 		"get_next_line.h": "c",
 		"istream": "c",
-		"gnl-practice": "c"
+		"gnl-practice": "c",
+		"gnl_practice": "c"
 	}
 }
