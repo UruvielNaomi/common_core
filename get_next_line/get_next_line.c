@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:53:43 by nstacia           #+#    #+#             */
-/*   Updated: 2023/12/06 14:32:04 by nstacia          ###   ########.fr       */
+/*   Updated: 2023/12/13 11:38:58 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static char	*process_and_move(char **remaining)
 		*remaining = ft_strdup(newline_char + 1);
 		free(placeholder_remaining);
 	}
+	
 	else
 	{
 		line = ft_strdup(*remaining);
