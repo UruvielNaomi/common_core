@@ -1,15 +1,8 @@
-#include "mlx.h"
-#include <unistd.h>
-
-typedef struct s_mlx
-{
-    void *mlx;
-    void *win;
-}              t_mlx;
+#include "so_long.h"
 
 void close_window(t_mlx *mlx)
 {
-    mlx_destroy_window(mlx->mlx, mlx->win);
+    mlx_destroy_window(mlx->mlx_connect, mlx->window);
 }
 
 int key_press(int keycode, t_mlx *mlx)
@@ -26,11 +19,11 @@ int main(void)
 {
     t_mlx mlx;
 
-    mlx.mlx = mlx_init();
-    if (mlx.mlx == NULL)
+    mlx.mlx_connect = mlx_init();
+    if (mlx.mlx_connect == NULL)
         return (1); // initialization failed
-    mlx.win = mlx_new_window(mlx.mlx, 1920, 1080, "Hello world!");
-    mlx_key_hook(mlx.win, key_press, &mlx);
-    mlx_loop(mlx.mlx);
+    mlx.window = mlx_new_window(mlx.mlx_connect, 1920, 1080, "So_long!");
+    mlx_key_hook(mlx.window, key_press, &mlx);
+    mlx_loop(mlx.mlx_connect);
     return (0);
 }
