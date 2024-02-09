@@ -31,7 +31,7 @@ char	*ft_strndup(char *src, int c)
 
 	length = ft_strlen(src); // length is calculated based on both src and c to ensure that we don’t try to access beyond the end of src and we don’t copy more than c characters.
 	if (c < length)
-		length = c;
+		length = c; // if src is bigger than the amount of character we want to duplicate, length is now c.
 	dest = (char *)malloc(sizeof(char) * length + 1);
 	if (!dest)
 		return (NULL);
