@@ -1,23 +1,38 @@
-    Understand the Requirements: Review the assignment instructions thoroughly to understand what you need to accomplish. Make sure you understand the rules of the game, what the program should do, and what functionalities it should have.
+Step plan: 
 
-    Set Up Your Project Structure: You've already made a good start by organizing your project into folders. Ensure that you have separate folders for source code (gameplay_code), header files (headers), images (images), maps (map), and MiniLibX (mlx). This organization will help keep your project clean and manageable.
+    Understand the Requirements: 
+    Review the assignment instructions thoroughly to understand what you need to accomplish. Make sure you understand the rules of the game, what the program should do, and what functionalities it should have.
 
-    Familiarize Yourself with MiniLibX: Since you're using MiniLibX for graphics, it's essential to familiarize yourself with it. Look for documentation, tutorials, or examples provided by your instructor or online. Understand how to create a window, draw images, handle keyboard input, and close the window.
+    Set Up Your Project:
+    Start by organizing your project into folders. Ensure that you have separate folders for source code, header files, images, maps, and MiniLibX. This organization will help keep your project clean and manageable.
 
-    Parse the Map File: Start by writing code to parse the map file (map1.ber). Your program needs to read this file and extract information about the map, such as the dimensions, the layout of walls, collectibles, exit, and player's starting position. Make sure to handle errors such as invalid map formats or missing components.
+    Familiarize Yourself with MiniLibX: 
+    Since you’re using MiniLibX for graphics, it’s essential to familiarize yourself with it. Look for documentation, tutorials, or examples provided by your instructor or online. Understand how to create a window, draw images, handle keyboard input, and close the window. 
+    Functions to look at: mlx_init, mlx_new_window, mlx_new_image, mlx_get_data_addr, mlx_put_image_to_window, mlx_key_hook, mlx_loop.
 
-    Check Map Validity: Implement logic to check if the parsed map is valid according to the rules specified in the assignment instructions. Verify that the map contains an exit, at least one collectible, a starting position, and is surrounded by walls. Ensure that there is a valid path from the starting position to the exit.
+    Parse the Map File: 
+    Start by writing code to parse the map file. Your program needs to read this file and extract information about the map, such as the dimensions, the layout of walls, collectibles, exit, and player’s starting position. Make sure to handle errors such as invalid map formats or missing components. 
+    Functions to look at: fopen, fread, fclose.
 
-    Display the Map: Once you have parsed and validated the map, use MiniLibX to display it on the screen. Each character in the map file (0, 1, C, E, P) should correspond to a specific image or color on the screen. You may need to create images for walls, collectibles, exit, and the player.
+    Check Map Validity: 
+    Implement logic to check if the parsed map is valid according to the rules specified in the assignment instructions. Verify that the map contains an exit, at least one collectible, a starting position, and is surrounded by walls. Ensure that there is a valid path from the starting position to the exit.
 
-    Implement Player Movement: Handle keyboard input to allow the player to move around the map. Use the W, A, S, and D keys (or ZQSD or arrow keys as an alternative) to move the player character (P) up, down, left, and right respectively. Ensure that the player cannot move into walls or outside the boundaries of the map.
+    Display the Map: 
+    Once you have parsed and validated the map, use MiniLibX to display it on the screen. Each character in the map file should correspond to a specific image or color on the screen. You may need to create images for walls, collectibles, exit, and the player. 
+    Functions to look at: mlx_xpm_file_to_image, mlx_put_image_to_window.
 
-    Collect Collectibles and Reach Exit: Implement logic to allow the player to collect collectibles (C) by moving over them. Keep track of the number of collectibles collected. Also, detect when the player reaches the exit (E) to win the game.
+    Implement Player Movement: 
+    Handle keyboard input to allow the player to move around the map. Use the W, A, S, and D keys to move the player character up, down, left, and right respectively. Ensure that the player cannot move into walls or outside the boundaries of the map. 
+    Functions to look at: mlx_key_hook.
 
-    Display Movement Count: Continuously display the current number of movements made by the player in the shell or console.
+    Collect Collectibles and Reach Exit: Implement logic to allow the player to collect collectibles by moving over them. Keep track of the number of collectibles collected. Also, detect when the player reaches the exit to win the game.
+
+    Display Movement Count: Continuously display the current number of movements made by the player in the shell or console. 
+    Functions to look at: printf.
 
     Handle Game Over and Victory Conditions: Detect when the player has collected all collectibles and reached the exit to win the game. Also, handle conditions for game over, such as when the player is trapped or makes too many movements without reaching the exit.
 
-    Clean Up and Testing: Once you've implemented all the functionalities, thoroughly test your program to ensure it works correctly. Check for memory leaks and handle any edge cases or error conditions gracefully. Make sure your code is well-commented and organized. Finally, create a Makefile to compile your source files.
+    Clean Up and Testing: Once you’ve implemented all the functionalities, thoroughly test your program to ensure it works correctly. Check for memory leaks and handle any edge cases or error conditions gracefully. Make sure your code is well-commented and organized. Finally, create a Makefile to compile your source files. 
+    Functions to look at: mlx_destroy_window, mlx_destroy_display, free.
 
     Submission: After completing and testing your project, ensure that you have all the required files (Makefile, .c and .h files, maps, and textures) ready for submission according to the assignment instructions.
