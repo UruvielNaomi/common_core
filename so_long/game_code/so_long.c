@@ -12,25 +12,27 @@ static void	*ft_memset(void *memoryBlock, int value, size_t numBytes)
 }
 
 
-int main(void)
+int main(int argc, char **argv)
 {
 	t_game game;
-	
-	ft_memset(&game, 0, sizeof(t_game));
-	//maps
-	//errors
-	game.mlx = mlx_init();
-	if (game.mlx == NULL)
-		return (1); // initialization failed
-	game.win = mlx_new_window(game.mlx, 1920, 1080, "So long!");
-	if (game.win == NULL)
+
+	if (argc == 2)
 	{
-		mlx_destroy_display(game.mlx);
-		free(game.mlx);
-		return (1); // window creation failed.
-	}
-	
-	mlx_key_hook(game.win, key_press, &game);
-	mlx_loop(game.mlx);
+		ft_memset(&game, 0, sizeof(t_game));
+		ft_get_map(&game, argv[1]);
+		//errors
+		game.mlx = mlx_init();
+		if (game.mlx == NULL)
+			return (1); // initialization failed
+		game.win = mlx_new_window(game.mlx, 1920, 1080, "So long!");
+		if (game.win == NULL)
+		{
+			mlx_destroy_display(game.mlx);
+			free(game.mlx);
+			return (1); // window creation failed.
+		}
+		mlx_key_hook(game.win, key_press, &game);
+		mlx_loop(game.mlx);
+	}	
 	return (0);
 }
