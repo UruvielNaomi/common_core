@@ -5,38 +5,40 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/14 15:29:04 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/15 14:14:23 by nstacia          ###   ########.fr       */
+/*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
+/*   Updated: 2024/02/15 15:39:44 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void free_map(t_game *game)
+void	free_map(t_game *game)
 {
-    int i;
+	int	i;
 
-    for (i = 0; i < game->rows; i++)
-    {
-        free(game->map[i]);  // Free each row
-    }
-    free(game->map);  // Free the array of pointers
+	i = 0;
+	while (i < game->rows)
+	{
+		free(game->map[i]);
+		i++;
+	}
+	free(game->map);
 }
 
-void close_window(t_game *game)
+void	close_window(t_game *game)
 {
 	mlx_destroy_window(game->mlx, game->win);
 	free(game->mlx);
-	exit (0); // program succesfully exited
+	exit (0);
 }
 
-int key_press(int keycode, t_game *game)
+int	key_press(int keycode, t_game *game)
 {
-	if (keycode == 53) // 53 is the keycode for the escape key on a Mac. It might be different on your system.
+	if (keycode == 53)
 	{
 		free_map(game);
 		close_window(game);
-		exit(0); // Exit the program after closing the window
+		exit(0);
 	}
 	return (0);
 }

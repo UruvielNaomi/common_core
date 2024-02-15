@@ -50,6 +50,7 @@ void	ft_check_column_lengths(t_game *game);
 void	ft_check_first_last_column(t_game *game);
 void	ft_check_first_last_row(t_game *game);
 void	ft_check_map(t_game *game);
+void	ft_check_map_content(&game);
 void	ft_find_player_position(t_game *game);
 void	ft_find_valid_path(t_game *game);
 void	ft_image_to_window(t_game game);
