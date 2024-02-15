@@ -6,15 +6,36 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/15 15:55:56 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/15 16:33:04 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_find_valid_path(t_game *game)
+void	ft_check_exit_collect(t_game *game)
 {
-	
+	int	i;
+	int	j;
+
+	i = 0;
+	while (game->map[i])
+	{
+		j = 0;
+		while (game->map[i][j])
+		{
+			if (game->map[i][j] == 'C')
+				game->collectables++;
+			if (game->map[i][j] == 'E')
+				game->exit_nr++;		
+			j++;
+		}
+		i++;
+	}
+	if (game->exit_nr != 1 && game->collectables < 1)
+	{
+		printf("Error\nExit or Collectable Error");
+		close_window(game);
+	}
 }
 
 void	ft_find_player_position(t_game *game)
@@ -39,14 +60,65 @@ void	ft_find_player_position(t_game *game)
 			}	
 			j++;
 		}
+		if (player_found)
+			break ;
 		i++;
 	}
-	if (!player_found)
-		printf("Error\nNo Player Found\n");
+}
+
+void	ft_count_players(t_game *game)
+{
+	int	i;
+	int	j;
+	int	players;
+
+	i = 0;
+	players = 0;
+	while (game->map[i])
+	{
+		j = 0;
+		while (game->map[i][j])
+		{
+			if (game->map[i][j] == 'P')
+				players++;
+			j++;
+		}
+		i++;
+	}
+	if (players == 0 || players > 1)
+	{
+		printf("Error\nIncorrect number of Players\n");
+		close_window(game);
+	}
+}
+
+void	ft_check_chars(t_game *game)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (game->map[i])
+	{
+		j = 0;
+		while (game->map[i][j])
+		{
+			if (game->map[i][j] != '1' &&
+			game->map[i][j] != '0' &&
+			game->map[i][j] != 'P' &&
+			game->map[i][j] != 'C' &&
+			game->map[i][j] != 'E')
+			printf("Error\nInvalid Map\n");			
+			j++;
+		}
+		i++;
+	}
 }
 
 void	ft_check_map_content(t_game *game)
 {
+	ft_check_chars(game);
+	ft_count_players(game);
 	ft_find_player_position(game);
-	ft_find_valid_path(game);	
+	ft_check_exit_collect(game);
 }
