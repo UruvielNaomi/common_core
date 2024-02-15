@@ -18,9 +18,10 @@ int main(int argc, char **argv)
 
 	if (argc == 2)
 	{
-		ft_memset(&game, 0, sizeof(t_game));
-		ft_get_map(&game, argv[1]);
-		//errors
+		ft_memset(&game, 0, sizeof(t_game)); //allocate memory
+		ft_get_map(&game, argv[1]); //read and create map
+		ft_check_map(&game); // check map validity
+		// Display the Map
 		game.mlx = mlx_init();
 		if (game.mlx == NULL)
 			return (1); // initialization failed
@@ -31,6 +32,7 @@ int main(int argc, char **argv)
 			free(game.mlx);
 			return (1); // window creation failed.
 		}
+		// Implement Player Movement
 		mlx_key_hook(game.win, key_press, &game);
 		mlx_loop(game.mlx);
 	}	

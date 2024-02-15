@@ -20,6 +20,12 @@
 # include "../minilibx/mlx.h"
 # include "get_next_line.h"
 
+typedef struct  s_point
+{
+	int		   x;
+	int		   y;
+}			   t_point;
+
 typedef struct s_game
 {
 	void	*mlx;
@@ -27,11 +33,18 @@ typedef struct s_game
 	void	*img;
 
 	int		fd;
+	int		rows;
+
 	char	*addr;
+	char	**map;
+
+	t_point	player_pos;
 }	t_game;
 
 int		key_press(int keycode, t_game *game);
+int		ft_count_rows(t_game *game, char **argv);
 
+void	ft_check_map(t_game *game);
 void	ft_get_map(t_game *game, char **argv);
 void	ft_image_to_window(t_game game);
 void	ft_xpm_to_image(t_game game);
