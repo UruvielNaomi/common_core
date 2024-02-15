@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
+/*   Updated: 2024/02/15 14:24:00 by nstacia          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
-#include "mlx.h"
 
 static void	*ft_memset(void *memoryBlock, int value, size_t numBytes)
 {
@@ -28,7 +39,7 @@ int main(int argc, char **argv)
 		game.win = mlx_new_window(game.mlx, 1920, 1080, "So long!");
 		if (game.win == NULL)
 		{
-			mlx_destroy_display(game.mlx);
+			close_window(&game);
 			free(game.mlx);
 			return (1); // window creation failed.
 		}

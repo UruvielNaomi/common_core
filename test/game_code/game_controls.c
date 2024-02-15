@@ -6,11 +6,11 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 15:29:04 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/15 14:14:23 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/15 14:14:09 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "test.h"
 
 void free_map(t_game *game)
 {
@@ -26,6 +26,7 @@ void free_map(t_game *game)
 void close_window(t_game *game)
 {
 	mlx_destroy_window(game->mlx, game->win);
+	// mlx_destroy_display(game->mlx); doesnt work?
 	free(game->mlx);
 	exit (0); // program succesfully exited
 }

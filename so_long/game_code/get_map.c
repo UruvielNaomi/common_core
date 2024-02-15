@@ -6,13 +6,13 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:19 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/15 12:14:43 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/15 14:31:32 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	ft_count_rows(t_game *game, char **argv)
+int	ft_count_rows(t_game *game)
 {
 	int	count;
 	char ch;
@@ -28,16 +28,16 @@ int	ft_count_rows(t_game *game, char **argv)
 	return (count);
 }
 
-void 	ft_get_map(t_game *game, char **argv)
+int 	ft_get_map(t_game *game, char *str)
 {
 	int i = 0;
 
-	game->fd = open(argv[1], O_RDONLY);
+	game->fd = open(str, O_RDONLY);
 	if (game->fd < 0)
 		return (0);
-	game->rows = ft_count_rows(game, argv[1]);
+	game->rows = ft_count_rows(game);
 	close(game->fd);
-	game->fd = open(argv[1], O_RDONLY);
+	game->fd = open(str, O_RDONLY);
 	if (game->fd < 0)
 		return (0);
 	game->map = malloc(sizeof(char *) * game->rows);
@@ -47,22 +47,5 @@ void 	ft_get_map(t_game *game, char **argv)
 		i++;
 	}
 	close (game->fd);
+	return (1);
 }
-
-void	ft_check_map(t_game *game)
-{
-	
-}
-
-/*
-
-flood_fill(area, size, begin)
-area = map
-size = x & y (how many rows and colums)
-begin = 
-
-/* 
-If any misconfiguration of any kind is encountered in the file, the program must
-exit in a clean way, and return "Error\n" followed by an explicit error message of
-your choice.
-*/

@@ -10,15 +10,14 @@
 /*																			*/
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef TEST_H
+# define TEST_H
 
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
 # include "../minilibx/mlx.h"
-# include "get_next_line.h"
 
 typedef struct  s_point
 {
@@ -41,19 +40,8 @@ typedef struct s_game
 	t_point	player_pos;
 }	t_game;
 
-
-int		ft_count_rows(t_game *game);
-int		ft_get_map(t_game *game, char *str);
 int		key_press(int keycode, t_game *game);
-
-void	ft_check_column_lengths(t_game *game);
-void	ft_check_first_last_column(t_game *game);
-void	ft_check_first_last_row(t_game *game);
-void	ft_check_map(t_game *game);
-void	ft_find_player_position(t_game *game);
-void	ft_find_valid_path(t_game *game);
-void	ft_image_to_window(t_game game);
-void	ft_xpm_to_image(t_game game);
 void	close_window(t_game *game);
+
 
 #endif
