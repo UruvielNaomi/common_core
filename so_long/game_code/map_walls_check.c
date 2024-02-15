@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/15 16:13:16 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/15 17:19:49 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,10 @@
 void	ft_check_first_last_column(t_game *game)
 {
 	int	i;
-	int	j;
 	int	last_col;
 
 	i = 0;
-	j = 0;
-	while (game->map[0][j])
-		j++;
-	last_col = j - 1;
+	last_col = game->map_width - 1;
 	while (game->map[i])
 	{
 		if (game->map[i][0] != '1' || game->map[i][last_col] != '1')
@@ -71,6 +67,7 @@ void	ft_check_column_lengths(t_game *game)
 	while (game->map[0][j])
 		j++;
 	num_col = j;
+	game->map_width = j;
 	while (game->map[i])
 	{
 		j = 0;

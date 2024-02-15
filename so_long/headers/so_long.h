@@ -37,6 +37,8 @@ typedef struct s_game
 	int		rows;
 	int		collectables;
 	int		exit_nr;
+	int		map_width;
+	int		map_height;
 
 	char	*addr;
 	char	**map;
