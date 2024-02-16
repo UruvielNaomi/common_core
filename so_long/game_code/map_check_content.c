@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/15 19:01:24 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/16 15:02:14 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	ft_check_exit_collect(t_game *game)
 	int	j;
 
 	i = 0;
-	while (game->map[i])
+	while (i < game->rows)
 	{
 		j = 0;
-		while (game->map[i][j])
+		while (game->map[i][j] && game->map[i][j] != '\n')
 		{
 			if (game->map[i][j] == 'C')
 				game->collectables++;
@@ -49,7 +49,7 @@ void	ft_find_player_position(t_game *game)
 	while (game->map[i] && !player_found)
 	{
 		j = 0;
-		while (game->map[i][j])
+		while (game->map[i][j] && game->map[i][j] != '\n')
 		{
 			if (game->map[i][j] == 'P')
 			{
@@ -74,10 +74,10 @@ void	ft_count_players(t_game *game)
 
 	i = 0;
 	players = 0;
-	while (game->map[i])
+	while (i < game->rows)
 	{
 		j = 0;
-		while (game->map[i][j])
+		while (game->map[i][j] && game->map[i][j] != '\n')
 		{
 			if (game->map[i][j] == 'P')
 				players++;
@@ -90,6 +90,7 @@ void	ft_count_players(t_game *game)
 		printf("Error\nIncorrect number of Players\n");
 		close_window(game);
 	}
+	printf("You have %d players\n", players);
 }
 
 void	ft_check_chars(t_game *game)
@@ -98,22 +99,26 @@ void	ft_check_chars(t_game *game)
 	int	j;
 
 	i = 0;
-	while (game->map[i])
+	while (i < game->rows)
 	{
 		j = 0;
-		while (game->map[i][j])
+		while (game->map[i][j] && game->map[i][j] != '\n')
 		{
 			if (game->map[i][j] != '1' &&
 			game->map[i][j] != '0' &&
 			game->map[i][j] != 'P' &&
 			game->map[i][j] != 'C' &&
 			game->map[i][j] != 'E')
-			printf("Error\nInvalid Map\n");			
+			{
+				printf("Error\nInvalid Map\n");
+				close_window(game);
+			}
 			j++;
 		}
 		i++;
 	}
 }
+
 
 void	ft_check_map_content(t_game *game)
 {

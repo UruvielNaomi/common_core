@@ -46,11 +46,13 @@ typedef struct s_game
 	t_point	player_pos;
 }	t_game;
 
+char	**copy_map(char **map, t_point size);
 
 int		ft_count_rows(t_game *game);
 int		ft_get_map(t_game *game, char *str);
 int		key_press(int keycode, t_game *game);
 
+void	close_window(t_game *game);
 void	ft_check_chars(t_game *game);
 void	ft_check_column_lengths(t_game *game);
 void	ft_check_first_last_column(t_game *game);
@@ -62,6 +64,6 @@ void	ft_find_player_position(t_game *game);
 void	ft_find_valid_path(t_game *game);
 void	ft_image_to_window(t_game game);
 void	ft_xpm_to_image(t_game game);
-void	close_window(t_game *game);
+void	*ft_memcpy(void	*dest, void const *src, size_t len);
 
 #endif

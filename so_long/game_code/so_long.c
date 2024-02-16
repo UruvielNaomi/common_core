@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/15 16:33:20 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/16 14:16:47 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ int	main(int argc, char **argv)
 	{
 		ft_memset(&game, 0, sizeof(t_game));
 		ft_get_map(&game, argv[1]);
-		ft_check_map(&game);
+		ft_check_map(&game); //seg fault somewhere here
 		ft_check_map_content(&game);
 		ft_find_valid_path(&game);
 		// Display the Map
 		game.mlx = mlx_init();
 		if (game.mlx == NULL)
 			return (1);
-		game.win = mlx_new_window(game.mlx, 1920, 1080, "So long!");
+		game.win = mlx_new_window(game.mlx, 600, 400, "So long!");
 		if (game.win == NULL)
 		{
 			close_window(&game);

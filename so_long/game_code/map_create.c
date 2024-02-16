@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:19 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/15 17:20:49 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/16 12:42:58 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,21 @@ int	ft_count_rows(t_game *game)
 {
 	int		count;
 	char	ch;
+	char	prev_ch;
 
 	count = 0;
 	while (read(game->fd, &ch, 1) == 1)
 	{
 		if (ch == '\n')
 			count++;
+		prev_ch = ch;
 	}
-	if (ch != '\n')
+	if (prev_ch != '\n')
 		count++;
 	game->map_height = count;
 	return (count);
 }
+
 
 int	ft_get_map(t_game *game, char *str)
 {
@@ -49,7 +52,10 @@ int	ft_get_map(t_game *game, char *str)
 		return (0);
 	game->map = malloc(sizeof(char *) * game->rows);
 	while (i < game->rows)
-		game->map[i++] = get_next_line(game->fd);
+	{
+		game->map[i] = get_next_line(game->fd);
+		i++;
+	}
 	close (game->fd);
 	return (1);
 }

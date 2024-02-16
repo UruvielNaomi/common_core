@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:33:59 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/15 19:01:38 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/16 16:24:18 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,11 @@ char	**copy_map(char **map, t_point size)
 
 	i = 0;
 	copy = (char **)malloc(sizeof(char *) * size.y);
+	if (!copy)
+	{		
+		return (NULL);
+		printf("Copy map failed\n");
+	}
 	while (i < size.y)
 	{
 		copy[i] = (char *)malloc(sizeof(char) * size.x);
@@ -44,39 +49,75 @@ char	**copy_map(char **map, t_point size)
 	}
 	return (copy);
 }
-
-
-void	flood_fill(char **map, t_point size, t_point current, int steps)
+void	reach_collectibles(char **map, t_point size, t_point cur, int *coll)
 {
-	if (current.y < 0 || current.y >= size.y || current.x < 0 || current.x >= size.x
-		|| map[current.y][current.x] == '1' || map[current.y][current.x] == 'V')
-		return;
-
-	// Mark the current point as visited
-	map[current.y][current.x] = 'V';
-
-	// Check if the current point is a collectible or an exit
-	if (map[current.y][current.x] == 'C' || map[current.y][current.x] == 'E')
+	if (cur.y < 0 || cur.y >= size.y || cur.x < 0 || cur.x >= size.x
+		|| map[cur.y][cur.x] == '1' || map[cur.y][cur.x] == 'V')
+		return ;
+	if (map[cur.y][cur.x] == 'C' )
 	{
-		// Found a collectible or an exit
-		printf("Found a %c at %d steps\n", map[current.y][current.x], steps);
+		(*coll) -= 1;
+		printf("Found a collectible\n");
+		map[cur.y][cur.x] = 'V';
+		if (*coll == 0)
+		{
+			printf("All collectibles found\n");
+			return ;
+		}
 	}
+	else
+		map[cur.y][cur.x] = 'V';
+	reach_collectibles(map, size, (t_point){cur.x - 1, cur.y}, coll);
+	reach_collectibles(map, size, (t_point){cur.x + 1, cur.y}, coll);
+	reach_collectibles(map, size, (t_point){cur.x, cur.y - 1}, coll);
+	reach_collectibles(map, size, (t_point){cur.x, cur.y + 1}, coll);
+}
 
-	// Recursively call fill on the neighboring points
-	flood_fill(map, size, (t_point){current.x - 1, current.y}, steps + 1);
-	flood_fill(map, size, (t_point){current.x + 1, current.y}, steps + 1);
-	flood_fill(map, size, (t_point){current.x, current.y - 1}, steps + 1);
-	flood_fill(map, size, (t_point){current.x, current.y + 1}, steps + 1);
+void	reach_exit(char **map, t_point size, t_point cur, int *found_exit)
+{
+	if (*found_exit || cur.y < 0 || cur.y >= size.y || cur.x < 0 || cur.x >= size.x
+		|| map[cur.y][cur.x] == '1' || map[cur.y][cur.x] == 'V')
+		return ;
+	if (map[cur.y][cur.x] == 'E' )
+	{
+		printf("Exit found\n");
+		*found_exit = 1;
+		return ;
+	}
+	else
+		map[cur.y][cur.x] = 'V';
+	reach_exit(map, size, (t_point){cur.x - 1, cur.y}, found_exit);
+	reach_exit(map, size, (t_point){cur.x + 1, cur.y}, found_exit);
+	reach_exit(map, size, (t_point){cur.x, cur.y - 1}, found_exit);
+	reach_exit(map, size, (t_point){cur.x, cur.y + 1}, found_exit);
 }
 
 void	ft_find_valid_path(t_game *game)
 {
 	t_point	size;
 	char	**map_copy;
-	
+	int		coll;
+	int		exit;
+
 	size.x = game->map_width;
 	size.y = game->map_height;
 	map_copy = copy_map(game->map, size);
-	flood_fill(map_copy, size, game->player_pos, 0);
+	coll = game->collectables;
+	reach_collectibles(map_copy, size, game->player_pos, &coll);
 	free(map_copy);
+	if (coll != 0)
+	{
+		printf("Error\nNot all Collectibles found\n");
+		close_window(game);
+	}
+	map_copy = copy_map(game->map, size);
+	exit = 0;
+	reach_exit(map_copy, size, game->player_pos, &exit);
+	free(map_copy);
+	if (!exit)
+	{
+		printf("Error\nExit has not been found\n");
+		close_window(game);
+	}
+	printf("test");
 }
