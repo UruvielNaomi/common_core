@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/16 15:02:14 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/16 16:58:56 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,7 @@ void	ft_check_exit_collect(t_game *game)
 		i++;
 	}
 	if (game->exit_nr != 1 && game->collectables < 1)
-	{
-		printf("Error\nExit or Collectable Error");
-		close_window(game);
-	}
+		ft_print_errors_map(7, game);
 }
 
 void	ft_find_player_position(t_game *game)
@@ -86,11 +83,7 @@ void	ft_count_players(t_game *game)
 		i++;
 	}
 	if (players == 0 || players > 1)
-	{
-		printf("Error\nIncorrect number of Players\n");
-		close_window(game);
-	}
-	printf("You have %d players\n", players);
+		ft_print_errors_map(6, game);
 }
 
 void	ft_check_chars(t_game *game)
@@ -109,10 +102,7 @@ void	ft_check_chars(t_game *game)
 			game->map[i][j] != 'P' &&
 			game->map[i][j] != 'C' &&
 			game->map[i][j] != 'E')
-			{
-				printf("Error\nInvalid Map\n");
-				close_window(game);
-			}
+				ft_print_errors_map(5, game);
 			j++;
 		}
 		i++;

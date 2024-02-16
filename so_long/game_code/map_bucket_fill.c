@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:33:59 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/16 16:24:18 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/16 16:57:05 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,7 @@ char	**copy_map(char **map, t_point size)
 	i = 0;
 	copy = (char **)malloc(sizeof(char *) * size.y);
 	if (!copy)
-	{		
 		return (NULL);
-		printf("Copy map failed\n");
-	}
 	while (i < size.y)
 	{
 		copy[i] = (char *)malloc(sizeof(char) * size.x);
@@ -97,7 +94,7 @@ void	ft_find_valid_path(t_game *game)
 	t_point	size;
 	char	**map_copy;
 	int		coll;
-	int		exit;
+	int		ex;
 
 	size.x = game->map_width;
 	size.y = game->map_height;
@@ -106,18 +103,11 @@ void	ft_find_valid_path(t_game *game)
 	reach_collectibles(map_copy, size, game->player_pos, &coll);
 	free(map_copy);
 	if (coll != 0)
-	{
-		printf("Error\nNot all Collectibles found\n");
-		close_window(game);
-	}
+		ft_print_errors_map(8, game);
 	map_copy = copy_map(game->map, size);
-	exit = 0;
-	reach_exit(map_copy, size, game->player_pos, &exit);
+	ex = 0;
+	reach_exit(map_copy, size, game->player_pos, &ex);
 	free(map_copy);
-	if (!exit)
-	{
-		printf("Error\nExit has not been found\n");
-		close_window(game);
-	}
-	printf("test");
+	if (!ex)
+		ft_print_errors_map(9, game);
 }

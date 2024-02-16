@@ -1,0 +1,8 @@
+Issues log:
+16/2/2024 11:00
+Flood_fill does not work. Backtracking causes major issues.
+- Solved: created seperate flood_fills for C and E.
+
+16/2/2024		16:30
+When there is an invalid map and we close the program, 
+we encounter a segmentation fault.

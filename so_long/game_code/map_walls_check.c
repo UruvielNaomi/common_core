@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/16 13:38:25 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/16 16:52:31 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ void	ft_check_first_last_column(t_game *game)
 	while (i < game->rows)
 	{
 		if (game->map[i][0] != '1' || (game->map[i][last_col] != '1' && game->map[i][last_col] != '\n'))
-		{
-			printf("Error\nFirst and last column aren't walls\n");
-			close_window(game);
-		}
+			ft_print_errors_map(4, game);
 		i++;
 	}
 }
@@ -40,10 +37,7 @@ void	ft_check_first_last_row(t_game *game)
 	while (game->map[i][j] && game->map[i][j] != '\n')
 	{
 		if (game->map[i][j] != '1')
-		{
-			printf("Error\nTop row isn't a wall\n");
-			close_window(game);
-		}
+			ft_print_errors_map(2, game);
 		j++;
 	}
 	i = game->rows - 1;
@@ -51,10 +45,7 @@ void	ft_check_first_last_row(t_game *game)
 	while (game->map[i][j] && game->map[i][j] != '\n')
 	{
 		if (game->map[i][j] != '1')
-		{
-			printf("Error\nBottom row isn't a wall\n");
-			close_window(game);
-		}
+			ft_print_errors_map(3, game);
 		j++;
 	}
 }
@@ -75,10 +66,7 @@ void	ft_check_column_lengths(t_game *game)
 		while (game->map[i][j] && game->map[i][j] != '\n')
 			j++;
 		if (j != game->map_width)
-		{
-			printf("Error\nMap not rectangluar\n");
-			close_window(game);
-		}
+			ft_print_errors_map(1, game);
 		i++;
 	}
 }
