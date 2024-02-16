@@ -6,3 +6,5 @@ Flood_fill does not work. Backtracking causes major issues.
 16/2/2024		16:30
 When there is an invalid map and we close the program, 
 we encounter a segmentation fault.
+- Solved: updated all code for error and made one function
+to handle errors.
