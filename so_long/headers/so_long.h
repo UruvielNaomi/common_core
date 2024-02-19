@@ -32,6 +32,10 @@ typedef struct s_game
 	void	*win;
 	void	*img;
 	void	*exit;
+	void	*player_img;
+	void	*collectible_img;
+	void	*grass_img;
+	void	*wall_img;
 
 	int		fd;
 	int		rows;
@@ -39,6 +43,8 @@ typedef struct s_game
 	int		exit_nr;
 	int		map_width;
 	int		map_height;
+	int		player_width;
+	int		player_height;
 
 	char	*addr;
 	char	**map;
