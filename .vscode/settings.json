@@ -9,6 +9,7 @@
 		"gnl-practice": "c",
 		"gnl_practice": "c",
 		"unistd.h": "c",
-		"so_long.h": "c"
+		"so_long.h": "c",
+		"ft_printf.h": "c"
 	}
 }

@@ -6,11 +6,12 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:45:02 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 16:47:35 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:57:17 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "ft_printf.h"
 
 void	ft_print_errors_map(int error_number, t_game *game)
 {

@@ -6,11 +6,12 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:19 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/21 16:52:34 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:57:39 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "ft_printf.h"
 
 int	ft_count_rows(t_game *game)
 {

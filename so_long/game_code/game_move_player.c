@@ -6,11 +6,12 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:54:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 16:47:54 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:57:10 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "ft_printf.h"
 
 int	move_accepted(t_game *game, int x, int y)
 {

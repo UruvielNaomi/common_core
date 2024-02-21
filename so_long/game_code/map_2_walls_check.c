@@ -6,11 +6,12 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 16:52:49 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:57:35 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "ft_printf.h"
 
 void	ft_check_first_last_column(t_game *game)
 {
