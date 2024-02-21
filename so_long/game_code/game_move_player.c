@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:54:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 15:31:03 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:08:15 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	move_accepted(t_game *game, int x, int y)
 	game->prev_pos.y = game->player_pos.y;
 	if (game->map[x][y] == 'E')
 	{
-		if (game->collectables > 0)
+		if (game->collectables != 0)
 			return (0);
 		printf("Congratulations! You brought all the hats back!");
 		close_window(game);
@@ -34,5 +34,7 @@ int	move_accepted(t_game *game, int x, int y)
 		game->player_pos.x = x;
 		game->player_pos.y = y;
 	}
+	if (game->collectables == 0)
+		update_exit(game);	
 	return (1);
 }

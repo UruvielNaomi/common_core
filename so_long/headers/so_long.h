@@ -79,5 +79,7 @@ void	ft_images_to_window(t_game *game);
 void	ft_print_errors_map(int	error_number, t_game *game);
 void	*ft_memcpy(void	*dest, void const *src, size_t len);
 void 	load_images(t_game *game);
+void	update_player_location(t_game *game);
+void	update_exit(t_game *game);
 
 #endif

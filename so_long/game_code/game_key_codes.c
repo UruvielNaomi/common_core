@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 15:34:48 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:19:02 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,27 @@ int	move_player_left_right(t_game *game, int keycode)
 {
 	int	x;
 	int	y;
+	int check;
 
 	x = game->player_pos.x;
 	y = game->player_pos.y;
+	check = 0;
 	if (keycode == 0)
 	{
 		y--;
 		if (game->map[x][y] == '1')
 			return (0);
-		move_accepted(game, x, y);
+		check = move_accepted(game, x, y);
 	}
 	if (keycode == 2)
 	{
 		y++;
 		if (game->map[x][y] == '1')
 			return (0);
-		move_accepted(game, x, y);
+		check = move_accepted(game, x, y);
 	}
-	update_player_location(game);
+	if (check == 1)
+		update_player_location(game);
 	return (1);
 }
 
@@ -41,13 +44,27 @@ int	move_player_up_down(t_game *game, int keycode)
 {
 	int	x;
 	int	y;
+	int	check;
 
 	x = game->player_pos.x;
 	y = game->player_pos.y;
 	if (keycode == 13)
+	{
 		x--;
-	if (keycode == 2)
+		if (game->map[x][y] == '1')
+			return (0);
+		check = move_accepted(game, x, y);
+	}
+	if (keycode == 1)
+	{
 		x++;
+		if (game->map[x][y] == '1')
+			return (0);
+		check = move_accepted(game, x, y);
+	}
+	if (check == 1)
+		update_player_location(game);
+	return (1);
 }
 
 void	free_map(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 15:41:15 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:20:40 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	ft_check_exit_collect(t_game *game)
 	int	j;
 
 	i = 0;
+	game->collectables = 0;
 	while (i < game->rows)
 	{
 		j = 0;
