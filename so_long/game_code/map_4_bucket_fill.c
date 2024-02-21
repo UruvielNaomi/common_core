@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_bucket_fill.c                                  :+:      :+:    :+:   */
+/*   map_4_bucket_fill.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:33:59 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 13:29:27 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 15:42:51 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	**copy_map(char **map, t_point size)
 	}
 	return (copy);
 }
+
 void	reach_collectibles(char **map, t_point size, t_point cur, int *coll)
 {
 	if (cur.y < 0 || cur.y >= size.y || cur.x < 0 || cur.x >= size.x
@@ -68,8 +69,9 @@ void	reach_collectibles(char **map, t_point size, t_point cur, int *coll)
 
 void	reach_exit(char **map, t_point size, t_point cur, int *found_exit)
 {
-	if (*found_exit || cur.y < 0 || cur.y >= size.y || cur.x < 0 || cur.x >= size.x
-		|| map[cur.y][cur.x] == '1' || map[cur.y][cur.x] == 'V')
+	if (*found_exit || cur.y < 0 || cur.y >= size.y || cur.x < 0
+		|| cur.x >= size.x || map[cur.y][cur.x] == '1'
+		|| map[cur.y][cur.x] == 'V')
 		return ;
 	if (map[cur.y][cur.x] == 'E' )
 	{

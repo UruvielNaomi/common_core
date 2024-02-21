@@ -52,14 +52,17 @@ typedef struct s_game
 	char	**map;
 
 	t_point	player_pos;
+	t_point	prev_pos;
 	t_point	exit_pos;
 }	t_game;
 
 char	**copy_map(char **map, t_point size);
 
-int		ft_count_rows(t_game *game);
-int		ft_get_map(t_game *game, char *str);
-int		key_press(int keycode, t_game *game);
+int	ft_count_rows(t_game *game);
+int	ft_get_map(t_game *game, char *str);
+int	key_press(int keycode, t_game *game);
+int	move_accepted(t_game *game, int x, int y);
+int	move_player_left_right(t_game *game, int keycode);
 
 void	close_window(t_game *game);
 void	free_map(t_game *game);

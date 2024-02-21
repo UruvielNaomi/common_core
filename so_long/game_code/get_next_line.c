@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 08:53:43 by nstacia           #+#    #+#             */
-/*   Updated: 2023/12/20 10:12:20 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 15:39:32 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static char	*read_and_buffer(int fd, char *remaining)
 	ssize_t	read_bytes;
 	char	*placeholder_line;
 
-	if (!remaining) // if remaining is null (from previous call)
-		remaining = ft_strdup(""); // initialize to empty string.
+	if (!remaining)
+		remaining = ft_strdup("");
 	while (1)
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);

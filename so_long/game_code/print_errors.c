@@ -6,13 +6,13 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:45:02 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 11:02:34 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 15:42:17 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_print_errors_map(int	error_number, t_game *game)
+void	ft_print_errors_map(int error_number, t_game *game)
 {
 	if (error_number == 1)
 		printf("Error\nMap not rectangluar\n");
@@ -33,9 +33,7 @@ void	ft_print_errors_map(int	error_number, t_game *game)
 	else if (error_number == 9)
 		printf("Error\nExit has not been found\n");
 	else if (error_number == 10)
-		printf("Error\nFailed to load player/exit/collectible image.\n");
-	else if (error_number == 11)
-		printf("Error\nFailed to load path/wall image.\n");
+		printf("Error\nFailed to load an image.\n");
 	free_map(game);
 	exit (1);
 }
