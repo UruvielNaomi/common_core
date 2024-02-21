@@ -3,51 +3,68 @@
 /*                                                        :::      ::::::::   */
 /*   drawing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:25 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/19 19:07:44 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/21 11:08:11 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void images_to_window(t_game *game)
+void	update_player_location(t_game *game, int x, int y)
 {
-    int x = game->player_pos.x * game->player_width;  // Multiply by the width of a tile
-    int y = game->player_pos.y * game->player_height; // Multiply by the height of a tile
-    mlx_put_image_to_window(game->mlx, game->win, game->player_img, x, y);
+	mlx_put_image_to_window(game->mlx, game->win, game->player_img, x, y);
 }
 
-
-void load_images(t_game *game) 
+void	update_collectibles(t_game *game, int x, int y)
 {
-    game->player_width = 32;
-    game->player_height = 32;
-    game->player_img = mlx_xpm_file_to_image(game->mlx, "../images/player_cat.xpm", &game->player_width, &game->player_height);
+	mlx_put_image_to_window(game->mlx, game->win, game->collectible_img, x, y);	
+}
+void ft_images_to_window(t_game *game)
+{
+	int	x;
+	int	y;
+
+	x = 0;
+	while (x < game->rows)
+	{
+		y = 0;
+		while (game->map[x][y] && game->map[x][y] != '\n')
+		{
+			if (game->map[x][y] == '1')
+				mlx_put_image_to_window(game->mlx, game->win, game->wall_img, x, y);
+			if (game->map[x][y] == '0')
+				mlx_put_image_to_window(game->mlx, game->win, game->grass_img, x, y);
+			if (game->map[x][y] == 'P')
+				update_player_location(game, x, y);
+			if (game->map[x][y] == 'C')
+				update_collectibles(game, x, y);
+			if (game->map[x][y] == 'E')
+				mlx_put_image_to_window(game->mlx, game->win, game->exit_img, x, y);
+			y++;
+		}
+		x++;
+	}
 }
 
-
-/*
-void	ft_xpm_to_image(t_game game)
+void	load_images(t_game *game) 
 {
-	
-	// int bits_per_pixel;
-	// int line_length;
-	// int endian;
-	
-	int x;
-	int y;
-
-	game.img = mlx_xpm_file_to_image(game.mlx, "filename", x, y);
-	// game.addr = mlx_get_data_addr(game.img, &bits_per_pixel, &line_length, &endian);
+	game->img_width = 32;
+	game->img_height = 32;
+	game->player_img = mlx_xpm_file_to_image(game->mlx, "images/player_cat.xpm", &game->img_width, &game->img_height);
+	if (game->player_img == NULL)
+		ft_print_errors_map(10, game);
+	game->exit = mlx_xpm_file_to_image(game->mlx, "images/exit.xpm", &game->img_width, &game->img_height);
+	if (game->exit_img == NULL)
+		ft_print_errors_map(10, game);
+	game->collectible_img = mlx_xpm_file_to_image(game->mlx, "images/collectible.xpm", &game->img_width, &game->img_height);
+	if (game->collectible_img == NULL)
+		ft_print_errors_map(10, game);
+	game->grass_img = mlx_xpm_file_to_image(game->mlx, "images/grass.xpm", &game->img_width, &game->img_height);
+	if (game->grass_img == NULL)
+		ft_print_errors_map(11, game);
+	game->wall_img = mlx_xpm_file_to_image(game->mlx, "images/wall.xpm", &game->img_width, &game->img_height);
+	if (game->wall_img == NULL)
+		ft_print_errors_map(11, game);
 }
-
-void	ft_image_to_window(t_game game)
-{
-	int x;
-	int y;
-
-	mlx_put_image_to_window(game.mlx, game.win, game.img, x, y);
-}
-*/

@@ -8,3 +8,12 @@ When there is an invalid map and we close the program,
 we encounter a segmentation fault.
 - Solved: updated all code for error and made one function
 to handle errors.
+
+20/2/2024
+Error in found all collectibles but still showing the error not all collectibles found.
+- Solved: wrong if statement. 
+
+21/2/2024
+Segmentation fault in ft_images_to_window(&game).
+- Moved the code down (put the function before creating a window), now window opens for a brief second but then still a seg fault.
+- Solved: path to image was incorrect.

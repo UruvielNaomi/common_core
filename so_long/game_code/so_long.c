@@ -6,11 +6,11 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/16 16:58:58 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 10:32:24 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long.h"	
 
 static void	*ft_memset(void *memory_block, int value, size_t num_bytes)
 {
@@ -30,20 +30,17 @@ int	main(int argc, char **argv)
 	{
 		ft_memset(&game, 0, sizeof(t_game));
 		ft_get_map(&game, argv[1]);
-		ft_check_map(&game); //seg fault somewhere here
+		ft_check_map(&game);
 		ft_check_map_content(&game);
 		ft_find_valid_path(&game);
-		// Display the Map
 		game.mlx = mlx_init();
 		if (game.mlx == NULL)
 			return (1);
-		game.win = mlx_new_window(game.mlx, 600, 400, "So long!");
+		game.win = mlx_new_window(game.mlx, 320, 320, "So long!");
 		if (game.win == NULL)
-		{
 			close_window(&game);
-			free(game.mlx);
-			return (1);
-		}
+		load_images(&game);
+		ft_images_to_window(&game); //segfault here
 		// Implement Player Movement
 		mlx_key_hook(game.win, key_press, &game);
 		mlx_loop(game.mlx);

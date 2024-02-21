@@ -36,6 +36,7 @@ typedef struct s_game
 	void	*collectible_img;
 	void	*grass_img;
 	void	*wall_img;
+	void	*exit_img;
 
 	int		fd;
 	int		rows;
@@ -43,13 +44,14 @@ typedef struct s_game
 	int		exit_nr;
 	int		map_width;
 	int		map_height;
-	int		player_width;
-	int		player_height;
+	int		img_width;
+	int		img_height;
 
 	char	*addr;
 	char	**map;
 
 	t_point	player_pos;
+	t_point	exit_pos;
 }	t_game;
 
 char	**copy_map(char **map, t_point size);
@@ -69,9 +71,9 @@ void	ft_check_map_content(t_game *game);
 void	ft_count_players(t_game *game);
 void	ft_find_player_position(t_game *game);
 void	ft_find_valid_path(t_game *game);
-void	ft_image_to_window(t_game game);
+void	ft_images_to_window(t_game *game);
 void	ft_print_errors_map(int	error_number, t_game *game);
-void	ft_xpm_to_image(t_game game);
 void	*ft_memcpy(void	*dest, void const *src, size_t len);
+void 	load_images(t_game *game);
 
 #endif

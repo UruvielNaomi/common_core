@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_bucket_fill.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:33:59 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/19 17:33:00 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/21 09:59:53 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ void	ft_find_valid_path(t_game *game)
 	coll = game->collectables;
 	reach_collectibles(map_copy, size, game->player_pos, &coll);
 	free(map_copy);
-	if (coll == 0)
+	if (coll != 0)
 		ft_print_errors_map(8, game);
 	map_copy = copy_map(game->map, size);
 	ex = 0;

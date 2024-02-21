@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/16 16:58:56 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 10:35:10 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ void	ft_check_exit_collect(t_game *game)
 			if (game->map[i][j] == 'C')
 				game->collectables++;
 			if (game->map[i][j] == 'E')
-				game->exit_nr++;		
+			{
+				game->exit_nr++;
+				game->exit_pos.x = i;
+				game->exit_pos.y = j;
+			}
 			j++;
 		}
 		i++;
