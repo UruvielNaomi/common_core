@@ -19,6 +19,7 @@
 # include <string.h>
 # include "../minilibx/mlx.h"
 # include "get_next_line.h"
+# include "ft_printf.h"
 
 typedef struct  s_point
 {

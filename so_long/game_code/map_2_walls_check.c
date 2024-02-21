@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 15:40:59 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:52:49 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	ft_check_map(t_game *game)
 {
 	if (game->map[0] == NULL)
 	{
-		printf("Error\nMap is empty\n");
+		ft_printf("Error\nMap is empty\n");
 		close_window(game);
 	}
 	ft_check_column_lengths(game);

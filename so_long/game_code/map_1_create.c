@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:19 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/21 15:39:39 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:52:34 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_get_map(t_game *game, char *str)
 	game->rows = ft_count_rows(game);
 	if (game->rows == 0)
 	{
-		printf("Error\nFile is empty\n");
+		ft_printf("Error\nFile is empty\n");
 		return (0);
 	}
 	close(game->fd);

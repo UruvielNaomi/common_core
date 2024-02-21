@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:45:02 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 15:42:17 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:47:35 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 void	ft_print_errors_map(int error_number, t_game *game)
 {
 	if (error_number == 1)
-		printf("Error\nMap not rectangluar\n");
+		ft_printf("Error\nMap not rectangluar\n");
 	else if (error_number == 2)
-		printf("Error\nTop row isn't a wall\n");
+		ft_printf("Error\nTop row isn't a wall\n");
 	else if (error_number == 3)
-		printf("Error\nBottom row isn't a wall\n");
+		ft_printf("Error\nBottom row isn't a wall\n");
 	else if (error_number == 4)
-		printf("Error\nFirst and last column aren't walls\n");
+		ft_printf("Error\nFirst and last column aren't walls\n");
 	else if (error_number == 5)
-		printf("Error\nInvalid Map\n");
+		ft_printf("Error\nInvalid Map\n");
 	else if (error_number == 6)
-		printf("Error\nIncorrect number of Players\n");
+		ft_printf("Error\nIncorrect number of Players\n");
 	else if (error_number == 7)
-		printf("Error\nExit or Collectable Amount Error\n");
+		ft_printf("Error\nExit or Collectable Amount Error\n");
 	else if (error_number == 8)
-		printf("Error\nNot all Collectibles found\n");
+		ft_printf("Error\nNot all Collectibles found\n");
 	else if (error_number == 9)
-		printf("Error\nExit has not been found\n");
+		ft_printf("Error\nExit has not been found\n");
 	else if (error_number == 10)
-		printf("Error\nFailed to load an image.\n");
+		ft_printf("Error\nFailed to load an image.\n");
 	free_map(game);
 	exit (1);
 }
