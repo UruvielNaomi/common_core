@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 16:19:02 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:34:31 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	move_player_left_right(t_game *game, int keycode)
 {
 	int	x;
 	int	y;
-	int check;
+	int	check;
 
 	x = game->player_pos.x;
 	y = game->player_pos.y;

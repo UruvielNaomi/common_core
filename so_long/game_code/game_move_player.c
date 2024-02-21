@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:54:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 16:08:15 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:34:40 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	move_accepted(t_game *game, int x, int y)
 		game->player_pos.y = y;
 	}
 	if (game->collectables == 0)
-		update_exit(game);	
+		update_exit(game);
 	return (1);
 }

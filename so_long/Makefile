@@ -5,12 +5,13 @@ CC := gcc
 CFLAGS := -Wall -Wextra -Werror -Iheaders/
 
 SOURCE := game_code/*.c
+GETNEXTLINE := get_next_line/*c
 LIBRARY := -Lminilibx -lmlx -framework OpenGL -framework AppKit
 MINILIBX := minilibx/
 
 all:
 	make -C $(MINILIBX)
-	$(CC) $(CFLAGS) $(SOURCE) $(LIBRARY) -o $(NAME)
+	$(CC) $(CFLAGS) $(SOURCE) $(GETNEXTLINE) $(LIBRARY) -o $(NAME)
 
 clean:
 

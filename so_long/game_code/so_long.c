@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 15:42:26 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 16:34:17 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	main(int argc, char **argv)
 			close_window(&game);
 		load_images(&game);
 		ft_images_to_window(&game);
-		// Implement Player Movement
 		mlx_key_hook(game.win, key_press, &game);
 		mlx_loop(game.mlx);
 	}	
