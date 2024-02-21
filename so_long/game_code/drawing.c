@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:25 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 11:08:11 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 12:31:33 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,24 @@ void ft_images_to_window(t_game *game)
 		y = 0;
 		while (game->map[x][y] && game->map[x][y] != '\n')
 		{
+			int pixel_x = x * game->img_width;
+			int pixel_y = y * game->img_height;
 			if (game->map[x][y] == '1')
-				mlx_put_image_to_window(game->mlx, game->win, game->wall_img, x, y);
+				mlx_put_image_to_window(game->mlx, game->win, game->wall_img, pixel_x, pixel_y);
 			if (game->map[x][y] == '0')
-				mlx_put_image_to_window(game->mlx, game->win, game->grass_img, x, y);
+				mlx_put_image_to_window(game->mlx, game->win, game->grass_img, pixel_x, pixel_y);
 			if (game->map[x][y] == 'P')
-				update_player_location(game, x, y);
+				update_player_location(game, pixel_x, pixel_y);
 			if (game->map[x][y] == 'C')
-				update_collectibles(game, x, y);
+				update_collectibles(game, pixel_x, pixel_y);
 			if (game->map[x][y] == 'E')
-				mlx_put_image_to_window(game->mlx, game->win, game->exit_img, x, y);
+				mlx_put_image_to_window(game->mlx, game->win, game->exit_closed_img, pixel_x, pixel_y);
 			y++;
 		}
 		x++;
 	}
 }
+
 
 void	load_images(t_game *game) 
 {
@@ -55,8 +58,11 @@ void	load_images(t_game *game)
 	game->player_img = mlx_xpm_file_to_image(game->mlx, "images/player_cat.xpm", &game->img_width, &game->img_height);
 	if (game->player_img == NULL)
 		ft_print_errors_map(10, game);
-	game->exit = mlx_xpm_file_to_image(game->mlx, "images/exit.xpm", &game->img_width, &game->img_height);
-	if (game->exit_img == NULL)
+	game->exit_closed_img = mlx_xpm_file_to_image(game->mlx, "images/exit_closed.xpm", &game->img_width, &game->img_height);
+	if (game->exit_closed_img == NULL)
+		ft_print_errors_map(10, game);
+	game->exit_open_img = mlx_xpm_file_to_image(game->mlx, "images/exit_open.xpm", &game->img_width, &game->img_height);
+	if (game->exit_open_img == NULL)
 		ft_print_errors_map(10, game);
 	game->collectible_img = mlx_xpm_file_to_image(game->mlx, "images/collectible.xpm", &game->img_width, &game->img_height);
 	if (game->collectible_img == NULL)

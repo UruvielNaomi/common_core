@@ -36,7 +36,8 @@ typedef struct s_game
 	void	*collectible_img;
 	void	*grass_img;
 	void	*wall_img;
-	void	*exit_img;
+	void	*exit_closed_img;
+	void	*exit_open_img;
 
 	int		fd;
 	int		rows;
