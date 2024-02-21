@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:25 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 12:31:33 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 13:35:11 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,11 @@ void ft_images_to_window(t_game *game)
 		y = 0;
 		while (game->map[x][y] && game->map[x][y] != '\n')
 		{
-			int pixel_x = x * game->img_width;
-			int pixel_y = y * game->img_height;
+			int pixel_x = y * game->img_width;
+			int pixel_y = x * game->img_height;
+			mlx_put_image_to_window(game->mlx, game->win, game->grass_img, pixel_x, pixel_y);
 			if (game->map[x][y] == '1')
 				mlx_put_image_to_window(game->mlx, game->win, game->wall_img, pixel_x, pixel_y);
-			if (game->map[x][y] == '0')
-				mlx_put_image_to_window(game->mlx, game->win, game->grass_img, pixel_x, pixel_y);
 			if (game->map[x][y] == 'P')
 				update_player_location(game, pixel_x, pixel_y);
 			if (game->map[x][y] == 'C')
@@ -49,7 +48,6 @@ void ft_images_to_window(t_game *game)
 		x++;
 	}
 }
-
 
 void	load_images(t_game *game) 
 {

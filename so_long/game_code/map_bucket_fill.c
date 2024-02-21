@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:33:59 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 09:59:53 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/21 13:29:27 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,9 @@ void	reach_collectibles(char **map, t_point size, t_point cur, int *coll)
 	if (map[cur.y][cur.x] == 'C' )
 	{
 		(*coll) -= 1;
-		printf("Found a collectible\n");
 		map[cur.y][cur.x] = 'V';
 		if (*coll == 0)
-		{
-			printf("All collectibles found\n");
 			return ;
-		}
 	}
 	else
 		map[cur.y][cur.x] = 'V';
@@ -77,7 +73,6 @@ void	reach_exit(char **map, t_point size, t_point cur, int *found_exit)
 		return ;
 	if (map[cur.y][cur.x] == 'E' )
 	{
-		printf("Exit found\n");
 		*found_exit = 1;
 		return ;
 	}
