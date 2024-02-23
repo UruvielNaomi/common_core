@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_1_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:19 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/21 16:57:39 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/23 16:34:24 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	ft_get_map(t_game *game, char *str)
 	if (game->rows == 0)
 	{
 		ft_printf("Error\nFile is empty\n");
+		close (game->fd);
 		return (0);
 	}
 	close(game->fd);

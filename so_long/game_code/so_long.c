@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 16:34:17 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/23 15:33:55 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	main(int argc, char **argv)
 		load_images(&game);
 		ft_images_to_window(&game);
 		mlx_key_hook(game.win, key_press, &game);
+		mlx_hook(game.win, 17, 0, close_window, &game);
 		mlx_loop(game.mlx);
 	}	
 	return (0);

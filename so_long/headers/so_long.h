@@ -48,6 +48,7 @@ typedef struct s_game
 	int		map_height;
 	int		img_width;
 	int		img_height;
+	int		count_moves;
 
 	char	*addr;
 	char	**map;
@@ -64,8 +65,8 @@ int	ft_get_map(t_game *game, char *str);
 int	key_press(int keycode, t_game *game);
 int	move_accepted(t_game *game, int x, int y);
 int	move_player_left_right(t_game *game, int keycode);
+int		close_window(t_game *game);
 
-void	close_window(t_game *game);
 void	free_map(t_game *game);
 void	ft_check_chars(t_game *game);
 void	ft_check_column_lengths(t_game *game);

@@ -2,7 +2,7 @@ NAME := so_long
 
 CC := gcc
 
-CFLAGS := -Wall -Wextra -Werror -Iheaders/
+CFLAGS := -Wall -Wextra -Werror -Iheaders/ -g
 
 SOURCE := game_code/*.c
 GETNEXTLINE := get_next_line/*c
@@ -17,8 +17,8 @@ all:
 clean:
 
 fclean: clean
-		make clean -C $(MINILIBX)
-		rm -rf $(NAME)
+	make clean -C $(MINILIBX)
+	rm -rf $(NAME) $(NAME).dSYM
 
 re: fclean all
 

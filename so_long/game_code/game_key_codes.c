@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_key_codes.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 16:34:31 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/23 16:25:17 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,33 +75,40 @@ void	free_map(t_game *game)
 	while (i < game->rows)
 	{
 		free(game->map[i]);
+		game->map[i] = NULL;  // Avoid dangling pointers
 		i++;
 	}
 	free(game->map);
+	game->map = NULL;  // Avoid dangling pointers
 }
 
-void	close_window(t_game *game)
+int	close_window(t_game *game)
 {
 	mlx_destroy_window(game->mlx, game->win);
+	free_map(game);
 	free(game->mlx);
 	exit (0);
 }
 
 int	key_press(int keycode, t_game *game)
 {
+	int move;
+
+	move = 0;
 	if (keycode == 53)
-	{
-		free_map(game);
 		close_window(game);
-		exit(0);
-	}
 	else if (keycode == 0)
-		move_player_left_right(game, keycode);
+		move = move_player_left_right(game, keycode);
 	else if (keycode == 13)
-		move_player_up_down(game, keycode);
+		move = move_player_up_down(game, keycode);
 	else if (keycode == 1)
-		move_player_up_down(game, keycode);
+		move = move_player_up_down(game, keycode);
 	else if (keycode == 2)
-		move_player_left_right(game, keycode);
+		move = move_player_left_right(game, keycode);
+	if (move == 1)
+	{
+		game->count_moves++;
+		ft_printf("Total moves: %d.\n", game->count_moves);
+	}
 	return (0);
 }
