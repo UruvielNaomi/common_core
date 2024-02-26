@@ -46,6 +46,7 @@ typedef struct s_game
 	int		exit_nr;
 	int		map_width;
 	int		map_height;
+	int		tile_size;
 	int		img_width;
 	int		img_height;
 	int		count_moves;

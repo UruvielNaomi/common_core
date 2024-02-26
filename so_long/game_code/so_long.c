@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/23 15:33:55 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/26 21:02:26 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,27 @@ static void	*ft_memset(void *memory_block, int value, size_t num_bytes)
 	return (memory_block);
 }
 
+void	check_file(char *str)
+{
+	int	file;
+	
+	file = open(str, O_RDONLY);
+	if (file < 0)
+	{
+		perror("Error\nEmpty file/non valid path\n");
+		exit(1);
+	}
+	close(file);
+}
+
+
 int	main(int argc, char **argv)
 {
 	t_game	game;
 
 	if (argc == 2)
 	{
+		check_file(argv[1]);
 		ft_memset(&game, 0, sizeof(t_game));
 		ft_get_map(&game, argv[1]);
 		ft_check_map(&game);
@@ -36,7 +51,8 @@ int	main(int argc, char **argv)
 		game.mlx = mlx_init();
 		if (game.mlx == NULL)
 			return (1);
-		game.win = mlx_new_window(game.mlx, 320, 320, "So long!");
+		game.win = mlx_new_window(game.mlx, game.map_width * game.tile_size, \
+			game.map_height * game.tile_size, "So long!");
 		if (game.win == NULL)
 			close_window(&game);
 		load_images(&game);

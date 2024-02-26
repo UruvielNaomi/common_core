@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:45:02 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/23 16:29:09 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/26 21:05:16 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ void	ft_print_errors_map(int error_number, t_game *game)
 	else if (error_number == 9)
 		ft_printf("Error\nExit has not been found\n");
 	else if (error_number == 10)
-		ft_printf("Error\nFailed to load an image.\n");
+		ft_printf("Error\nFailed to load an image\n");
+	else if (error_number == 11)
+		ft_printf("Error\nFile error\n");
 	free_map(game);
 	exit (1);
 }
