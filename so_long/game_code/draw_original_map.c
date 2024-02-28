@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_original_map.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:25 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 15:38:20 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/28 11:51:33 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_images_to_window(t_game *game)
 			if (game->map[x][y] == '1')
 				draw_image(game, game->wall_img, x, y);
 			if (game->map[x][y] == 'P')
-				draw_image(game, game->player_img, x, y);
+				draw_image(game, game->player_img_r, x, y);
 			if (game->map[x][y] == 'C')
 				draw_image(game, game->collectible_img, x, y);
 			if (game->map[x][y] == 'E')
@@ -60,10 +60,16 @@ void	load_images(t_game *game)
 {
 	game->img_width = 32;
 	game->img_height = 32;
-	load_image(game, &game->player_img, "images/player_cat.xpm");
+	load_image(game, &game->player_img_r, "images/player_r.xpm");
+	load_image(game, &game->player_img_l, "images/player_l.xpm");
+	load_image(game, &game->player_img_br, "images/player_br.xpm");
+	load_image(game, &game->player_img_bl, "images/player_bl.xpm");
 	load_image(game, &game->exit_closed_img, "images/exit_closed.xpm");
 	load_image(game, &game->exit_open_img, "images/exit_open.xpm");
 	load_image(game, &game->collectible_img, "images/collectible.xpm");
 	load_image(game, &game->grass_img, "images/grass.xpm");
 	load_image(game, &game->wall_img, "images/wall.xpm");
+	load_image(game, &game->patrol_img_r, "images/ghost_r.xpm");
+	load_image(game, &game->patrol_img_l, "images/ghost_l.xpm");
+	load_image(game, &game->patrol_img_b, "images/ghost_b.xpm");
 }

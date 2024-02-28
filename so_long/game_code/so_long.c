@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/26 21:02:26 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 11:57:53 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 			close_window(&game);
 		load_images(&game);
 		ft_images_to_window(&game);
+		find_starting_position_patrol(&game);
 		mlx_key_hook(game.win, key_press, &game);
 		mlx_hook(game.win, 17, 0, close_window, &game);
 		mlx_loop(game.mlx);

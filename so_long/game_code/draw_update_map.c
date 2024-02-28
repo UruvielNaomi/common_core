@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_update_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/21 16:23:21 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/02/28 11:50:36 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	update_player_location(t_game *game)
 	mlx_put_image_to_window(game->mlx, game->win, \
 		game->grass_img, pixel_x, pixel_y);
 	mlx_put_image_to_window(game->mlx, game->win, \
-		game->player_img, pixel_x, pixel_y);
+		game->player_img_r, pixel_x, pixel_y);
 }
 
 void	update_exit(t_game *game)

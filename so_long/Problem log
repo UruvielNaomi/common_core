@@ -17,3 +17,6 @@ Error in found all collectibles but still showing the error not all collectibles
 Segmentation fault in ft_images_to_window(&game).
 - Moved the code down (put the function before creating a window), now window opens for a brief second but then still a seg fault.
 - Solved: path to image was incorrect.
+
+28/2/2024
+Dont forget to add if statements for updating player position for left/right/back.

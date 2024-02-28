@@ -33,12 +33,18 @@ typedef struct s_game
 	void	*win;
 	void	*img;
 	void	*exit;
-	void	*player_img;
+	void	*player_img_r;
+	void	*player_img_l;
+	void	*player_img_br;
+	void	*player_img_bl;
 	void	*collectible_img;
 	void	*grass_img;
 	void	*wall_img;
 	void	*exit_closed_img;
 	void	*exit_open_img;
+	void	*patrol_img_r;
+	void	*patrol_img_l;
+	void	*patrol_img_b;
 
 	int		fd;
 	int		rows;
@@ -57,6 +63,7 @@ typedef struct s_game
 	t_point	player_pos;
 	t_point	prev_pos;
 	t_point	exit_pos;
+	t_point patrol_pos;
 }	t_game;
 
 char	**copy_map(char **map, t_point size);
@@ -82,6 +89,7 @@ void	ft_images_to_window(t_game *game);
 void	ft_print_errors_map(int	error_number, t_game *game);
 void	*ft_memcpy(void	*dest, void const *src, size_t len);
 void 	load_images(t_game *game);
+void	place_patrol(t_game *game);
 void	update_player_location(t_game *game);
 void	update_exit(t_game *game);
 
