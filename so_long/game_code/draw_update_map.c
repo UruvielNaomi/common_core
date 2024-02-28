@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 11:50:36 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 13:49:33 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,9 @@ void	update_exit(t_game *game)
 	pixel_y = game->exit_pos.x * game->img_height;
 	mlx_put_image_to_window(game->mlx, game->win, \
 		game->exit_open_img, pixel_x, pixel_y);
+}
+void	patrol_encounter(t_game *game)
+{
+	ft_printf("G A M E   O V E R !");
+	close_window(game);
 }

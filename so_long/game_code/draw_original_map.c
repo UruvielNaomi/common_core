@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:25 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 11:51:33 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 13:22:25 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	ft_images_to_window(t_game *game)
 		}
 		x++;
 	}
+	find_starting_position_patrol(game);
+	draw_image(game, game->patrol_img_l, game->patrol_pos.x, game->patrol_pos.y);
 }
 
 void	load_image(t_game *game, void **img, char *path)

@@ -75,6 +75,10 @@ int	move_accepted(t_game *game, int x, int y);
 int	move_player_left_right(t_game *game, int keycode);
 int		close_window(t_game *game);
 
+void	check_file(char *str);
+void	draw_image(t_game *game, void *img, int x, int y);
+void	draw_patrol(t_game *game);
+void	find_starting_position_patrol(t_game *game);
 void	free_map(t_game *game);
 void	ft_check_chars(t_game *game);
 void	ft_check_column_lengths(t_game *game);
@@ -89,7 +93,7 @@ void	ft_images_to_window(t_game *game);
 void	ft_print_errors_map(int	error_number, t_game *game);
 void	*ft_memcpy(void	*dest, void const *src, size_t len);
 void 	load_images(t_game *game);
-void	place_patrol(t_game *game);
+void	patrol_encounter(t_game *game);
 void	update_player_location(t_game *game);
 void	update_exit(t_game *game);
 

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/23 16:25:17 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 13:30:36 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	move_player_left_right(t_game *game, int keycode)
 
 	x = game->player_pos.x;
 	y = game->player_pos.y;
-	check = 0;
 	if (keycode == 0)
 	{
 		y--;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_errors.c                                     :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:45:02 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/26 21:05:16 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 12:44:33 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,17 @@ void	ft_print_errors_map(int error_number, t_game *game)
 		ft_printf("Error\nFile error\n");
 	free_map(game);
 	exit (1);
+}
+
+void	check_file(char *str)
+{
+	int	file;
+	
+	file = open(str, O_RDONLY);
+	if (file < 0)
+	{
+		perror("Error\nEmpty file/non valid path\n");
+		exit(1);
+	}
+	close(file);
 }

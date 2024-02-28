@@ -6,12 +6,21 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:54:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/26 20:41:22 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 13:49:35 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "ft_printf.h"
+
+void	update_collectables(t_game *game, int x, int y)
+{
+	game->collectables -= 1;
+	game->player_pos.x = x;
+	game->player_pos.y = y;
+	game->map[x][y] = '0';
+
+}
 
 int	move_accepted(t_game *game, int x, int y)
 {
@@ -25,17 +34,14 @@ int	move_accepted(t_game *game, int x, int y)
 		close_window(game);
 	}
 	if (game->map[x][y] == 'C')
-	{
-		game->collectables -= 1;
-		game->player_pos.x = x;
-		game->player_pos.y = y;
-		game->map[x][y] = '0'; // change the 'C' to '0'
-	}
+		update_collectables(game, x, y);
 	if (game->map[x][y] == '0')
 	{
 		game->player_pos.x = x;
 		game->player_pos.y = y;
 	}
+	if (game->map[x][y] == 'G')
+		patrol_encounter(game);
 	if (game->collectables == 0)
 		update_exit(game);
 	return (1);
