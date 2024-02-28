@@ -6,11 +6,12 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:25 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 14:11:18 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:27:39 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "so_long_bonus.h"
 
 void	draw_image(t_game *game, void *img, int x, int y)
 {

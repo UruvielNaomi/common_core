@@ -6,11 +6,12 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 14:11:59 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 16:55:17 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "so_long_bonus.h"
 
 int	move_player_left_right(t_game *game, int keycode)
 {

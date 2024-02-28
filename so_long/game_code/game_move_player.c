@@ -6,12 +6,13 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:54:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 14:10:38 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:27:49 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "ft_printf.h"
+#include "so_long_bonus.h"
 
 void	update_collectables(t_game *game, int x, int y)
 {

@@ -6,27 +6,14 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 14:12:19 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 15:52:19 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	update_player_location(t_game *game, int keycode)
+void	player_direction(t_game *game, int keycode, int	pixel_x, int pixel_y)
 {
-	int	prev_pix_x;
-	int	prev_pix_y;
-	int	pixel_x;
-	int	pixel_y;
-
-	prev_pix_x = game->prev_pos.y * game->img_width;
-	prev_pix_y = game->prev_pos.x * game->img_height;
-	mlx_put_image_to_window(game->mlx, game->win, \
-		game->grass_img, prev_pix_x, prev_pix_y);
-	pixel_x = game->player_pos.y * game->img_width;
-	pixel_y = game->player_pos.x * game->img_height;
-	mlx_put_image_to_window(game->mlx, game->win, \
-		game->grass_img, pixel_x, pixel_y);
 	if (keycode == 0)
 	{
 		mlx_put_image_to_window(game->mlx, game->win, \
@@ -47,6 +34,24 @@ void	update_player_location(t_game *game, int keycode)
 		mlx_put_image_to_window(game->mlx, game->win, \
 		game->player_img_r, pixel_x, pixel_y);
 	}
+}
+
+void	update_player_location(t_game *game, int keycode)
+{
+	int	prev_pix_x;
+	int	prev_pix_y;
+	int	pixel_x;
+	int	pixel_y;
+
+	prev_pix_x = game->prev_pos.y * game->img_width;
+	prev_pix_y = game->prev_pos.x * game->img_height;
+	mlx_put_image_to_window(game->mlx, game->win, \
+		game->grass_img, prev_pix_x, prev_pix_y);
+	pixel_x = game->player_pos.y * game->img_width;
+	pixel_y = game->player_pos.x * game->img_height;
+	mlx_put_image_to_window(game->mlx, game->win, \
+		game->grass_img, pixel_x, pixel_y);
+	player_direction(game, keycode, pixel_x, pixel_y);
 }
 
 void	update_exit(t_game *game)
