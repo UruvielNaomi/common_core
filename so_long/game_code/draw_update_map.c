@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 14:04:04 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:12:19 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	update_player_location(t_game *game, int keycode)
 	{
 		mlx_put_image_to_window(game->mlx, game->win, \
 		game->player_img_r, pixel_x, pixel_y);
-	}	
+	}
 }
 
 void	update_exit(t_game *game)
@@ -59,6 +59,7 @@ void	update_exit(t_game *game)
 	mlx_put_image_to_window(game->mlx, game->win, \
 		game->exit_open_img, pixel_x, pixel_y);
 }
+
 void	patrol_encounter(t_game *game)
 {
 	ft_printf("G A M E   O V E R !");

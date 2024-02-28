@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 13:14:55 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:12:46 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	ft_find_player_position(t_game *game)
 				game->player_pos.y = j;
 				player_found = 1;
 				break ;
-			}	
+			}
 			j++;
 		}
 		if (player_found)

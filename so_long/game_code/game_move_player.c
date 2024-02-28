@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:54:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 13:49:35 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:10:38 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	update_collectables(t_game *game, int x, int y)
 	game->player_pos.x = x;
 	game->player_pos.y = y;
 	game->map[x][y] = '0';
-
 }
 
 int	move_accepted(t_game *game, int x, int y)

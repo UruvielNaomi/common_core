@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 14:04:43 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:11:59 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,11 +74,11 @@ void	free_map(t_game *game)
 	while (i < game->rows)
 	{
 		free(game->map[i]);
-		game->map[i] = NULL;  // Avoid dangling pointers
+		game->map[i] = NULL;
 		i++;
 	}
 	free(game->map);
-	game->map = NULL;  // Avoid dangling pointers
+	game->map = NULL;
 }
 
 int	close_window(t_game *game)
@@ -91,7 +91,7 @@ int	close_window(t_game *game)
 
 int	key_press(int keycode, t_game *game)
 {
-	int move;
+	int	move;
 
 	move = 0;
 	if (keycode == 53)

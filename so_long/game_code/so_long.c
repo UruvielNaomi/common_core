@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 13:06:34 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:11:26 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ int	main(int argc, char **argv)
 		all_map_checks(&game);
 		if (initialize_map_graphics(&game) == 1)
 			return (1);
-	}	
+	}
 	return (0);
 }

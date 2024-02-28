@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:45:02 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 12:44:33 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:13:15 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_print_errors_map(int error_number, t_game *game)
 void	check_file(char *str)
 {
 	int	file;
-	
+
 	file = open(str, O_RDONLY);
 	if (file < 0)
 	{

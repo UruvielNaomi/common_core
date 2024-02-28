@@ -6,11 +6,11 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:40:47 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/28 13:25:47 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:10:11 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	find_starting_position_patrol(t_game *game)
 {
@@ -37,4 +37,3 @@ void	find_starting_position_patrol(t_game *game)
 		i--;
 	}
 }
-
