@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 13:30:36 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/28 14:04:43 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	move_player_left_right(t_game *game, int keycode)
 		check = move_accepted(game, x, y);
 	}
 	if (check == 1)
-		update_player_location(game);
+		update_player_location(game, keycode);
 	return (1);
 }
 
@@ -62,7 +62,7 @@ int	move_player_up_down(t_game *game, int keycode)
 		check = move_accepted(game, x, y);
 	}
 	if (check == 1)
-		update_player_location(game);
+		update_player_location(game, keycode);
 	return (1);
 }
 
@@ -111,3 +111,10 @@ int	key_press(int keycode, t_game *game)
 	}
 	return (0);
 }
+
+/*
+    ‘w’: 13 (up)
+    ‘s’: 1 (down)
+    ‘a’: 0 (left)
+    ‘d’: 2 (right)
+*/

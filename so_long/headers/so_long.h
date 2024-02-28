@@ -35,8 +35,7 @@ typedef struct s_game
 	void	*exit;
 	void	*player_img_r;
 	void	*player_img_l;
-	void	*player_img_br;
-	void	*player_img_bl;
+	void	*player_img_b;
 	void	*collectible_img;
 	void	*grass_img;
 	void	*wall_img;
@@ -94,7 +93,7 @@ void	ft_print_errors_map(int	error_number, t_game *game);
 void	*ft_memcpy(void	*dest, void const *src, size_t len);
 void 	load_images(t_game *game);
 void	patrol_encounter(t_game *game);
-void	update_player_location(t_game *game);
+void	update_player_location(t_game *game, int keycode);
 void	update_exit(t_game *game);
 
 #endif
