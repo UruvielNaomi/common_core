@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:42:39 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 14:12:46 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 13:21:05 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_check_exit_collect(t_game *game)
 		}
 		i++;
 	}
-	if (game->exit_nr != 1 && game->collectables < 1)
+	if (game->exit_nr != 1 || game->collectables < 1)
 		ft_print_errors_map(7, game);
 }
 
