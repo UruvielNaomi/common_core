@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/29 09:01:50 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 13:57:22 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int	key_press(int keycode, t_game *game)
 	if (move == 1)
 	{
 		game->count_moves++;
-		ft_printf("Total moves: %d.\n", game->count_moves);
+		ft_printf("\rTotal moves:  %d  \n", game->count_moves);
 		update_step_counter_window(game);
 	}
 	return (0);
