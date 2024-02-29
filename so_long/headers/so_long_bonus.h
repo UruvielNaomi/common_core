@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:07:48 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 10:26:27 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 10:55:30 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SO_LONG_BONUS_H
 
 # include "so_long.h"
+# include <time.h>
 
 
 char	*ft_itoa(int nbr);

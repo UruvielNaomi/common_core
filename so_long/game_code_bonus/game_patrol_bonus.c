@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:48:56 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 10:47:30 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 11:10:46 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,17 +81,25 @@ t_point	calculate_direction_patrol(t_game *game, int direction)
 
 int	move_patrol(t_game *game)
 {
+	static time_t last_time;
+	time_t	current_time;
 	int direction;
 	t_point new_pos;
 
+	current_time = time(NULL);
+	if (current_time - last_time < 1)
+		return (0);
+	last_time = current_time;
 	direction = rand() % 4;
 	new_pos = calculate_direction_patrol(game, direction);
 	if (is_valid_path_patrol(game, new_pos.x, new_pos.y) == 1)
 	{
 		game->pat_prev_pos.x = game->patrol_pos.x;
 		game->pat_prev_pos.y = game->patrol_pos.y;
+		game->map[game->pat_prev_pos.x][game->pat_prev_pos.y] = '0';		
 		game->patrol_pos.x = new_pos.x;
 		game->patrol_pos.y = new_pos.y;
+		game->map[new_pos.x][new_pos.y] = 'G';
 		update_patrol_location(game, direction);
 	}
 	return (0);
