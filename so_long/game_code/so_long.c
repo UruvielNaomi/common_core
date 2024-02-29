@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 16:49:57 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 10:24:49 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 int	initialize_map_graphics(t_game *game)
 {
-	t_game_bonus	game_bonus;
-	
 	game->mlx = mlx_init();
 	if (game->mlx == NULL)
 		return (1);
@@ -26,9 +24,10 @@ int	initialize_map_graphics(t_game *game)
 		close_window(game);
 	load_images(game);
 	ft_images_to_window(game);
-	step_counter_window(game, &game_bonus);
+	step_counter_window(game);
 	mlx_key_hook(game->win, key_press, game);
 	mlx_hook(game->win, 17, 0, close_window, game);
+	mlx_loop_hook(game->mlx, move_patrol, game);
 	mlx_loop(game->mlx);
 	return (0);
 }

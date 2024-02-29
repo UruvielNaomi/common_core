@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 16:55:17 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 09:01:50 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,10 @@ int	close_window(t_game *game)
 	mlx_destroy_window(game->mlx, game->win);
 	free_map(game);
 	free(game->mlx);
+	if (game->str2)
+		free(game->str2);
+	if (game->str3)
+		free(game->str3);
 	exit (0);
 }
 
@@ -109,6 +113,7 @@ int	key_press(int keycode, t_game *game)
 	{
 		game->count_moves++;
 		ft_printf("Total moves: %d.\n", game->count_moves);
+		update_step_counter_window(game);
 	}
 	return (0);
 }

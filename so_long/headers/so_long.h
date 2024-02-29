@@ -58,11 +58,14 @@ typedef struct s_game
 
 	char	*addr;
 	char	**map;
+	char	*str2;
+	char	*str3;
 
 	t_point	player_pos;
 	t_point	prev_pos;
 	t_point	exit_pos;
 	t_point patrol_pos;
+	t_point	pat_prev_pos;
 }	t_game;
 
 char	**copy_map(char **map, t_point size);

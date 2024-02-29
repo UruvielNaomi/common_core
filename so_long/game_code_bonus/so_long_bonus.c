@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:40:47 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/28 16:48:51 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 09:50:35 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,27 +39,32 @@ void	find_starting_position_patrol(t_game *game)
 	}
 }
 
-void	step_counter_window(t_game *game, t_game_bonus *game_bonus)
+void	step_counter_window(t_game *game)
 {
 	char	*str1;
 	
 	str1 = "Steps: ";
-	game_bonus->str2 = ft_itoa(game->count_moves);
-	game_bonus->str3 = ft_strjoin(str1, game_bonus->str2);
-	mlx_string_put(game->mlx, game->win, game->map_width - (game->map_width / 10),\
-	game->map_height - (game->map_height / 10), 0xFFFFFF,  game_bonus->str3);
+	game->str2 = ft_itoa(game->count_moves);
+	game->str3 = ft_strjoin(str1, game->str2);
+	mlx_string_put(game->mlx, game->win, game->map_width,\
+	game->map_height - (game->map_height / 20), 0xFFFFFF,  game->str3);
 }
 
-void	update_step_counter_window(t_game *game, t_game_bonus *game_bonus)
+void	update_step_counter_window(t_game *game)
 {
 	char	*str1;
 	
 	str1 = "Steps: ";
 
-	if (game_bonus->str2)
-		free(game_bonus->str2);
-	game_bonus->str2 = ft_itoa(game->count_moves);
-	if (game_bonus->str3)
-		free(game_bonus->str3);
-	game_bonus->str3 = ft_strjoin(str1, game_bonus->str2);
+	if (game->str2)
+		free(game->str2);
+	game->str2 = ft_itoa(game->count_moves);
+	if (game->str3)
+		free(game->str3);
+	game->str3 = ft_strjoin(str1, game->str2);
+	draw_image(game, game->wall_img, 0, 0);
+	draw_image(game, game->wall_img, 0, 1);
+	draw_image(game, game->wall_img, 0, 2);
+	mlx_string_put(game->mlx, game->win, game->map_width - (game->map_width / 10),\
+	game->map_height - (game->map_height / 20), 0xFFFFFF,  game->str3);
 }
