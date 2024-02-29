@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:07:48 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 20:15:06 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 20:50:12 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include "so_long.h"
 # include <time.h>
 # include <sys/time.h>
-
 
 char	*ft_itoa(int nbr);
 char	*ft_strjoin(char *s1, char const *s2);

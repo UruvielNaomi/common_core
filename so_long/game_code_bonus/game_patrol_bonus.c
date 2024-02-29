@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:48:56 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 20:15:22 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 20:48:20 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	update_patrol_location(t_game *game, int direction)
 {
 	int	x;
-	int y;
+	int	y;
 	int	prev_x;
 	int	prev_y;
 
@@ -23,10 +23,8 @@ void	update_patrol_location(t_game *game, int direction)
 	y = game->patrol_pos.y;
 	prev_x = game->pat_prev_pos.x;
 	prev_y = game->pat_prev_pos.y;
-
 	draw_image(game, game->grass_img, prev_x, prev_y);
 	draw_image(game, game->grass_img, x, y);
-	
 	if (direction == 0 || direction == 1)
 		patrol_left_right(game, direction, x, y);
 	if (direction == 2 || direction == 3)

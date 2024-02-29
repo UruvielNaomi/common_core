@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:40:47 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 19:48:16 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 20:36:46 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	step_counter_window(t_game *game)
 void	update_step_counter_window(t_game *game)
 {
 	char	*str1;
-	int y;
+	int		y;
 
 	str1 = "Steps: ";
 	y = 0;
