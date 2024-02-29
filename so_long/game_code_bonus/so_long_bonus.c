@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,7 +7,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:40:47 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 11:06:37 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 12:00:05 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +68,9 @@ void	update_step_counter_window(t_game *game)
 	draw_image(game, game->wall_img, 0, 2);
 	mlx_string_put(game->mlx, game->win, game->map_width - (game->map_width / 10),\
 	game->map_height - (game->map_height / 20), 0xFFFFFF,  game->str3);
+}
+void	patrol_encounter(t_game *game)
+{
+	ft_printf("G A M E   O V E R !");
+	close_window(game);
 }

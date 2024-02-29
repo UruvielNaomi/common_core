@@ -44,6 +44,7 @@ typedef struct s_game
 	void	*patrol_img_r;
 	void	*patrol_img_l;
 	void	*patrol_img_b;
+	void	*background_img;
 
 	int		fd;
 	int		rows;
