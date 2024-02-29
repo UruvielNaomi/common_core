@@ -6,14 +6,14 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/29 11:49:36 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 12:24:16 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "so_long_bonus.h"
 
-void	player_direction(t_game *game, int keycode, int	pixel_x, int pixel_y)
+void	player_direction(t_game *game, int keycode, int pixel_x, int pixel_y)
 {
 	if (keycode == 0)
 	{

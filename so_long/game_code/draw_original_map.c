@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:25 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/29 12:22:52 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 12:23:24 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	load_images(t_game *game)
 	load_image(game, &game->player_img_r, "images/player_r.xpm");
 	load_image(game, &game->player_img_l, "images/player_l.xpm");
 	load_image(game, &game->player_img_b, "images/player_br.xpm");
-	//load_image(game, &game->player_img_bl, "images/player_bl.xpm");
 	load_image(game, &game->exit_closed_img, "images/exit_closed.xpm");
 	load_image(game, &game->exit_open_img, "images/exit_open.xpm");
 	load_image(game, &game->collectible_img, "images/collectible.xpm");

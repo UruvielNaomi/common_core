@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 14:40:47 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 12:00:05 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 12:28:19 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +42,19 @@ void	find_starting_position_patrol(t_game *game)
 void	step_counter_window(t_game *game)
 {
 	char	*str1;
-	
+
 	str1 = "Steps: ";
 	game->str2 = ft_itoa(game->count_moves);
 	game->str3 = ft_strjoin(str1, game->str2);
-	mlx_string_put(game->mlx, game->win, game->map_width,\
-	game->map_height - (game->map_height / 20), 0xFFFFFF,  game->str3);
+	mlx_string_put(game->mlx, game->win, game->map_width, \
+	game->map_height - (game->map_height / 20), 0xFFFFFF, game->str3);
 }
 
 void	update_step_counter_window(t_game *game)
 {
 	char	*str1;
-	
-	str1 = "Steps: ";
 
+	str1 = "Steps: ";
 	if (game->str2)
 		free(game->str2);
 	game->str2 = ft_itoa(game->count_moves);
@@ -66,9 +64,12 @@ void	update_step_counter_window(t_game *game)
 	draw_image(game, game->wall_img, 0, 0);
 	draw_image(game, game->wall_img, 0, 1);
 	draw_image(game, game->wall_img, 0, 2);
-	mlx_string_put(game->mlx, game->win, game->map_width - (game->map_width / 10),\
-	game->map_height - (game->map_height / 20), 0xFFFFFF,  game->str3);
+	mlx_string_put(game->mlx, game->win, \
+		game->map_width - (game->map_width / 10), \
+		game->map_height - (game->map_height / 20), \
+		0xFFFFFF, game->str3);
 }
+
 void	patrol_encounter(t_game *game)
 {
 	ft_printf("G A M E   O V E R !");

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:48:56 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 11:10:46 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 12:29:29 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	is_valid_path_patrol(t_game *game, int x, int y)
 
 t_point	calculate_direction_patrol(t_game *game, int direction)
 {
-	t_point new_pos;
+	t_point	new_pos;
 
 	new_pos.x = game->patrol_pos.x;
 	new_pos.y = game->patrol_pos.y;
@@ -81,10 +81,10 @@ t_point	calculate_direction_patrol(t_game *game, int direction)
 
 int	move_patrol(t_game *game)
 {
-	static time_t last_time;
-	time_t	current_time;
-	int direction;
-	t_point new_pos;
+	static time_t	last_time;
+	time_t			current_time;
+	int				direction;
+	t_point			new_pos;
 
 	current_time = time(NULL);
 	if (current_time - last_time < 1)
@@ -96,7 +96,7 @@ int	move_patrol(t_game *game)
 	{
 		game->pat_prev_pos.x = game->patrol_pos.x;
 		game->pat_prev_pos.y = game->patrol_pos.y;
-		game->map[game->pat_prev_pos.x][game->pat_prev_pos.y] = '0';		
+		game->map[game->pat_prev_pos.x][game->pat_prev_pos.y] = '0';
 		game->patrol_pos.x = new_pos.x;
 		game->patrol_pos.y = new_pos.y;
 		game->map[new_pos.x][new_pos.y] = 'G';
@@ -104,4 +104,3 @@ int	move_patrol(t_game *game)
 	}
 	return (0);
 }
-

@@ -6,16 +6,16 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:51:54 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/28 16:01:48 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 12:25:28 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 #include "get_next_line.h"
 
-int ft_fill_array(char *array, int nbr, int i)
+int	ft_fill_array(char *array, int nbr, int i)
 {
-	char *numbers;
+	char	*numbers;
 
 	numbers = "0123456789";
 	if (nbr < 0)
@@ -37,7 +37,7 @@ int ft_fill_array(char *array, int nbr, int i)
 	return (i);
 }
 
-int ft_count_digits(int nbr)
+int	ft_count_digits(int nbr)
 {
 	int	count;
 
@@ -54,6 +54,7 @@ int ft_count_digits(int nbr)
 	}
 	return (count);
 }
+
 char	*ft_itoa(int nbr)
 {
 	char	*array;
@@ -64,7 +65,7 @@ char	*ft_itoa(int nbr)
 	length = ft_count_digits(nbr);
 	array = (char *)malloc(sizeof(char) * length + 1);
 	if (!array)
-		return NULL;
+		return (NULL);
 	i = ft_fill_array(array, nbr, i);
 	array[i] = '\0';
 	return (array);
