@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:07:48 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 11:50:20 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 20:15:06 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "so_long.h"
 # include <time.h>
+# include <sys/time.h>
 
 
 char	*ft_itoa(int nbr);
@@ -26,6 +27,8 @@ int		move_patrol(t_game *game);
 
 void	find_starting_position_patrol(t_game *game);
 void	patrol_encounter(t_game *game);
+void	patrol_left_right(t_game *game, int direction, int x, int y);
+void	patrol_up_down(t_game *game, int direction, int x, int y);
 void	step_counter_window(t_game *game);
 void	update_step_counter_window(t_game *game);
 

@@ -6,52 +6,31 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:48:56 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 12:29:29 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/02/29 20:15:22 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	patrol_direction(t_game *game, int direction, int pixel_x, int pixel_y)
-{
-	if (direction == 0)
-	{
-		mlx_put_image_to_window(game->mlx, game->win, \
-		game->patrol_img_l, pixel_x, pixel_y);
-	}
-	if (direction == 1)
-	{
-		mlx_put_image_to_window(game->mlx, game->win, \
-		game->patrol_img_r, pixel_x, pixel_y);
-	}
-	if (direction == 2)
-	{
-		mlx_put_image_to_window(game->mlx, game->win, \
-		game->patrol_img_b, pixel_x, pixel_y);
-	}
-	if (direction == 3)
-	{
-		mlx_put_image_to_window(game->mlx, game->win, \
-		game->patrol_img_r, pixel_x, pixel_y);
-	}
-}
-
 void	update_patrol_location(t_game *game, int direction)
 {
-	int	prev_pix_x;
-	int	prev_pix_y;
-	int	pixel_x;
-	int	pixel_y;
+	int	x;
+	int y;
+	int	prev_x;
+	int	prev_y;
 
-	prev_pix_x = game->pat_prev_pos.y * game->img_width;
-	prev_pix_y = game->pat_prev_pos.x * game->img_height;
-	mlx_put_image_to_window(game->mlx, game->win, \
-		game->grass_img, prev_pix_x, prev_pix_y);
-	pixel_x = game->patrol_pos.y * game->img_width;
-	pixel_y = game->patrol_pos.x * game->img_height;
-	mlx_put_image_to_window(game->mlx, game->win, \
-		game->grass_img, pixel_x, pixel_y);
-	patrol_direction(game, direction, pixel_x, pixel_y);
+	x = game->patrol_pos.x;
+	y = game->patrol_pos.y;
+	prev_x = game->pat_prev_pos.x;
+	prev_y = game->pat_prev_pos.y;
+
+	draw_image(game, game->grass_img, prev_x, prev_y);
+	draw_image(game, game->grass_img, x, y);
+	
+	if (direction == 0 || direction == 1)
+		patrol_left_right(game, direction, x, y);
+	if (direction == 2 || direction == 3)
+		patrol_up_down(game, direction, x, y);
 }
 
 int	is_valid_path_patrol(t_game *game, int x, int y)

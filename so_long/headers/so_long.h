@@ -23,8 +23,8 @@
 
 typedef struct  s_point
 {
-	int		   x;
-	int		   y;
+	int	x;
+	int	y;
 }			   t_point;
 
 typedef struct s_game
@@ -42,7 +42,9 @@ typedef struct s_game
 	void	*exit_closed_img;
 	void	*exit_open_img;
 	void	*patrol_img_r;
+	void	*patrol_img_r2;
 	void	*patrol_img_l;
+	void	*patrol_img_l2;
 	void	*patrol_img_b;
 	void	*background_img;
 
