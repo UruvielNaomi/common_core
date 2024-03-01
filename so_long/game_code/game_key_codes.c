@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_key_codes.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/29 13:57:22 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/01 10:28:36 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int	move_player_left_right(t_game *game, int keycode)
 		check = move_accepted(game, x, y);
 	}
 	if (check == 1)
-		update_player_location(game, keycode);
+		update_player_location(game, keycode, x, y);
+	if (check == 2)
+		exit_closed(game, keycode, x, y);
 	return (1);
 }
 
@@ -63,7 +65,9 @@ int	move_player_up_down(t_game *game, int keycode)
 		check = move_accepted(game, x, y);
 	}
 	if (check == 1)
-		update_player_location(game, keycode);
+		update_player_location(game, keycode, x, y);
+	if (check == 2)
+		exit_closed(game, keycode, x, y);
 	return (1);
 }
 

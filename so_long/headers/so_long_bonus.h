@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 14:07:48 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/29 20:50:12 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/01 10:19:16 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int		ft_fill_array(char *array, int nbr, int i);
 int		move_patrol(t_game *game);
 
 void	find_starting_position_patrol(t_game *game);
+void	ft_images_to_window_bonus(t_game *game);
+void	load_images_bonus(t_game *game);
 void	patrol_encounter(t_game *game);
 void	patrol_left_right(t_game *game, int direction, int x, int y);
 void	patrol_up_down(t_game *game, int direction, int x, int y);

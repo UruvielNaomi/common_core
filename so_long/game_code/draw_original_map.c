@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_original_map.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:35:25 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/29 19:48:19 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/01 10:36:29 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,6 @@ void	ft_images_to_window(t_game *game)
 		}
 		x++;
 	}
-	find_starting_position_patrol(game);
-	draw_image(game, game->patrol_img_l, game->patrol_pos.x, \
-		game->patrol_pos.y);
 }
 
 void	load_image(t_game *game, void **img, char *path)
@@ -72,9 +69,4 @@ void	load_images(t_game *game)
 	load_image(game, &game->collectible_img, "images/collectible.xpm");
 	load_image(game, &game->grass_img, "images/grass.xpm");
 	load_image(game, &game->wall_img, "images/wall.xpm");
-	load_image(game, &game->patrol_img_r, "images/ghost_r.xpm");
-	load_image(game, &game->patrol_img_r2, "images/ghost_r2.xpm");
-	load_image(game, &game->patrol_img_l, "images/ghost_l.xpm");
-	load_image(game, &game->patrol_img_l2, "images/ghost_l2.xpm");
-	load_image(game, &game->patrol_img_b, "images/ghost_b.xpm");
 }

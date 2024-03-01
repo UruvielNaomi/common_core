@@ -81,6 +81,7 @@ int		move_player_left_right(t_game *game, int keycode);
 int		close_window(t_game *game);
 
 void	check_file(char *str);
+void	exit_closed(t_game *game, int keycode, int x, int y);
 void	draw_image(t_game *game, void *img, int x, int y);
 void	free_map(t_game *game);
 void	ft_check_chars(t_game *game);
@@ -95,8 +96,10 @@ void	ft_find_valid_path(t_game *game);
 void	ft_images_to_window(t_game *game);
 void	ft_print_errors_map(int error_number, t_game *game);
 void	*ft_memcpy(void	*dest, void const *src, size_t len);
+void	load_image(t_game *game, void **img, char *path);
 void	load_images(t_game *game);
-void	update_player_location(t_game *game, int keycode);
+void	player_direction(t_game *game, int keycode, int x, int y);
+void	update_player_location(t_game *game, int keycode, int x, int y);
 void	update_exit(t_game *game);
 
 #endif
