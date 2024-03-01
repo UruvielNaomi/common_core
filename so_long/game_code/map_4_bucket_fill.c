@@ -6,27 +6,23 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:33:59 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/01 13:00:02 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/01 13:57:28 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	*ft_memcpy(void	*dest, void const *src, size_t len)
+void	free_map_copy(char **map_copy, int rows)
 {
-	unsigned char		*dest_ptr;
-	const unsigned char	*src_ptr;
+	int	i;
 
-	dest_ptr = dest;
-	src_ptr = src;
-	if (!dest && !src)
-		return (dest);
-	while (len > 0)
+	i = 0;
+	while (i < rows)
 	{
-		*dest_ptr++ = *src_ptr++;
-		len--;
+		free(map_copy[i]);
+		i++;
 	}
-	return (dest);
+	free(map_copy);
 }
 
 char	**copy_map(char **map, t_point size)
@@ -92,32 +88,19 @@ void	ft_find_valid_path(t_game *game)
 	char	**map_copy;
 	int		coll;
 	int		ex;
-	int		i;
 
 	size.x = game->map_width;
 	size.y = game->map_height;
 	map_copy = copy_map(game->map, size);
 	coll = game->collectables;
 	reach_collectibles(map_copy, size, game->player_pos, &coll);
-	i = 0;
-	while (i < game->rows)
-	{
-		free(map_copy[i]);
-		i++;
-	}
-	free(map_copy);
+	free_map_copy(map_copy, game->rows);
 	if (coll != 0)
 		ft_print_errors_map(8, game);
 	map_copy = copy_map(game->map, size);
 	ex = 0;
 	reach_exit(map_copy, size, game->player_pos, &ex);
-	i = 0;
-	while (i < game->rows)
-	{
-		free(map_copy[i]);
-		i++;
-	}
-	free(map_copy);
+	free_map_copy(map_copy, game->rows);
 	if (!ex)
 		ft_print_errors_map(9, game);
 }

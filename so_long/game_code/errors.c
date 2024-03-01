@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:45:02 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/01 12:51:36 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/01 13:55:56 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ft_print_errors_map(int error_number, t_game *game)
 		ft_printf("Error\nFailed to load an image\n");
 	else if (error_number == 11)
 		ft_printf("Error\nFile error\n");
-	if (game->map)
+	if (game)
 		free_map(game);
 	exit (1);
 }

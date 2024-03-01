@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:19 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/01 12:11:11 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/01 13:55:36 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,13 @@ int	ft_get_map(t_game *game, char *str)
 	if (game->fd < 0)
 	{
 		close (game->fd);
-		ft_printf("Error\nEmpty file/non valid path\n");
-		exit (1);
+		ft_print_errors_map(11, game);
 	}
 	game->rows = ft_count_rows(game);
 	if (game->rows == 0)
 	{
 		close (game->fd);
-		ft_printf("Error\nEmpty file/non valid path\n");
-		exit (1);
+		ft_print_errors_map(11, game);
 	}
 	close(game->fd);
 	game->fd = open(str, O_RDONLY);
