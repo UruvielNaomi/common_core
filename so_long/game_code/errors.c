@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/16 16:45:02 by nstacia           #+#    #+#             */
-/*   Updated: 2024/02/28 14:13:15 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/01 12:00:25 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	check_file(char *str)
 	file = open(str, O_RDONLY);
 	if (file < 0)
 	{
-		perror("Error\nEmpty file/non valid path\n");
+		ft_printf("Error\nEmpty file/non valid path\n");
 		exit(1);
 	}
 	close(file);

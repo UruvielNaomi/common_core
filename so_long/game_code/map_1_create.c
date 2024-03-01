@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_1_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:19 by Naomi             #+#    #+#             */
-/*   Updated: 2024/02/26 21:05:23 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/01 12:11:11 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,15 @@ int	ft_get_map(t_game *game, char *str)
 	if (game->fd < 0)
 	{
 		close (game->fd);
-		ft_print_errors_map(11, game);
+		ft_printf("Error\nEmpty file/non valid path\n");
+		exit (1);
 	}
 	game->rows = ft_count_rows(game);
 	if (game->rows == 0)
 	{
 		close (game->fd);
-		ft_print_errors_map(11, game);
+		ft_printf("Error\nEmpty file/non valid path\n");
+		exit (1);
 	}
 	close(game->fd);
 	game->fd = open(str, O_RDONLY);
@@ -60,3 +62,43 @@ int	ft_get_map(t_game *game, char *str)
 	close (game->fd);
 	return (1);
 }
+
+/* TRIED TEMPORARY ROW FOR GET NEXT LINE, STILL MEMORY LEAKS. :(
+int	ft_get_map(t_game *game, char *str)
+{
+	int	i;
+	char *row;
+
+	i = 0;
+	game->fd = open(str, O_RDONLY);
+	if (game->fd < 0)
+	{
+		close (game->fd);
+		ft_printf("Error\nEmpty file/non valid path\n");
+		exit (1);
+	}
+	game->rows = ft_count_rows(game);
+	if (game->rows == 0)
+	{
+		close (game->fd);
+		ft_printf("Error\nEmpty file/non valid path\n");
+		exit (1);
+	}
+	close(game->fd);
+	game->fd = open(str, O_RDONLY);
+	if (game->fd < 0)
+		return (0);
+	game->map = malloc(sizeof(char *) * game->rows);
+	while (i < game->rows)
+	{
+		// game->map[i++] = get_next_line(game->fd);
+		row = get_next_line(game->fd);
+		game->map[i] = ft_strdup(row);
+		free (row);
+		i++;
+	}
+	i = 0;
+	close (game->fd);
+	return (1);
+}
+*/

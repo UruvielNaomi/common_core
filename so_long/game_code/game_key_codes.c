@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/01 10:28:36 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/01 12:07:53 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,15 @@ int	close_window(t_game *game)
 	free_map(game);
 	free(game->mlx);
 	if (game->str2)
+	{
 		free(game->str2);
+		game->str2 = NULL;
+	}
 	if (game->str3)
+	{
 		free(game->str3);
+		game->str2 = NULL;
+	}
 	exit (0);
 }
 
