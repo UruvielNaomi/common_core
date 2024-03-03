@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/03 20:47:06 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/03 21:06:38 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ void	update_player_location(t_game *game, int keycode, int x, int y)
 	draw_image(game, game->grass_img, prev_x, prev_y);
 	if (game->map[prev_x][prev_y] == 'E')
 		draw_image(game, game->exit_closed_img, prev_x, prev_y);
-	draw_image(game, game->grass_img, x, y);
+	if (game->map[x][y] == 'C')
+	{
+		draw_image(game, game->grass_img, x, y);
+		game->map[x][y] = '0';		
+	}
 	player_direction(game, keycode, x, y);
 }
 
