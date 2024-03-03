@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/03 20:33:49 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/03 20:47:06 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,5 @@ void	exit_closed(t_game *game, int keycode, int x, int y)
 	prev_x = game->prev_pos.x;
 	prev_y = game->prev_pos.y;
 	draw_image(game, game->grass_img, prev_x, prev_y);
-	draw_image(game, game->grass_img, x, y);
-	draw_image(game, game->exit_closed_img, x, y);
 	player_direction(game, keycode, x, y);
 }
