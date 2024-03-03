@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:33:59 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/03 18:48:11 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/03 20:31:47 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	*ft_memcpy(void	*dest, void const *src, size_t len)
 	return (dest);
 }
 
-static void	*ft_memset(void *memory_block, int value, size_t num_bytes)
+void	*ft_memset(void *memory_block, int value, size_t num_bytes)
 {
 	unsigned char	*byte_pointer;
 

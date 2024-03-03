@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_update_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/01 10:35:30 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/03 20:33:49 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,17 @@ void	update_exit(t_game *game)
 	pixel_y = game->exit_pos.x * game->img_height;
 	mlx_put_image_to_window(game->mlx, game->win, \
 		game->exit_open_img, pixel_x, pixel_y);
+}
+
+void	exit_closed(t_game *game, int keycode, int x, int y)
+{
+	int	prev_x;
+	int	prev_y;
+
+	prev_x = game->prev_pos.x;
+	prev_y = game->prev_pos.y;
+	draw_image(game, game->grass_img, prev_x, prev_y);
+	draw_image(game, game->grass_img, x, y);
+	draw_image(game, game->exit_closed_img, x, y);
+	player_direction(game, keycode, x, y);
 }

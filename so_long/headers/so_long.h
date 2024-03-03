@@ -101,7 +101,6 @@ void		load_images(t_game *game);
 void		player_direction(t_game *game, int keycode, int x, int y);
 void		update_player_location(t_game *game, int keycode, int x, int y);
 void		update_exit(t_game *game);
-
-static void	*ft_memset(void *memory_block, int value, size_t num_bytes);
+void		*ft_memset(void *memory_block, int value, size_t num_bytes);
 
 #endif

@@ -6,26 +6,13 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:54:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/03 17:38:22 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/03 20:08:44 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "ft_printf.h"
 #include "so_long_bonus.h"
-
-void	exit_closed(t_game *game, int keycode, int x, int y)
-{
-	int	prev_x;
-	int	prev_y;
-
-	prev_x = game->prev_pos.x;
-	prev_y = game->prev_pos.y;
-	draw_image(game, game->grass_img, prev_x, prev_y);
-	draw_image(game, game->grass_img, x, y);
-	draw_image(game, game->exit_closed_img, x, y);
-	player_direction(game, keycode, x, y);
-}
 
 void	update_collectables(t_game *game, int x, int y)
 {
