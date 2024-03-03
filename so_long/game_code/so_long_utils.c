@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long_utils.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 16:33:59 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/01 13:57:35 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/03 18:48:11 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,14 @@ void	*ft_memcpy(void	*dest, void const *src, size_t len)
 		len--;
 	}
 	return (dest);
+}
+
+static void	*ft_memset(void *memory_block, int value, size_t num_bytes)
+{
+	unsigned char	*byte_pointer;
+
+	byte_pointer = (unsigned char *)memory_block;
+	while (num_bytes--)
+		*byte_pointer++ = (unsigned char)value;
+	return (memory_block);
 }

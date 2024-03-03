@@ -20,6 +20,11 @@ Segmentation fault in ft_images_to_window(&game).
 
 28/2/2024
 Dont forget to add if statements for updating player position for left/right/back.
+- Done
+
+1/3/2024
+memory leak???
+-Solved: Did not free full 2d array of copy, only one row. Added while loop.
 
 1/3/2024
 player recopies itself on starting position (check draw image);

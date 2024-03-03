@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 13:41:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/01 13:56:32 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/03 18:56:19 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,6 @@ void	all_map_checks(t_game *game)
 	ft_check_map(game);
 	ft_check_map_content(game);
 	ft_find_valid_path(game);
-}
-
-static void	*ft_memset(void *memory_block, int value, size_t num_bytes)
-{
-	unsigned char	*byte_pointer;
-
-	byte_pointer = (unsigned char *)memory_block;
-	while (num_bytes--)
-		*byte_pointer++ = (unsigned char)value;
-	return (memory_block);
 }
 
 int	main(int argc, char **argv)
