@@ -2,7 +2,8 @@
 
 1. The client takes a string and converts each character to its ascii value.
 2. Each ascii value is converted into a binary representation.
-3. The client sends this binary data to the server using UNIX signals (SIGUSR1 and SIGUSR2). both signals representing one binary (0 and 1).
+3. The client sends this binary data to the server using UNIX signals (SIGUSR1 and SIGUSR2). 
+	both signals representing one binary (0 and 1).
 4. The server receives these signals and constructs the binary representation of each character.
 5. The server then converts the binary sequence back into its corresponding ASCII value.
-6. Then that is being converted back into their character representations and displayed on the terminal/
+6. Then that is being converted back into their character representations and displayed on the terminal.
