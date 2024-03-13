@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw_update_map.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 15:24:19 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/03 21:06:38 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/13 10:17:06 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	update_player_location(t_game *game, int keycode, int x, int y)
 	if (game->map[x][y] == 'C')
 	{
 		draw_image(game, game->grass_img, x, y);
-		game->map[x][y] = '0';		
+		game->map[x][y] = '0';
 	}
 	player_direction(game, keycode, x, y);
 }

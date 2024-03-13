@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_move_player.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 14:54:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/03 21:06:33 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/13 10:19:47 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	update_collectables(t_game *game, int x, int y)
 	game->collectables -= 1;
 	game->player_pos.x = x;
 	game->player_pos.y = y;
-	//game->map[x][y] = '0';
 }
 
 int	move_accepted(t_game *game, int x, int y)
