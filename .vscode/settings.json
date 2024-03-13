@@ -10,6 +10,7 @@
 		"gnl_practice": "c",
 		"unistd.h": "c",
 		"so_long.h": "c",
-		"ft_printf.h": "c"
+		"ft_printf.h": "c",
+		"string.h": "c"
 	}
 }

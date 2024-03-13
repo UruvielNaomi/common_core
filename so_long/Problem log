@@ -29,3 +29,9 @@ memory leak???
 1/3/2024
 player recopies itself on starting position (check draw image);
 - solved: updated if statement: if (game->map[x][y] == '0' || game->map[x][y] == 'P')
+
+13/3/2024
+1. file with multiple enters
+2. seg fault when file exists but no map
+- solved 2: added if statements to closing/exiting function. freeing things that were not yet initialized.
+- solved 1: added variable to check if a row in the .ber file has chars (to prevent map error if file ends with errors)

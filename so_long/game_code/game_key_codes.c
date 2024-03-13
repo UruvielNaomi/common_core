@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   game_key_codes.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:38:23 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/03 20:42:58 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/13 11:31:18 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,12 @@ void	free_map(t_game *game)
 
 int	close_window(t_game *game)
 {
-	mlx_destroy_window(game->mlx, game->win);
-	free_map(game);
-	free(game->mlx);
+	if (game->win != NULL)
+		mlx_destroy_window(game->mlx, game->win);
+	if (game->map != NULL)
+		free_map(game);
+	if (game->mlx != NULL)
+		free(game->mlx);
 	if (game->str2)
 	{
 		free(game->str2);

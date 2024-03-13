@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 16:39:19 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/13 10:31:05 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/13 11:43:32 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,23 @@ int	ft_count_rows(t_game *game)
 	int		count;
 	char	ch;
 	char	prev_ch;
+	int		has_chars;
 
 	count = 0;
+	has_chars = 0;
 	while (read(game->fd, &ch, 1) == 1)
 	{
+		if (ch != '\n' && ch != '\r' && ch != ' ')
+			has_chars = 1;
 		if (ch == '\n')
-			count++;
+		{
+			if (has_chars)
+				count++;
+			has_chars = 0;
+		}
 		prev_ch = ch;
 	}
-	if (prev_ch != '\n')
+	if (prev_ch != '\n' && has_chars)
 		count++;
 	game->map_height = count;
 	game->tile_size = 32;
@@ -59,3 +67,8 @@ int	ft_get_map(t_game *game, char *str)
 	close (game->fd);
 	return (1);
 }
+
+/* 
+if (ch != '\n' && ch != '\r' && ch != ' ')
+	check if line contains space/carriage return/newline char
+*/
