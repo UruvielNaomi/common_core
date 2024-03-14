@@ -6,11 +6,11 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:47:17 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/13 17:09:40 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/14 10:58:56 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../headers/minitalk.h"
 
 void	bit_to_string(int bit)
 {

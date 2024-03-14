@@ -6,11 +6,11 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 16:39:18 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/13 16:39:40 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/14 10:58:39 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minitalk.h"
+#include "../headers/minitalk.h"
 
 int	ft_atoi(const char *str)
 {
