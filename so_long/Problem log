@@ -35,3 +35,6 @@ player recopies itself on starting position (check draw image);
 2. seg fault when file exists but no map
 - solved 2: added if statements to closing/exiting function. freeing things that were not yet initialized.
 - solved 1: added variable to check if a row in the .ber file has chars (to prevent map error if file ends with errors)
+
+13/3/2024
+When player touches patrol, game ends. but when patrol touches player, image of player disappears and game continues. Project has made it through at school, but needs to be updated in the future.
