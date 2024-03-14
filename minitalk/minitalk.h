@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:50:40 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/13 16:39:55 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/03/14 18:42:07 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # include "ft_printf.h"
 # include <unistd.h>
+
+struct {
+	int		bits;
+	char	character;
+}			received;
 
 int	ft_atoi(const char *str);
 
