@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:33:21 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/15 15:09:28 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/15 15:58:15 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,11 @@ int	main(int argc, char **argv)
 	int		pid;
 	char	*str;
 
-	pid = ft_atoi(argv[1]);
-	str = argv[2];
-	send_string(pid, str);
+	if (argc == 3)
+	{
+		pid = ft_atoi(argv[1]);
+		str = argv[2];
+		send_string(pid, str);
+	}
 	return (0);
 }

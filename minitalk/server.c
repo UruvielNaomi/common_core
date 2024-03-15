@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:47:17 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/15 15:06:44 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/15 15:57:04 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	bit_to_string(int signum)
 	{
 		ft_printf("%c", s_received.character);
 		if (s_received.character == '\0')
-			ft_print("\n");
+			ft_printf("\n");
 		s_received.bits = 0;
 		s_received.character = 0;
 	}
@@ -32,7 +32,7 @@ int	main(void)
 {
 	s_received.bits = 0;
 	s_received.character = 0;
-	ft_prinft("Welcome in the server.\n");
+	ft_printf("Welcome in the server.\n");
 	ft_printf("Server PID is: %d\n", getpid());
 	while (1)
 	{
