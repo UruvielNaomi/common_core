@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:33:21 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/15 16:30:02 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/15 20:01:39 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	send_string(int pid, char *str)
 		send_char(pid, str[i]);
 		i++;
 	}
+	send_char(pid, '\n');
 }
 
 int	main(int argc, char **argv)
