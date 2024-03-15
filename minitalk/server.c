@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:47:17 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/15 15:57:04 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/15 16:46:33 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 void	bit_to_string(int signum)
 {
-	s_received.character <<= 1;
 	if (signum == SIGUSR2)
-		s_received.character |= 1;
+		s_received.character += (1 << s_received.bits);
 	s_received.bits++;
-	if (s_received.bits == 8)
+	if (s_received.bits == 7)
 	{
 		ft_printf("%c", s_received.character);
 		if (s_received.character == '\0')
@@ -42,3 +41,4 @@ int	main(void)
 	}
 	return (0);
 }
+

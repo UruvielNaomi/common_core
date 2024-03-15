@@ -1,2 +1,4 @@
 15/3/2024
-send string is received by server, but printing is incorrect.
+- send string is received by server, but printing is incorrect.
+solved: changed count from 8 to 7.
+- isnt printing newline.
