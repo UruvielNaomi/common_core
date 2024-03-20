@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:33:21 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/15 20:01:39 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/20 09:21:40 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	send_char(int pid, char c)
 	int	bit;
 
 	bit = 0;
-	while (bit < 7)
+	while (bit < 8)
 	{
 		usleep(100);
 		if ((c >> bit) & 1)
