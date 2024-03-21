@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:33:21 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/20 09:21:40 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/21 14:39:08 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 
 	if (argc == 3)
 	{
+		s_received.client_pid = getpid();
 		pid = ft_atoi(argv[1]);
 		str = argv[2];
 		send_string(pid, str);

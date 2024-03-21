@@ -11,6 +11,7 @@
 		"unistd.h": "c",
 		"so_long.h": "c",
 		"ft_printf.h": "c",
-		"string.h": "c"
+		"string.h": "c",
+		"minitalk.h": "c"
 	}
 }
