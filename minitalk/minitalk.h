@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:50:40 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/21 14:57:47 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/21 16:43:46 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 struct {
 	int		bits;
 	char	character;
-}			s_received;
+}			s_server;
 
 int	ft_atoi(const char *str);
 
