@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:33:21 by nstacia           #+#    #+#             */
-/*   Updated: 2024/03/21 14:39:08 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/21 15:00:03 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	send_char(int pid, char c)
 		else
 			kill(pid, SIGUSR1);
 		bit++;
+		usleep(100);
 	}
 }
 
@@ -48,10 +49,11 @@ int	main(int argc, char **argv)
 
 	if (argc == 3)
 	{
-		s_received.client_pid = getpid();
 		pid = ft_atoi(argv[1]);
 		str = argv[2];
 		send_string(pid, str);
 	}
+	else
+		ft_printf("Input error: Either no string or more than one word.\n");
 	return (0);
 }
