@@ -1,0 +1,4 @@
+Research on algorithms
+- when list is small (1 to 5) we can use a simple algorithm.
+- when the list becomes larger we need to sort. 
+- We can use binary search to find the correct position?
