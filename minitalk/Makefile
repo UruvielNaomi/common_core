@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+         #
+#    By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/14 10:46:03 by nstacia           #+#    #+#              #
-#    Updated: 2024/03/21 13:28:36 by Naomi            ###   ########.fr        #
+#    Updated: 2024/03/22 13:37:24 by nstacia          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ clean:
 
 fclean: clean
 	$(MAKE) fclean -C ./libft
-	$(MAKE) clean -C ./ft_printf
+	$(MAKE) fclean -C ./ft_printf
 	$(RM) $(SERVER) $(CLIENT) $(NAME)
 
 re: fclean all
