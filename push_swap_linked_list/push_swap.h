@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/28 10:27:49 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/28 11:44:36 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,12 @@
 
 // Stack
 
-typedef struct s_stack
+typedef struct s_list
 {
 	int				value;
 	int				index;
 	struct s_list	*next;
-}				t_stack;
+}				t_list;
 
-int		check_stack(int *array, int size);
-
-void	ft_check_2(int *stack_a);
-void	ft_check_3(int *stack_a);
 
 #endif
