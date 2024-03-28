@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 13:27:06 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/27 18:39:50 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/28 08:59:56 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_check_2(int *stack_a)
 	if (stack_a[0] > stack_a[1])
 	{
 		ft_sa(stack_a);
-		ft_printf("sa\n");
+		ft_printf("sa\n"); // here or move to function?
 	}
 	else
 		ft_printf("No operations needed, array is sorted\n");
@@ -45,18 +45,16 @@ void	ft_check_3(int *stack_a)
 		ft_printf("No operations needed, array is sorted\n");
 }
 
-/*
-int	check_array(int *array, int size)
+int	check_stack(int *stack, int len)
 {
 	int i;
 	
 	i = 0;
-	while(i < size - 1) // to prevent accessing memory out of the array in our if statement, the last number has already been checked.
+	while(i < len - 1) // to prevent accessing memory out of the stack in our if statement, the last number has already been checked.
 	{
-		if (array[i] > array[i + 1])
+		if (stack[i] > stack[i + 1])
 			return (1);
 		i++;
 	}
 	return (0);
 }
-*/

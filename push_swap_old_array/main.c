@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/27 18:38:14 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/28 09:17:32 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,9 @@ void ft_push_swap(int *stack_a, int len)
 	if (len == 2)
 		ft_check_2(stack_a);
 	if (len == 3)
-		ft_check_3(stack_a, len);
+		ft_check_3(stack_a);
 	if (len > 3)
 		ft_insertion(stack_a, len);
-	else
-		return (1);
-	return (0);
 }
 
 int main(int argc, char **argv)
@@ -43,7 +40,7 @@ int main(int argc, char **argv)
 		if (!stack_a)
 			return (NULL);
 		i = 0;
-		while (stack_a[i])
+		while (i < len)
 		{
 			stack_a[i] = ft_atoi(argv[i + 1]);
 			i++;

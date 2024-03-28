@@ -1,0 +1,36 @@
+
+
+Difference between sending a pointer to the first address and sending the entire address:
+-----------------------------------------------------------------------------------------
+
+ ## Sending a pointer *, means we send the address of the first element of the array ##
+
+void modify_array(int *arr) {
+    arr[0] = 100;
+}
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    printf("Before: %d\n", arr[0]);  // Outputs: Before: 1
+    modify_array(arr);
+    printf("After: %d\n", arr[0]);   // Outputs: After: 100
+    return 0;
+}
+
+
+-----------------------------------------------------------------------------------------
+
+
+## ending the &, means we send the address of the entire array ##
+
+void modify_array(int **arr) {
+    (*arr)[0] = 100;  // Need to dereference the pointer to the array first
+}
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    printf("Before: %d\n", arr[0]);  // Outputs: Before: 1
+    modify_array(&arr);
+    printf("After: %d\n", arr[0]);   // Outputs: After: 100
+    return 0;
+}

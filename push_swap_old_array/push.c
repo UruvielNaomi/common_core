@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/27 18:21:36 by Naomi            ###   ########.fr       */
+/*   Created: 2024/03/28 09:17:56 by Naomi             #+#    #+#             */
+/*   Updated: 2024/03/28 09:32:11 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+void	ft_pa(int *stack_a, int *stack_b)
+{
+	int	temp_a;
+	int	temp_b;
+	int i;
 
-void	ft_check_2(int *stack_a);
-#endif
+	temp_a = stack_a[0];
+	temp_b = stack_b[0];
+
+	stack_a[0] = stack_a[1];
+
+}
+
+void	ft_pb(int *stack_a, int *stack_b)
+{
+	
+}
