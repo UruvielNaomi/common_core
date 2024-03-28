@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   clean.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/28 13:06:25 by Naomi            ###   ########.fr       */
+/*   Created: 2024/03/28 13:12:35 by Naomi             #+#    #+#             */
+/*   Updated: 2024/03/28 13:17:33 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-
-// Stack
-
-typedef struct s_list
+void	free_stack(t_list **stack)
 {
-	int				value;
-	int				index;
-	struct s_list	*next;
-}				t_list;
+	t_list	*head;
+	t_list	*tmp;
 
-
-#endif
+	head = *stack;
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
+	free(stack);
+	*stack = NULL;
+}

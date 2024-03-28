@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   insertion.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/28 13:06:25 by Naomi            ###   ########.fr       */
+/*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
+/*   Updated: 2024/03/28 13:41:07 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-
-// Stack
-
-typedef struct s_list
+void	ft_push_2(t_list **stack_a, t_list **stack_b)
 {
-	int				value;
-	int				index;
-	struct s_list	*next;
-}				t_list;
+	ft_pa(stack_a, stack_b);
+	ft_pa(stack_a, stack_b);	
+}
 
-
-#endif
+void	ft_insertion(t_list **stack_a, t_list **stack_b)
+{
+	
+}

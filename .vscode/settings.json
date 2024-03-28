@@ -12,6 +12,7 @@
 		"so_long.h": "c",
 		"ft_printf.h": "c",
 		"string.h": "c",
-		"minitalk.h": "c"
+		"minitalk.h": "c",
+		"libft.h": "c"
 	}
 }

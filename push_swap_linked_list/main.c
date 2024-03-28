@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/28 12:55:38 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/28 13:34:23 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ void ft_push_swap(t_list **stack_a, t_list **stack_b, int size)
 	if (size == 3)
 		ft_check_3(stack_a);
 	if (size > 3)
-		ft_insertion(stack_a, size);
+	{
+		ft_push_2(stack_a, stack_b);
+		ft_insertion(stack_a, stack_b);
+	}
 }
 
 void	ft_initialize_list(t_list **stack_a, int *temp_stack)
@@ -78,8 +81,7 @@ int main(int argc, char **argv)
 	ft_initialize_list(stack_a, temp_stack);
 	free(temp_stack);
 	ft_push_swap(stack_a, stack_b, argc - 1);
-	// free nodes!
-	free(stack_a);
-	free(stack_b);	
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

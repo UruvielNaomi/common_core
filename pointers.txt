@@ -34,3 +34,10 @@ int main() {
     printf("After: %d\n", arr[0]);   // Outputs: After: 100
     return 0;
 }
+
+
+
+-----------------------------------------------------------------------------------------
+
+
+In summary, if you want a function to change what a pointer points to, you pass the pointer. If you want a function to change the pointer itself, you pass a pointer to the pointer.
