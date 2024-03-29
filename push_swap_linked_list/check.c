@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:23:14 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/29 12:39:29 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/29 13:57:16 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,10 @@
 void	ft_check_2(t_list **stack_a)
 {
 	if ((*stack_a)->value > (*stack_a)->next->value)
+	{
 		ft_sa(stack_a);
+		ft_index_update(stack_a);
+	}
 }
 
 void	ft_check_3(t_list **stack_a)
@@ -41,18 +44,33 @@ void	ft_check_3(t_list **stack_a)
 		ft_sa(stack_a);
 		ft_ra(stack_a);
 	}
+	ft_sa(stack_a);
 }
 
 int	ft_check_stack(t_list **stack)
 {
-	t_list *current;
-	
+	t_list	*current;
+
 	current = *stack;
 	while (current->next != NULL)
 	{
 		if (current->value > current->next->value)
 			return (1);
 		current = current->next;
+	}
+	return (0);
+}
+
+int	check_temp_stack(int *stack, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len - 1)
+	{
+		if (stack[i] > stack[i + 1])
+			return (1);
+		i++;
 	}
 	return (0);
 }
