@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/29 13:56:31 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/29 14:48:38 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,13 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 }				t_list;
+
+// keep track of count and index
+
+typedef struct s_track
+{
+	int	size;
+	int	count;
+}	t_track;
 
 #endif

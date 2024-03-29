@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/29 14:02:59 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/29 14:59:16 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,18 @@
 
 void	ft_push_swap(t_list **stack_a, t_list **stack_b, int size)
 {
+	t_track	track;
+
 	if (size == 1)
-	{
-		ft_printf("No operations needed, array contains only one integer\n");
-		return (0);
-	}
+		return ;
 	if (size == 2)
 		ft_check_2(stack_a);
 	if (size == 3)
 		ft_check_3(stack_a);
 	if (size > 3)
 	{
-		ft_push_2(stack_a, stack_b);
-		ft_insertion(stack_a, stack_b);
+		ft_push_2(stack_a, stack_b, &track);
+		ft_insertion(stack_a, stack_b, &track);
 	}
 }
 
@@ -56,3 +55,10 @@ int	main(int argc, char **argv)
 	free_stack(stack_b);
 	return (0);
 }
+
+/*
+no malloc needed for track because it's only used
+through a chain of functions within ft_push_swap.
+
+want to use it anywhere else? malloc needed!!
+*/
