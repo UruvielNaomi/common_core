@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:23:14 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/28 12:55:17 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/29 12:39:29 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 void	ft_check_2(t_list **stack_a)
 {
 	if ((*stack_a)->value > (*stack_a)->next->value)
-	{
 		ft_sa(stack_a);
-		ft_printf("sa\n"); // here or move to function?
-	}
 }
 
 void	ft_check_3(t_list **stack_a)
