@@ -13,6 +13,7 @@
 		"ft_printf.h": "c",
 		"string.h": "c",
 		"minitalk.h": "c",
-		"libft.h": "c"
+		"libft.h": "c",
+		"push_swap.h": "c"
 	}
 }

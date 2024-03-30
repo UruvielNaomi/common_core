@@ -6,28 +6,11 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/29 14:59:16 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/30 10:38:22 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_push_swap(t_list **stack_a, t_list **stack_b, int size)
-{
-	t_track	track;
-
-	if (size == 1)
-		return ;
-	if (size == 2)
-		ft_check_2(stack_a);
-	if (size == 3)
-		ft_check_3(stack_a);
-	if (size > 3)
-	{
-		ft_push_2(stack_a, stack_b, &track);
-		ft_insertion(stack_a, stack_b, &track);
-	}
-}
 
 int	main(int argc, char **argv)
 {
