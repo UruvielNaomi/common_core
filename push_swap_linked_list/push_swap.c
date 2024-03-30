@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:38:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 12:51:50 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/30 15:04:49 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	ft_push_2(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	ft_pb(stack_a, stack_b, track);
 	ft_pb(stack_a, stack_b, track);
-	track->count = 0; // needed??
 }
 
 void	ft_push_swap(t_list **stack_a, t_list **stack_b, int size)

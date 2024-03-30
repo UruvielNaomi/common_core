@@ -6,13 +6,12 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 13:39:41 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/30 14:49:39 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// search top and bottom half of stack_b for value closest to stack_a[0]
 void	ft_search_top(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	t_list	*temp;
@@ -28,6 +27,7 @@ void	ft_search_top(t_list **stack_a, t_list **stack_b, t_track *track)
 		{
 			track->dif_top = (*stack_a)->value - temp->value;
 			track->close_top = i;
+			track->value_top = temp->value;
 		}
 		i++;
 	}
@@ -38,9 +38,13 @@ void	ft_search_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 	t_list	*temp;
 	int		i;
 
+	i = 1;
 	temp = *stack_b;
 	while (i <= track->j)
+	{
 		temp = temp->next;
+		i++;
+	}
 	track->dif_bot = (*stack_a)->value - temp->value;
 	while (i <= track->k)
 	{
@@ -49,6 +53,7 @@ void	ft_search_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 		{
 			track->dif_bot = (*stack_a)->value - temp->value;
 			track->close_bot = i;
+			track->value_bot = temp->value;
 		}
 		i++;
 	}
@@ -76,19 +81,12 @@ void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 	ft_divide_stack_b(track);
 	ft_search_top(stack_a, stack_b, track);
 	ft_search_bottom(stack_a, stack_b, track);
-	if (track->close_top < (track->close_bot - track->size)) // is the closest number found in the top, closer to the top than the closest found number in the bottom, to the bottom?
-	{
-		if (temp->value > (*stack_a)->value)
-			ft_rb(stack_b);
-		
-	}
-		// if yes, check if value is higher or lower than stack_a->value.
-			// if its higher, rotate b: shift up all elements of stack b by 1: The first element becomes the last one-->call function ft_rb until this element has been placed at the bottom of stack_b.
-			// if its lower, check if it is at the top already, if not rotate b until its placed at the top of stack_b.
-		// if no, closest number found is in the bottom part:
-			// is the found number higher than the to be pushed one, check if its the first element reverse rotate: shift down all elements of stack b by 1: The last element becomes the first one.--> call function ft_rrb until the found element has been placed at the bottom of stack_b.
-			// if its lower, reverse rotate until its placed at the top of stack_b.
-	// if top and bottom have equally close numbers
+	if (track->dif_top < track->dif_bot) // closest found in the top.
+		ft_high_top(stack_a, stack_b, track);
+	else if (track->dif_bot < track->dif_top) // closest found in the bot
+		ft_high_bottom(stack_a, stack_b, track);
+	else if (track->dif_bot == track->dif_top) // equally far
+		ft_equal(stack_a, stack_b, track);
 }
 
 // prepare order of stack b.
