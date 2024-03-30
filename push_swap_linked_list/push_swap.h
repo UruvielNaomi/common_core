@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/29 14:48:38 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/30 12:40:28 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ typedef struct s_track
 {
 	int	size;
 	int	count;
+	int	j;
+	int	k;
+	int	dif_top;
+	int	dif_bot;
+	int	close_top;
+	int	close_bot;
 }	t_track;
 
 #endif

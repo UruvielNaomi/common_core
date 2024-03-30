@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clean.c                                            :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:12:35 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/29 14:04:13 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/30 11:23:57 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 void	free_stack(t_list **stack)
 {
 	t_list	*head;
-	t_list	*tmp;
+	t_list	*temp;
 
 	head = *stack;
 	while (head)
 	{
-		tmp = head;
+		temp = head;
 		head = head->next;
-		free(tmp);
+		free(temp);
 	}
 	free(stack);
 	*stack = NULL;
