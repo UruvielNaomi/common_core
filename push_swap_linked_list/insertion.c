@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 14:49:39 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/30 15:20:30 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,11 @@ void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 	ft_divide_stack_b(track);
 	ft_search_top(stack_a, stack_b, track);
 	ft_search_bottom(stack_a, stack_b, track);
-	if (track->dif_top < track->dif_bot) // closest found in the top.
+	if (track->dif_top < track->dif_bot)
 		ft_high_top(stack_a, stack_b, track);
-	else if (track->dif_bot < track->dif_top) // closest found in the bot
+	else if (track->dif_bot < track->dif_top)
 		ft_high_bottom(stack_a, stack_b, track);
-	else if (track->dif_bot == track->dif_top) // equally far
+	else if (track->dif_bot == track->dif_top)
 		ft_equal(stack_a, stack_b, track);
 }
 

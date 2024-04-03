@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:52:05 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 15:04:54 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/30 15:21:29 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_equal(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	if (track->size % 2 == 0) // even numbers, so nb of operations is the same
 	{
-		if (track->value_top > (*stack_a)->value) // found number is higher than to be pushed, push to last place
+		if (track->value_top > (*stack_a)->value) // found number is higher
 			ft_rotate_to_last(stack_a, stack_b, track);
 		else
 			ft_rotate_to_first(stack_a, stack_b, track);

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 14:24:20 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 15:04:12 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/03/30 15:19:18 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_rotate_to_first(t_list **stack_a, t_list **stack_b, t_track *track)
 
 void	ft_rrotate_to_last(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	while (track->close_bot != track->size + 1) // size + 1 is technically out of bound, therefore one step furthers means it will rotate one time extra, pushing it to the top.
+	while (track->close_bot != track->size + 1)
 	{
 		ft_rrb(stack_b);
 		track->close_bot--;
