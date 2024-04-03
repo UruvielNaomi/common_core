@@ -1,15 +1,16 @@
-SOURCES =   check.c \
-            free.c \
-            index.c \
-            init.c \
-            insertion.c \
-            main.c \
-            organise_b.c \
-            push_swap.c \
-            push.c \
-            rotate.c \
-            stack_b_rotate.c \
-            swap.c \
+
+SOURCES =	check.c \
+			free.c \
+			index.c \
+			init.c \
+			insertion.c \
+			main.c \
+			organise_b.c \
+			push_swap.c \
+			push.c \
+			rotate.c \
+			stack_b_rotate.c \
+			swap.c \
 
 OBJECTS = ${SOURCES:.c=.o}
 
@@ -22,26 +23,26 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 .c.o:
-    ${CC} ${CFLAGS} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o $@
 
 all: $(LIBFT) $(PRINTF) $(NAME)
 
 $(LIBFT):
-    $(MAKE) -C ./libft
+	$(MAKE) -C ./libft
 
 $(PRINTF):
-    $(MAKE) -C ./ft_printf
+	$(MAKE) -C ./ft_printf
 
 $(NAME): $(OBJECTS)
-    $(CC) $(CFLAGS) -o $(NAME) $(OBJECTS) $(LIBFT) $(PRINTF)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS) $(LIBFT) $(PRINTF)
 
 clean:
-    ${RM} ${OBJECTS}
+	${RM} ${OBJECTS}
 
 fclean: clean
-    $(MAKE) fclean -C ./libft
-    $(MAKE) fclean -C ./ft_printf
-    $(RM) $(NAME)
+	$(MAKE) fclean -C ./libft
+	$(MAKE) fclean -C ./ft_printf
+	$(RM) $(NAME)
 
 re: fclean all
 

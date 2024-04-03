@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:17:56 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 10:29:05 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/03 12:00:52 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_pa(t_list **stack_a, t_list **stack_b, t_track *track)
 	temp->next = *stack_a;
 	*stack_a = temp;
 	ft_index_update(stack_a);
-	ft_index_update(stack_b, track);
+	ft_index_size_update(stack_b, track);
 	ft_printf("pb\n");
 }
 

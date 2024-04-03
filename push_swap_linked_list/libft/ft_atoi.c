@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:18:10 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/21 13:18:12 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/03 11:51:49 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minitalk.h"
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
