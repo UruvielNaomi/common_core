@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:40:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 09:49:50 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/03 10:12:55 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_index_update_a(t_list **stack_a)
+void	ft_index_update(t_list **stack)
 {
 	t_list	*temp;
 	int		i;
 
-	temp = *stack_a;
+	temp = *stack;
 	i = 0;
 	while (temp != NULL)
 	{
@@ -27,12 +27,12 @@ void	ft_index_update_a(t_list **stack_a)
 	}
 }
 
-void	ft_index_update_b(t_list **stack_b, t_track *track)
+void	ft_index_size_update(t_list **stack, t_track *track)
 {
 	t_list	*temp;
 	int		i;
 
-	temp = *stack_b;
+	temp = *stack;
 	i = 0;
 	while (temp != NULL)
 	{

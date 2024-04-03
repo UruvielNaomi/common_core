@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 15:04:28 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/03 10:40:10 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <limits.h>
 
 // Stack
 
@@ -42,6 +43,8 @@ typedef struct s_track
 	int	close_bot;
 	int	value_top;
 	int	value_bot;
+	int	lowest_value;
+	int	lowest_index;
 }	t_track;
 
 #endif

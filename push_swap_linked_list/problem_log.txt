@@ -1,0 +1,9 @@
+
+
+######### PROBLEM LOG #########
+
+
+--------------------------------------------------------------------------------
+Notes:
+add check for if non numeric numbers are being send in the string,
+Atoi doesnt currently handle that error!

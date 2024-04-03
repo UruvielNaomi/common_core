@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_b_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 14:24:20 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 15:19:18 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/03 10:45:12 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rotate_to_last(t_list **stack_a, t_list **stack_b, t_track *track)
+void	ft_rotate_to_last(t_list **stack_b, t_track *track)
 {
 	while (track->close_top != 0)
 	{
@@ -21,7 +21,7 @@ void	ft_rotate_to_last(t_list **stack_a, t_list **stack_b, t_track *track)
 	}
 }
 
-void	ft_rotate_to_first(t_list **stack_a, t_list **stack_b, t_track *track)
+void	ft_rotate_to_first(t_list **stack_b, t_track *track)
 {
 	while (track->close_top != 1)
 	{
@@ -30,7 +30,7 @@ void	ft_rotate_to_first(t_list **stack_a, t_list **stack_b, t_track *track)
 	}
 }
 
-void	ft_rrotate_to_last(t_list **stack_a, t_list **stack_b, t_track *track)
+void	ft_rrotate_to_last(t_list **stack_b, t_track *track)
 {
 	while (track->close_bot != track->size + 1)
 	{
@@ -39,7 +39,7 @@ void	ft_rrotate_to_last(t_list **stack_a, t_list **stack_b, t_track *track)
 	}
 }
 
-void	ft_rrotate_to_first(t_list **stack_a, t_list **stack_b, t_track *track)
+void	ft_rrotate_to_first(t_list **stack_b, t_track *track)
 {
 	while (track->close_bot != track->size)
 	{

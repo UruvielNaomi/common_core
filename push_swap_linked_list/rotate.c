@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:08:48 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 15:04:45 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/03 10:11:58 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_rb(t_list **stack_b)
 	*stack_b = (*stack_b)->next;
 	temp->next = NULL;
 	ft_lstadd_back(stack_b, temp);
+	ft_index_update(stack_b);
 	ft_printf("rb\n");
 }
 
@@ -42,6 +43,7 @@ void	ft_rrb(t_list **stack_b)
 	temp_back = temp;
 	prev->next = NULL;
 	temp_back->next = *stack_b;
+	ft_index_update(stack_b);
 	*stack_b = temp_back;
 	ft_printf("rrb\n");
 }
