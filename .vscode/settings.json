@@ -14,6 +14,7 @@
 		"string.h": "c",
 		"minitalk.h": "c",
 		"libft.h": "c",
-		"push_swap.h": "c"
+		"push_swap.h": "c",
+		"stddef.h": "c"
 	}
 }

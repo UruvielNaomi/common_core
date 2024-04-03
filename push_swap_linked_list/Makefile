@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/04/03 13:26:35 by nstacia           #+#    #+#              #
+#    Updated: 2024/04/03 13:32:11 by nstacia          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 SOURCES =	check.c \
 			free.c \
@@ -14,7 +25,7 @@ SOURCES =	check.c \
 
 OBJECTS = ${SOURCES:.c=.o}
 
-NAME = push_swap.a
+NAME = push_swap
 LIBFT = ./libft/libft.a
 PRINTF = ./ft_printf/ft_printf.a
 LIBC = ar rcs
@@ -23,7 +34,7 @@ RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
 .c.o:
-	${CC} ${CFLAGS} -c $< -o $@
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 all: $(LIBFT) $(PRINTF) $(NAME)
 

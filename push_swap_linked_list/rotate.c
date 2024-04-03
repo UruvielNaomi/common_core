@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:08:48 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 10:11:58 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/03 13:20:33 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,42 @@ void	ft_rrb(t_list **stack_b)
 	ft_index_update(stack_b);
 	*stack_b = temp_back;
 	ft_printf("rrb\n");
+}
+
+void	ft_ra(t_list **stack_a)
+{
+	t_list	*temp;
+
+	if (*stack_a == NULL)
+		return ;
+	temp = *stack_a;
+	*stack_a = (*stack_a)->next;
+	temp->next = NULL;
+	ft_lstadd_back(stack_a, temp);
+	ft_index_update(stack_a);
+	ft_printf("ra\n");
+}
+
+void	ft_rra(t_list **stack_a)
+{
+	t_list	*temp;
+	t_list	*temp_back;
+	t_list	*prev;
+
+	if (*stack_a == NULL || (*stack_a)->next == NULL)
+		return ;
+	temp = *stack_a;
+	while (temp->next != NULL)
+	{
+		prev = temp;
+		temp = temp->next;
+	}
+	temp_back = temp;
+	prev->next = NULL;
+	temp_back->next = *stack_a;
+	ft_index_update(stack_a);
+	*stack_a = temp_back;
+	ft_printf("rra\n");
 }
 
 /*

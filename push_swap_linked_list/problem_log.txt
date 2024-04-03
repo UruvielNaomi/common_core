@@ -2,6 +2,12 @@
 
 ######### PROBLEM LOG #########
 
+DATE: 3/4/2024
+Problem: still need to make ft_ra & ft_rra. Functions missing.
+Solved: yes.
+
+DATE: 3/4/2024
+Problem: Segfault after first two pushes.
 
 --------------------------------------------------------------------------------
 Notes:

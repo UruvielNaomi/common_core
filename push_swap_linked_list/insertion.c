@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 10:40:01 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/03 14:00:42 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	ft_search_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 		i++;
 	}
 	track->dif_bot = (*stack_a)->value - temp->value;
-	while (i <= track->k)
+	while (i <= track->k && temp->next != NULL)
 	{
 		temp = temp->next;
 		if ((*stack_a)->value - temp->value < track->dif_bot)
@@ -75,9 +75,6 @@ void	ft_divide_stack_b(t_track *track)
 
 void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	t_list	*temp;
-
-	temp = *stack_b;
 	ft_divide_stack_b(track);
 	ft_search_top(stack_a, stack_b, track);
 	ft_search_bottom(stack_a, stack_b, track);
@@ -87,6 +84,7 @@ void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 		ft_high_bottom(stack_a, stack_b, track);
 	else if (track->dif_bot == track->dif_top)
 		ft_equal(stack_a, stack_b, track);
+	ft_pb(stack_a, stack_b, track);
 }
 
 // prepare order of stack b.
