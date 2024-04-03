@@ -33,14 +33,15 @@ while (i < size)
 
 DATE: 3/4/2024
 Problem: with example array, array is rb when not supposed to.
-Solved: 
-Changed:
+Solved: yes
+Changed: found error in rotate_to_last_first, swapped conditions.
+NOTE: check ft_rrotate_to_first and last: are those conditions correct or also swapped?? <---------------!!!!!!!!!!!
 
 --------------------------------------------------------------------------------
 
-DATE: 
-Problem: 
-Solved: 
+DATE: 3/4/2024
+Problem: infinite loop after pushing everything from stack_a to stack_b
+Solved: no.
 Changed:
 
 --------------------------------------------------------------------------------
