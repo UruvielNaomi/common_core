@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 14:00:42 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/03 15:03:12 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void	ft_divide_stack_b(t_track *track)
 
 void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 {
+	if (*stack_a == NULL)
+		return;
 	ft_divide_stack_b(track);
 	ft_search_top(stack_a, stack_b, track);
 	ft_search_bottom(stack_a, stack_b, track);

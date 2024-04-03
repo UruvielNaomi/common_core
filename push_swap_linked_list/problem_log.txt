@@ -1,15 +1,85 @@
 
+--------------------------------------------------------------------------------
 
 ######### PROBLEM LOG #########
+
+--------------------------------------------------------------------------------
 
 DATE: 3/4/2024
 Problem: still need to make ft_ra & ft_rra. Functions missing.
 Solved: yes.
 
+--------------------------------------------------------------------------------
+
 DATE: 3/4/2024
 Problem: Segfault after first two pushes.
+Solved: yes. tried to access out of bound:
+Changed:
+while (i <= track->k)
+to:
+while (i <= track->k && temp->next != NULL)
 
 --------------------------------------------------------------------------------
+
+DATE: 3/4/2024
+Problem: unsure? too many pushes from a to b, not printing any operations in between.
+Solved: not fully, but found out that ft_initialize_list had a mistake. still loop issue after pushing everything from a to b.
+Changed: pass the size of temp_stack to ft_initialize_list and use a for loop to iterate over the array
+while (temp_stack[i])
+to:
+while (i < size)
+
+--------------------------------------------------------------------------------
+
+DATE: 3/4/2024
+Problem: with example array, array is rb when not supposed to.
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+
 Notes:
 add check for if non numeric numbers are being send in the string,
 Atoi doesnt currently handle that error!

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/30 10:38:22 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/03 15:06:39 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 		return (-1);
 	*stack_a = NULL;
 	*stack_b = NULL;
-	ft_initialize_list(stack_a, temp_stack);
+	ft_initialize_list(stack_a, temp_stack, argc - 1);
 	free(temp_stack);
 	ft_push_swap(stack_a, stack_b, argc - 1);
 	free_stack(stack_a);

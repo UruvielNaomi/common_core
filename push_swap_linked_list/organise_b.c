@@ -6,7 +6,7 @@
 /*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:52:05 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 10:46:25 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/03 14:50:09 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ void	ft_high_top(t_list **stack_a, t_list **stack_b, t_track *track)
 		ft_rotate_to_last(stack_b, track);
 	else
 		ft_rotate_to_first(stack_b, track);
-
 }
 
 void	ft_high_bottom(t_list **stack_a, t_list **stack_b, t_track *track)

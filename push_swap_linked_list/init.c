@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
+/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:52:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/29 14:00:00 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/03 15:06:41 by nstacia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_initialize_list(t_list **stack_a, int *temp_stack)
+void	ft_initialize_list(t_list **stack_a, int *temp_stack, int size)
 {
 	int		i;
 	t_list	*new;
 
 	i = 0;
-	while (temp_stack[i])
+	while (i < size)
 	{
 		new = ft_lstnew(temp_stack[i], i);
 		ft_lstadd_back(stack_a, new);
