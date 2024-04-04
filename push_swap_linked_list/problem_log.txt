@@ -57,10 +57,14 @@ again mistake in how often to rotate: updated (for good?), not sure this is the 
 
 --------------------------------------------------------------------------------
 
-DATE: 
-Problem: 
-Solved: 
+DATE: 4/4/2024
+Problem: void ft_search_lowest(t_list **stack, t_track *track)
+Solved: yes
 Changed:
+tried to access out of bound memory, change if condition from:
+if (temp->next->value > temp->value)
+to:
+if (temp->value < track->lowest_value)
 
 --------------------------------------------------------------------------------
 

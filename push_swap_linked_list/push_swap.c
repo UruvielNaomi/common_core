@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:38:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/04 15:48:29 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/04 16:55:50 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,12 @@ void	ft_insertion(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	while ((*stack_a != NULL))
 		ft_organise_stack_b(stack_a, stack_b, track);	
-	// if (ft_check_stack_desc(stack_b) == 1)
+	//ft_printf("test 1\n");
+	//if (ft_check_stack_desc(stack_b) == 1)
+	//{
 	//	ft_search_lowest(stack_b, track);
+	//}
+	//ft_printf("test 1\n");
 	//while ((*stack_b) != NULL)
 	//	ft_pa(stack_a, stack_b, track);
 	// update stack_size??
