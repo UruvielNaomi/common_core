@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:40:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 10:12:55 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/04 14:08:58 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ void	ft_index_size_update(t_list **stack, t_track *track)
 		i++;
 		temp = temp->next;
 	}
-	track->size = i + 1;
+	track->size = i;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   organise_b.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:52:05 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 14:50:09 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/04 13:32:40 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	ft_high_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 
 void	ft_equal(t_list **stack_a, t_list **stack_b, t_track *track)
 {
+	ft_printf("test 2\n");
 	if (track->size % 2 == 0)
 	{
 		if (track->value_top > (*stack_a)->value)
@@ -65,7 +66,7 @@ void	ft_equal(t_list **stack_a, t_list **stack_b, t_track *track)
 	}
 	else
 	{
-		if (track->close_top < (track->size - track->close_bot))
+		if (track->close_top < (track->size - track->close_bot + 1))
 		{
 			if (track->value_top > (*stack_a)->value)
 				ft_rotate_to_last(stack_b, track);

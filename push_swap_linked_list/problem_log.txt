@@ -46,10 +46,14 @@ Changed:
 
 --------------------------------------------------------------------------------
 
-DATE: 
-Problem: 
-Solved: 
+DATE: 4/4/2024
+Problem: Suddenly another infinite loop in first part of the code.
+Solved: yes
 Changed:
+function to track size of stacks was incorrect: was always one too big.
+function to find closest numbers in top and bottom were incorrect: moved the part of moving to the next element to end of the loop (skipped first element before).
+function ft_equal had error to calculate distance to bottom: we added + 1 to equal that distance to the top starts at 1.
+again mistake in how often to rotate: updated (for good?), not sure this is the last time i have to change this.
 
 --------------------------------------------------------------------------------
 

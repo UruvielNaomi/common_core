@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:38:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 15:11:27 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/04 14:17:43 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,11 @@ void	ft_print_stack(t_list *stack)
 void	ft_insertion(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	while ((*stack_a != NULL))
-		ft_organise_stack_b(stack_a, stack_b, track);
-	ft_printf("test 1\n");
-	
-	if (ft_check_stack_desc(stack_b) == 1)
-		ft_search_lowest(stack_b, track);
-	while ((*stack_b) != NULL)
-		ft_pa(stack_a, stack_b, track);
+		ft_organise_stack_b(stack_a, stack_b, track);	
+	// if (ft_check_stack_desc(stack_b) == 1)
+	//	ft_search_lowest(stack_b, track);
+	//while ((*stack_b) != NULL)
+	//	ft_pa(stack_a, stack_b, track);
 }
 
 void	ft_push_2(t_list **stack_a, t_list **stack_b, t_track *track)
@@ -68,5 +66,10 @@ void	ft_push_swap(t_list **stack_a, t_list **stack_b, int size)
 		//ft_print_stack(*stack_b);
 
 		ft_insertion(stack_a, stack_b, &track);
+
+		//t_printf("After ft_push_2:\nStack A: ");
+		//ft_print_stack(*stack_a);
+		//ft_printf("Stack B: ");
+		//ft_print_stack(*stack_b);
 	}
 }

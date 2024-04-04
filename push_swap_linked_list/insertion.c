@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   insertion.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 15:03:12 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/04 14:26:52 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,17 @@ void	ft_search_top(t_list **stack_a, t_list **stack_b, t_track *track)
 	temp = *stack_b;
 	i = 1;
 	track->dif_top = (*stack_a)->value - temp->value;
+	track->close_top = i;
+	track->value_top = temp->value;
 	while (i <= track->j)
 	{
-		temp = temp->next;
 		if ((*stack_a)->value - temp->value < track->dif_top)
 		{
 			track->dif_top = (*stack_a)->value - temp->value;
 			track->close_top = i;
 			track->value_top = temp->value;
 		}
+		temp = temp->next;
 		i++;
 	}
 }
@@ -46,15 +48,17 @@ void	ft_search_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 		i++;
 	}
 	track->dif_bot = (*stack_a)->value - temp->value;
-	while (i <= track->k && temp->next != NULL)
+	track->close_bot = i;
+	track->value_bot = temp->value;
+	while (i <= track->k)
 	{
-		temp = temp->next;
 		if ((*stack_a)->value - temp->value < track->dif_bot)
 		{
 			track->dif_bot = (*stack_a)->value - temp->value;
 			track->close_bot = i;
 			track->value_bot = temp->value;
 		}
+		temp = temp->next;
 		i++;
 	}
 }
@@ -89,6 +93,23 @@ void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 	ft_pb(stack_a, stack_b, track);
 }
 
+
+/*
+local problem log:
+- size top and bottom halfs = correct.
+- 
+*/
+
+/*
+	ft_printf("dif top:%d\n", track->dif_top);
+	ft_printf("number top:%d\n", track->value_top);
+	ft_printf("location top:%d\n", track->close_top);
+	ft_printf("Found value in bottom:%d\n", track->value_bot);
+	ft_printf("Difference in value between stack_a[0] and found number in bottom:%d\n", track->dif_bot);
+	ft_printf("Location, spot: %d\n", track->close_bot);
+	ft_printf("Total size stack b: %d\n", track->size);
+
+*/
 // prepare order of stack b.
 // stack_b element 1 value must be lower than stack_a element 1.
 // stack_b last_index must be higher than stack_a element 1.
