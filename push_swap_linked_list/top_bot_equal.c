@@ -6,37 +6,11 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:52:05 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/04 13:32:40 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/04 14:42:32 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_search_lowest(t_list **stack_b, t_track *track)
-{
-	t_list	*temp;
-	int		border;
-
-	temp = *stack_b;
-	track->lowest_value = temp->value;
-	track->lowest_index = temp->index;
-	if (track->size % 2 == 0)
-		border = track->size / 2;
-	else
-		border = track->size / 2 + 1;
-	while (temp->next != NULL)
-	{
-		if (temp->next->value > temp->value)
-		{
-			track->lowest_value = temp->value;
-			track->lowest_index = temp->index;
-		}		
-	}
-	if (track->lowest_index > border)
-		ft_rotate_to_last(stack_b, track);
-	else
-		ft_rrotate_to_last(stack_b, track);
-}
 
 void	ft_high_top(t_list **stack_a, t_list **stack_b, t_track *track)
 {

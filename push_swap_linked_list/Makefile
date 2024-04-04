@@ -3,25 +3,28 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+         #
+#    By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 13:26:35 by nstacia           #+#    #+#              #
-#    Updated: 2024/04/03 13:32:11 by nstacia          ###   ########.fr        #
+#    Updated: 2024/04/04 15:39:28 by Naomi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SOURCES =	check.c \
+SOURCES =	check_low.c \
+			check_stack.c \
 			free.c \
 			index.c \
 			init.c \
-			insertion.c \
 			main.c \
-			organise_b.c \
+			organise.c \
+			print.c \
 			push_swap.c \
 			push.c \
 			rotate.c \
-			stack_b_rotate.c \
+			rotation_direction.c \
+			search.c \
 			swap.c \
+			top_bot_equal.c \
 
 OBJECTS = ${SOURCES:.c=.o}
 

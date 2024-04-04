@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check.c                                            :+:      :+:    :+:   */
+/*   check_low.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 12:23:14 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 09:59:04 by nstacia          ###   ########.fr       */
+/*   Created: 2024/04/04 15:39:38 by Naomi             #+#    #+#             */
+/*   Updated: 2024/04/04 15:44:12 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,44 +47,20 @@ void	ft_check_3(t_list **stack_a)
 	ft_sa(stack_a);
 }
 
-int	ft_check_stack_asc(t_list **stack)
+void	ft_check_4(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	t_list	*current;
-
-	current = *stack;
-	while (current->next != NULL)
-	{
-		if (current->value > current->next->value)
-			return (1);
-		current = current->next;
-	}
-	return (0);
+	ft_search_lowest(stack_a, track);
+	ft_move_lowest_up(stack_a, track);
+	ft_pb(stack_a, stack_b, track);
+	ft_check_3(stack_a);
+	ft_pa(stack_a, stack_b, track);
 }
 
-int	ft_check_stack_desc(t_list **stack)
+void	ft_check_5(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	t_list	*current;
-
-	current = *stack;
-	while (current->next != NULL)
-	{
-		if (current->value < current->next->value)
-			return (1);
-		current = current->next;
-	}
-	return (0);
-}
-
-int	check_temp_stack(int *stack, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len - 1)
-	{
-		if (stack[i] > stack[i + 1])
-			return (1);
-		i++;
-	}
-	return (0);
+	ft_search_lowest(stack_a, track);
+	ft_move_lowest_up(stack_a, track);
+	ft_pb(stack_a, stack_b, track);
+	ft_check_4(stack_a, stack_b, track);
+	ft_pa(stack_a, stack_b, track);
 }
