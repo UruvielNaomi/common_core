@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/04 15:44:24 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/04 17:17:36 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	ft_index_update(t_list **stack);
 void	ft_index_size_update(t_list **stack, t_track *track);
 void	ft_initialize_list(t_list **stack_a, int *temp_stack, int size);
 void	ft_insertion(t_list **stack_a, t_list **stack_b, t_track *track);
+void	ft_move_back(t_list **stack_a, t_list **stack_b, t_track *track);
 void	ft_move_lowest_down(t_list **stack, t_track *track);
 void	ft_move_lowest_up(t_list **stack, t_track *track);
 void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track);

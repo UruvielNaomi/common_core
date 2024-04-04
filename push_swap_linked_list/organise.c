@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   insertion.c                                        :+:      :+:    :+:   */
+/*   organise.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/04 14:26:52 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/04 17:13:30 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,13 @@ void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 	ft_pb(stack_a, stack_b, track);
 }
 
+void	ft_move_back(t_list **stack_a, t_list **stack_b, t_track *track)
+{
+	ft_index_size_update(stack_b, track);
+	while (track->size != 0)
+		ft_pa(stack_a, stack_b, track);
+}
+
 
 /*
 local problem log:
@@ -113,16 +120,3 @@ local problem log:
 // prepare order of stack b.
 // stack_b element 1 value must be lower than stack_a element 1.
 // stack_b last_index must be higher than stack_a element 1.
-
-/*
-t_list	*temp;
-
-	temp = stack_b;
-	if ((*stack_a)->value > temp->value)
-	{
-		while (temp->next != NULL)
-			temp = temp->next;
-		if ((*stack_a)->value < temp->value)
-			ft_pb(stack_a, stack_b, track);
-	}
-*/
