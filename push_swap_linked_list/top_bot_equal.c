@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   organise_b.c                                       :+:      :+:    :+:   */
+/*   top_bot_equal.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 13:52:05 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/04 14:42:32 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/04 21:21:46 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,11 @@ void	ft_high_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 	if (track->value_bot > (*stack_a)->value)
 		ft_rrotate_to_last(stack_b, track);
 	else
-		ft_rrotate_to_first(stack_b, track);
+		ft_rrotate_to_first(stack_b, track); 
 }
 
 void	ft_equal(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	ft_printf("test 2\n");
 	if (track->size % 2 == 0)
 	{
 		if (track->value_top > (*stack_a)->value)

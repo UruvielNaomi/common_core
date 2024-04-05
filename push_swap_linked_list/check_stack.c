@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:23:14 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/04 16:34:13 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 09:32:09 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_check_stack_asc(t_list **stack)
 	t_list	*current;
 
 	current = *stack;
-	while (current->next != NULL)
+	while (current != NULL && current->next != NULL)
 	{
 		if (current->value > current->next->value)
 			return (1);
@@ -31,7 +31,7 @@ int	ft_check_stack_desc(t_list **stack)
 	t_list	*current;
 
 	current = *stack;
-	while (current != NULL)
+	while (current != NULL && current->next != NULL)
 	{
 		if (current->value < current->next->value)
 			return (1);
