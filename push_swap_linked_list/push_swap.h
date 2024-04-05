@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 11:44:53 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 19:14:51 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,13 @@ typedef struct s_track
 	int	border;
 }	t_track;
 
+int		check_doubles(int *stack, int len);
+int		check_temp_stack(int *stack, int len);
+void	ft_check_numeric(int argc, char **argv);
 int		ft_check_stack_asc(t_list **stack);
 int		ft_check_stack_desc(t_list **stack);
-int		check_temp_stack(int *stack, int len);
+int		ft_check_errors(int *stack, int len);
+void	ft_free_temp(int *stack);
 int		*ft_initialize_temp_stack(int argc, char **argv);
 
 void	ft_check_2(t_list **stack_a);

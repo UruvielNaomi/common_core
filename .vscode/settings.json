@@ -57,6 +57,9 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
-    "FOUT_NIETGEBRUIKEN.C": "cpp"
+    "FOUT_NIETGEBRUIKEN.C": "cpp",
+    "stdlib.h": "c",
+    "stdio.h": "c",
+    "push_swap.h": "c"
   }
 }
