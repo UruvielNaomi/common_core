@@ -6,11 +6,12 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 19:47:56 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 19:49:51 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
 void	ft_free_all(int *temp_stack, t_list **stack_a, t_list **stack_b)
 {
 	free(temp_stack);
