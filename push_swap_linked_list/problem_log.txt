@@ -60,9 +60,12 @@ if (temp->value < track->lowest_value)
 
 DATE: 4/4/2024
 Problem: it doesnt sort properly 
-Solved:  1/2
+Solved:  yes
 Changed:
-ft_check_3 wasnt sorting properly. changed it completely and also updated ft_search_lowest, because the index of the to be checked stack might not be up to date when it starts, now it is.
+- ft_check_3 wasnt sorting properly. changed it completely and also updated ft_search_lowest, because the index of the to be checked stack might not be up to date when it starts, now it is.
+- index for closest found value was wrong
+- rotation and reverse rotation always one too many.
+fixed now.
 --------------------------------------------------------------------------------
 
 DATE: 

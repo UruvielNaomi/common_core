@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 09:26:26 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 10:47:19 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ typedef struct s_track
 	int	k;
 	int	dif_top;
 	int	dif_bot;
-	int	close_top;
-	int	close_bot;
-	int	value_top;
-	int	value_bot;
+	int	loc_top;
+	int	loc_bot;
+	int	topval_top;
+	int	topval_bot;
 	int	lowest_value;
 	int	lowest_index;
 	int	border;
@@ -50,8 +50,8 @@ void	ft_check_4(t_list **stack_a, t_list **stack_b, t_track *track);
 void	ft_check_5(t_list **stack_a, t_list **stack_b, t_track *track);
 void	ft_divide_stack_b(t_track *track);
 void	ft_equal(t_list **stack_a, t_list **stack_b, t_track *track);
-void	ft_high_bottom(t_list **stack_a, t_list **stack_b, t_track *track);
-void	ft_high_top(t_list **stack_a, t_list **stack_b, t_track *track);
+void	ft_closest_bottom(t_list **stack_a, t_list **stack_b, t_track *track);
+void	ft_closest_top(t_list **stack_a, t_list **stack_b, t_track *track);
 void	ft_index_update(t_list **stack);
 void	ft_index_size_update(t_list **stack, t_track *track);
 void	ft_initialize_list(t_list **stack_a, int *temp_stack, int size);

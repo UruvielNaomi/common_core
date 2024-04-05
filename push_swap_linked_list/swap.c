@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 11:33:16 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/29 14:07:21 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 11:30:50 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	ft_sa(t_list **stack_a)
 }
 
 /*
-
 with comments:
 
 void ft_sa(t_list **stack_a)
@@ -58,5 +57,4 @@ void ft_sa(t_list **stack_a)
 	(*stack_a)->index = 0;
 	ft_printf("sa\n");
 }
-
 */
