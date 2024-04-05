@@ -6,13 +6,13 @@
 #    By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 13:26:35 by nstacia           #+#    #+#              #
-#    Updated: 2024/04/05 18:32:16 by Naomi            ###   ########.fr        #
+#    Updated: 2024/04/05 19:46:05 by Naomi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES =	check_low.c \
 			check_stack.c \
-			errors.c \
+			check_temp_stack.c \
 			free.c \
 			index.c \
 			init.c \

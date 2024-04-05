@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:21:15 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 18:51:24 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 19:44:57 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_check_numeric(int argc, char **argv)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (i < argc)
@@ -34,9 +34,9 @@ void	ft_check_numeric(int argc, char **argv)
 	}
 }
 
-int		check_min_max(int *stack)
+int	check_min_max(int *stack)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (stack[i])
@@ -51,7 +51,7 @@ int		check_min_max(int *stack)
 	return (0);
 }
 
-int		ft_check_errors(int *stack, int len)
+int	ft_check_temp_stack(int *stack, int len)
 {
 	if (check_doubles(stack, len) == 1)
 		return (1);
@@ -59,11 +59,5 @@ int		ft_check_errors(int *stack, int len)
 		return (0);
 	else
 		return (2);
-}
-
-void	ft_free_temp(int *stack)
-{
-	free(stack);
-	exit (1);
 }
 

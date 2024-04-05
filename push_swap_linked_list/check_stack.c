@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:23:14 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 18:09:30 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 19:43:41 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,17 @@ int	check_temp_stack(int *stack, int len)
 int	check_doubles(int *stack, int len)
 {
 	int	i;
+	int	j;
 
 	i = 0;
 	while (i < len - 1)
 	{
-		int j;
-
 		j = i + 1;
 		while (j < len)
 		{
 			if (stack[i] == stack[j])
 			{
-				ft_printf("Error\n");	
+				ft_printf("Error\n");
 				return (1);
 			}
 			j++;

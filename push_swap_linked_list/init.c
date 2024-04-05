@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:52:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 19:17:54 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 19:29:49 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	*ft_initialize_temp_stack(int argc, char **argv)
 	i = 0;
 	while (i < (argc - 1))
 	{
-		temp_stack[i] = ft_atoi(argv[i + 1]);
+		temp_stack[i] = ft_atoi(argv[i + 1], temp_stack);
 		i++;
 	}
 	return (temp_stack);

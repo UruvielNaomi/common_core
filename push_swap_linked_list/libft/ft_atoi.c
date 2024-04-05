@@ -3,16 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:18:10 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 11:51:49 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/05 19:36:11 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	ft_int_min_max_error(int *temp_stack)
+{
+	printf("Error\n");
+	free(temp_stack);
+	exit(1);
+}
+
+int	ft_atoi(const char *str, int *temp_stack)
 {
 	int	i;
 	int	result;
@@ -31,6 +38,9 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		if ((result == 214748364 && (str[i] == '8' || str[i] == '9')) || \
+			(result > 214748364))
+			ft_int_min_max_error(temp_stack);
 		result = result * 10 + (str[i] - '0');
 		i++;
 	}
