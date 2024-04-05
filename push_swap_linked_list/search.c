@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:42:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 11:30:40 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 11:48:25 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,17 @@ void	ft_move_lowest_down(t_list **stack, t_track *track)
 			ft_rb(stack);
 			track->lowest_index--;
 		}
-	}		
+	}
 	else
+	{
 		while (track->lowest_index < track->size)
 		{
 			ft_rrb(stack);
 			track->lowest_index++;
-		}		
+		}
+	}
 }
+
 void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 {
 	if (track->lowest_index < track->border)
@@ -61,13 +64,15 @@ void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 			ft_ra(stack);
 			track->lowest_index--;
 		}
-	}		
+	}
 	else
+	{
 		while (track->lowest_index < track->size)
 		{
 			ft_rra(stack);
 			track->lowest_index++;
-		}		
+		}
+	}
 }
 
 void	ft_move_lowest_up(t_list **stack, t_track *track)
@@ -79,11 +84,13 @@ void	ft_move_lowest_up(t_list **stack, t_track *track)
 			ft_ra(stack);
 			track->lowest_index--;
 		}
-	}		
+	}
 	else
+	{
 		while (track->lowest_index != track->size)
 		{
 			ft_rra(stack);
 			track->lowest_index++;
-		}		
+		}
+	}
 }

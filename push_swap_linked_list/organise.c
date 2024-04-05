@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 11:28:55 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 11:50:05 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	ft_calculate_difference(t_list **stack_a, t_list *temp)
 
 void	ft_search_top(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	t_list *temp;
-	int i;
+	t_list	*temp;
+	int		i;
 
 	i = 1;
 	temp = *stack_b;
@@ -47,15 +47,15 @@ void	ft_search_top(t_list **stack_a, t_list **stack_b, t_track *track)
 
 void	ft_search_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	t_list *temp;
-	int i;
+	t_list	*temp;
+	int		i;
 
 	i = 1;
 	temp = *stack_b;
 	while (i <= track->j)
 	{
-		temp =temp->next;
-		i++;		
+		temp = temp->next;
+		i++;
 	}
 	track->dif_bot = ft_calculate_difference(stack_a, temp);
 	track->loc_bot = i;
@@ -65,7 +65,7 @@ void	ft_search_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 		if (ft_calculate_difference(stack_a, temp) < track->dif_bot)
 		{
 			track->dif_bot = ft_calculate_difference(stack_a, temp);
-			track->topval_bot= temp->value;
+			track->topval_bot = temp->value;
 			track->loc_bot = i;
 		}
 		temp = temp->next;
@@ -90,7 +90,7 @@ void	ft_divide_stack_b(t_track *track)
 void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	if (*stack_a == NULL)
-		return;
+		return ;
 	ft_divide_stack_b(track);
 	ft_search_top(stack_a, stack_b, track);
 	ft_search_bottom(stack_a, stack_b, track);
@@ -101,13 +101,6 @@ void	ft_organise_stack_b(t_list **stack_a, t_list **stack_b, t_track *track)
 	if (track->dif_bot == track->dif_top)
 		ft_equal(stack_a, stack_b, track);
 	ft_pb(stack_a, stack_b, track);
-}
-
-void	ft_move_back(t_list **stack_a, t_list **stack_b, t_track *track)
-{
-	ft_index_size_update(stack_b, track);
-	while (track->size != 0)
-		ft_pa(stack_a, stack_b, track);
 }
 
 /*
