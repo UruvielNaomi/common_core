@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:21:15 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 14:14:32 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 15:44:59 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	check_doubles(int *stack, int len)
 			if (stack[i] == stack[j])
 			{
 				ft_printf("Error: doubles\n");
+				ft_printf("i = %d\n", stack[i]);
+				ft_printf("j = %d\n", stack[j]);
 				return (1);
 			}
 			j++;
@@ -52,7 +54,7 @@ int	check_doubles(int *stack, int len)
 
 void	ft_check_errors(int *temp_stack, int argc)
 {
-	if (check_doubles(temp_stack, argc) == 1)
+	if (check_doubles(temp_stack, argc - 1) == 1)
 	{
 		free(temp_stack);
 		exit (1);

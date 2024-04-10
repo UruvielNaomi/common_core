@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:52:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 13:58:51 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 15:38:39 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,14 @@ int	*ft_initialize_temp_stack(int argc, char **argv)
 {
 	int	*temp_stack;
 	int	i;
+	int len;
 
-	temp_stack = (int *)malloc(sizeof(int) * (argc - 1));
+	len = argc - 1;
+	temp_stack = (int *)malloc(sizeof(int) * len);
 	if (!temp_stack)
 		return (NULL);
 	i = 0;
-	while (i < (argc - 1))
+	while (i < len)
 	{
 		temp_stack[i] = ft_atoi(argv[i + 1], temp_stack);
 		i++;
