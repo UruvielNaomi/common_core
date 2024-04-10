@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:23:14 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 12:05:01 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 13:06:35 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,43 +36,6 @@ int	ft_check_stack_desc(t_list **stack)
 		if (current->value < current->next->value)
 			return (1);
 		current = current->next;
-	}
-	return (0);
-}
-
-int	check_temp_stack(int *stack, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i < len - 1)
-	{
-		if (stack[i] > stack[i + 1])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	check_doubles(int *stack, int len)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < len - 1)
-	{
-		j = i + 1;
-		while (j < len)
-		{
-			if (stack[i] == stack[j])
-			{
-				ft_printf("Error: doubles\n");
-				return (1);
-			}
-			j++;
-		}
-		i++;
 	}
 	return (0);
 }

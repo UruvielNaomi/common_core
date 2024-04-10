@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:52:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 19:29:49 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 13:58:51 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,33 @@ void	ft_initialize_list(t_list **stack_a, int *temp_stack, int size)
 		new = ft_lstnew(temp_stack[i], i);
 		ft_lstadd_back(stack_a, new);
 		i++;
+	}
+}
+
+t_list	**initialize_stack()
+{
+	t_list **stack = (t_list **)malloc(sizeof(t_list *));
+	if (!stack)
+		return (NULL);
+	*stack = NULL;
+	return (stack);
+}
+
+void initialize_stacks(t_list ***stack_a, t_list ***stack_b, int *temp_stack)
+{
+	*stack_a = initialize_stack();
+	if (!*stack_a)
+	{
+		ft_printf("Error\n");
+		exit(1);
+	}
+	*stack_b = initialize_stack();
+	if (!*stack_b)
+	{
+		free(*stack_a);  // free memory allocated for stack_a
+		free(temp_stack);
+		ft_printf("Error\n");
+		exit(1);
 	}
 }
 

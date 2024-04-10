@@ -68,20 +68,41 @@ Changed:
 fixed now.
 --------------------------------------------------------------------------------
 
+DATE: 10/4/2024
+Problem: initial checks for errors are not working
+Solved: yes
+Changed:
+Now also accepts negative numeric (forgot to add the '-')
+Removed unnecessary and wrong function that checks INT_MIN and INT_MAX.
+Correctly frees stack now if error is encountered.
+Temporarily added extra info to the printf on what error, musnt forget to remove for final version (just "Error").
+
+--------------------------------------------------------------------------------
+
+DATE: 10/4/2024
+Problem: Doesnt work when we send a 0 in the list?!
+Solved: no
+Changed:
+
+--------------------------------------------------------------------------------
+
 DATE: 
-Problem: 
+Problem:
 Solved: 
 Changed:
 
 --------------------------------------------------------------------------------
 
 DATE: 
-Problem: 
+Problem:
 Solved: 
 Changed:
 
 --------------------------------------------------------------------------------
 
-Notes:
-add check for if non numeric numbers are being send in the string,
-Atoi doesnt currently handle that error!
+DATE: 
+Problem:
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------

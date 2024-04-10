@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 13:18:10 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 19:36:11 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 13:22:19 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_atoi(const char *str, int *temp_stack)
 	sign = 1;
 	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (str[i] == '-' | str[i] == '+')
+	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
 			sign *= -1;

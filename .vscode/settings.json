@@ -60,6 +60,7 @@
     "FOUT_NIETGEBRUIKEN.C": "cpp",
     "stdlib.h": "c",
     "stdio.h": "c",
-    "push_swap.h": "c"
+    "push_swap.h": "c",
+    "__locale": "c"
   }
 }
