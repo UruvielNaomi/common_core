@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:42:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 11:53:03 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/05 11:48:25 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_move_lowest_down(t_list **stack, t_track *track)
 	}
 	else
 	{
-		while (track->lowest_index < track->size - 1)
+		while (track->lowest_index < track->size)
 		{
 			ft_rrb(stack);
 			track->lowest_index++;
@@ -67,7 +67,7 @@ void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 	}
 	else
 	{
-		while (track->lowest_index < track->size - 1)
+		while (track->lowest_index < track->size)
 		{
 			ft_rra(stack);
 			track->lowest_index++;

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:23:14 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 12:05:01 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 09:33:12 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	ft_check_stack_desc(t_list **stack)
 	return (0);
 }
 
-int	check_temp_stack(int *stack, int len)
+int	check_t_stack(int *stack, int len)
 {
 	int	i;
 
@@ -67,7 +67,7 @@ int	check_doubles(int *stack, int len)
 		{
 			if (stack[i] == stack[j])
 			{
-				ft_printf("Error: doubles\n");
+				ft_printf("Error\n");
 				return (1);
 			}
 			j++;

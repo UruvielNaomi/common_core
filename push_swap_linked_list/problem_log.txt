@@ -14,8 +14,8 @@ Solved: yes.
 DATE: 3/4/2024
 Problem: unsure? too many pushes from a to b, not printing any operations in between.
 Solved: not fully, but found out that ft_initialize_list had a mistake. still loop issue after pushing everything from a to b.
-Changed: pass the size of temp_stack to ft_initialize_list and use a for loop to iterate over the array
-while (temp_stack[i])
+Changed: pass the size of t_stack to ft_initialize_list and use a for loop to iterate over the array
+while (t_stack[i])
 to:
 while (i < size)
 
@@ -68,10 +68,10 @@ Changed:
 fixed now.
 --------------------------------------------------------------------------------
 
-DATE: 
-Problem: 
-Solved: 
-Changed:
+DATE: 5/4/2024
+Problem: Only takes input if its in several strings, not if its one string with all the numbers.
+Solved: yes.
+Changed: Added ft_split and created a temporary **char that contains argv or the split string to prevent rewriting EVERYTHING.
 
 --------------------------------------------------------------------------------
 
