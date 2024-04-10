@@ -68,10 +68,10 @@ Changed:
 fixed now.
 --------------------------------------------------------------------------------
 
-DATE: 
-Problem: 
-Solved: 
-Changed:
+DATE: 5/4/2024
+Problem: Only takes input if its in several strings, not if its one string with all the numbers.
+Solved: yes.
+Changed: Added ft_split and created a temporary **char that contains argv or the split string to prevent rewriting EVERYTHING.
 
 --------------------------------------------------------------------------------
 
