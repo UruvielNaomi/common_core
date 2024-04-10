@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_t_stack.c                                 :+:      :+:    :+:   */
+/*   check_temp_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:21:15 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 19:49:58 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 12:08:55 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	ft_check_numeric(int argc, char **argv)
 	while (i < argc)
 	{
 		j = 0;
+		if (argv[i][j] == '-')
+			j++;
 		while (argv[i][j])
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
@@ -51,11 +53,11 @@ int	check_min_max(int *stack)
 	return (0);
 }
 
-int	ft_check_t_stack(int *stack, int len)
+int	ft_check_temp_stack(int *stack, int len)
 {
 	if (check_doubles(stack, len) == 1)
 		return (1);
-	if (check_t_stack(stack, len) == 0)
+	if (check_temp_stack(stack, len) == 0)
 		return (0);
 	else
 		return (2);

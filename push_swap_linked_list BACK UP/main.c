@@ -6,34 +6,44 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 10:53:29 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 12:08:55 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+void	ft_free_all(int *temp_stack, t_list **stack_a, t_list **stack_b)
+{
+	free(temp_stack);
+	free_stack(stack_a);
+	free_stack(stack_b);
+}
 
 int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
-	int		*t_stack;
-	char	**t_argv;
+	int		*temp_stack;
 
 	if (argc < 2)
 		return (1);
-	//if (argc == 2)
-	//	t_argv = ft_split(argv[1], ' ');
-	//else
-	t_argv = argv;
-	ft_check_numeric(argc, t_argv);
-	t_stack = ft_initialize_t_stack(argc, t_argv);
-	check_and_free_t_stack(t_stack, argc);
-	initialize_stacks(&stack_a, &stack_b);
-	ft_initialize_list(stack_a, t_stack, argc - 1);
+	ft_check_numeric(argc, argv);
+	temp_stack = ft_initialize_temp_stack(argc, argv);
+	if (ft_check_temp_stack(temp_stack, argc) == 1)
+		free(temp_stack);
+	else if (ft_check_temp_stack(temp_stack, argc) == 0)
+		return (0);
+	stack_a = (t_list **)malloc(sizeof(t_list *));
+	if (!stack_a)
+		return (-1);
+	stack_b = (t_list **)malloc(sizeof(t_list *));
+	if (!stack_b)
+		return (-1);
+	*stack_a = NULL;
+	*stack_b = NULL;
+	ft_initialize_list(stack_a, temp_stack, argc - 1);
 	ft_push_swap(stack_a, stack_b, argc - 1);
-	ft_fr(t_stack, stack_a, stack_b);
-	ft_fr_t_argv(t_argv, argv);
+	ft_free_all(temp_stack, stack_a, stack_b);
 	return (0);
 }
 
