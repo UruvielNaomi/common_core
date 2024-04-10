@@ -31,8 +31,8 @@ NOTE: check ft_rrotate_to_first and last: are those conditions correct or also s
 
 DATE: 3/4/2024
 Problem: infinite loop after pushing everything from stack_a to stack_b
-Solved: no.
-Changed:
+Solved: yes
+Changed: -
 
 --------------------------------------------------------------------------------
 
@@ -81,15 +81,16 @@ Temporarily added extra info to the printf on what error, musnt forget to remove
 
 DATE: 10/4/2024
 Problem: Doesnt work when we send a 0 in the list?!
-Solved: no
+Solved: yes
 Changed:
-
+Many mistakes when using a while loop and argc. all up to date for now.
 --------------------------------------------------------------------------------
 
-DATE: 
-Problem:
-Solved: 
+DATE: 10/4/2024
+Problem: Must accept input as ./push_swap "10 8 12" and ./push_swap 10 8 12.
+Solved: no
 Changed:
+Have to incorporate split and probably rewrite entire main. 
 
 --------------------------------------------------------------------------------
 

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:38:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 11:55:45 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 15:59:04 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_push_2(t_list **stack_a, t_list **stack_b, t_track *track)
 void	ft_push_swap(t_list **stack_a, t_list **stack_b, int size)
 {
 	t_track	track;
+
 	ft_printf("Stack A before:\n");
 	ft_print_stack(stack_a);
 	if (size == 1)
