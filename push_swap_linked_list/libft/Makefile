@@ -3,16 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+         #
+#    By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 11:44:29 by nstacia           #+#    #+#              #
-#    Updated: 2024/04/03 11:44:57 by nstacia          ###   ########.fr        #
+#    Updated: 2024/04/10 08:14:57 by Naomi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS =	ft_atoi.c \
 		ft_lstadd_back.c \
 		ft_lstnew.c \
+		ft_split.c \
 		ft_strlen.c \
 	
 OBJS = ${SRCS:.c=.o}
