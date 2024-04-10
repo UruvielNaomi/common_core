@@ -6,22 +6,44 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 15:58:36 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 17:32:57 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int count_digits(char **split_str)
+{
+	int i = 0;
+
+	while (split_str[i])
+		i++;
+	return (i);
+}
 
 int	main(int argc, char **argv)
 {
 	t_list	**stack_a;
 	t_list	**stack_b;
 	int		*temp_stack;
+	char	**array;
 
 	if (argc < 2)
 		return (1);
-	ft_check_numeric(argc, argv);
-	temp_stack = ft_initialize_temp_stack(argc, argv);
+	if (argc == 2)
+	{
+		
+		array = ft_split(argv[1], ' ');
+		argc = count_digits(array);
+		ft_check_numeric(argc, array);
+		temp_stack = ft_initialize_temp_stack(argc, array);
+		ft_free_array(array);
+	}
+	else
+	{
+		ft_check_numeric(argc, argv);
+		temp_stack = ft_initialize_temp_stack(argc, argv);
+	}
 	ft_check_errors(temp_stack, argc);
 	initialize_stacks(&stack_a, &stack_b, temp_stack);
 	ft_initialize_list(stack_a, temp_stack, argc - 1);
@@ -29,3 +51,29 @@ int	main(int argc, char **argv)
 	ft_free_all(temp_stack, stack_a, stack_b);
 	return (0);
 }
+
+/*
+void	ft_print_str(char **split_str)
+{
+	int i = 0;
+
+	while (split_str[i])
+	{
+		ft_printf("%s\n", split_str[i]);
+		i++;
+	}
+}
+
+void	print_temp_stack(int *stack, int len)
+{
+	int	i;
+
+	i = 0;
+	while (i < len - 1)
+	{
+		ft_printf("%d\n", stack[i]);
+		i++;
+	}
+}
+
+*/

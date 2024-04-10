@@ -90,7 +90,7 @@ DATE: 10/4/2024
 Problem: Must accept input as ./push_swap "10 8 12" and ./push_swap 10 8 12.
 Solved: no
 Changed:
-Have to incorporate split and probably rewrite entire main. 
+Incorporated split but now problem with argv vs split array.
 
 --------------------------------------------------------------------------------
 

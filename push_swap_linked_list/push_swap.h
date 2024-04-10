@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 15:56:13 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 17:33:19 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void	ft_divide_stack_b(t_track *track);
 void	ft_equal(t_list **stack_a, t_list **stack_b, t_track *track);
 void	ft_check_errors(int *temp_stack, int argc);
 void	ft_free_all(int *temp_stack, t_list **stack_a, t_list **stack_b);
+void	ft_free_array(char **array);
 void	ft_index_update(t_list **stack);
 void	ft_index_size_update(t_list **stack, t_track *track);
 void	ft_initialize_list(t_list **stack_a, int *temp_stack, int size);

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:12:35 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 13:05:57 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/10 17:32:33 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,18 @@ void	ft_free_all(int *temp_stack, t_list **stack_a, t_list **stack_b)
 	free(temp_stack);
 	free_stack(stack_a);
 	free_stack(stack_b);
+}
+
+void	ft_free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+	array = NULL;
 }
