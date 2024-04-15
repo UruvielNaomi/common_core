@@ -6,16 +6,18 @@
 #    By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 13:26:35 by nstacia           #+#    #+#              #
-#    Updated: 2024/04/15 11:16:17 by Naomi            ###   ########.fr        #
+#    Updated: 2024/04/15 14:17:10 by Naomi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SOURCES =	check_low.c \
 			check_stack.c \
 			check_temp_stack.c \
+			find.c \
 			free.c \
 			index.c \
 			init.c \
+			insert.c \
 			main.c \
 			print.c \
 			push_swap.c \
