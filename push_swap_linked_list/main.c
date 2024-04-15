@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/15 09:08:36 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/15 09:12:39 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 	else
 		handle_more_args(argc, argv, &temp_stack);
 	ft_check_errors(temp_stack, argc);
-	initialize_stacks(&stack_a, &stack_b, temp_stack);
+	init_stacks(&stack_a, &stack_b, temp_stack);
 	ft_initialize_list(stack_a, temp_stack, argc - 1);
 	ft_push_swap(stack_a, stack_b, argc - 1);
 	ft_free_all(temp_stack, stack_a, stack_b);

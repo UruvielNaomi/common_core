@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/15 08:35:42 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/15 09:12:41 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ void	ft_search_bottom(t_list **stack_a, t_list **stack_b, t_track *track);
 void	ft_search_lowest(t_list **stack_b, t_track *track);
 void	ft_search_top(t_list **stack_a, t_list **stack_b, t_track *track);
 void	free_stack(t_list **stack);
-void	initialize_stacks(t_list ***stack_a, t_list ***stack_b, int *temp_stack);
+void	init_stacks(t_list ***stack_a, t_list ***stack_b, int *temp_stack);
 
 t_list	**initialize_stack(void);
 
