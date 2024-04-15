@@ -6,19 +6,26 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/15 08:43:49 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/15 09:08:36 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int count_digits(char **split_str)
+int	count_digits(char **split_str)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (split_str[i])
 		i++;
 	return (i);
+}
+
+void	handle_more_args(int argc, char **argv, int **temp_stack)
+{
+	ft_check_numeric(argc, argv);
+	*temp_stack = ft_initialize_temp_stack(argc, argv);
 }
 
 int	main(int argc, char **argv)
@@ -40,10 +47,7 @@ int	main(int argc, char **argv)
 		ft_free_array(array, argv[1]);
 	}
 	else
-	{
-		ft_check_numeric(argc, argv);
-		temp_stack = ft_initialize_temp_stack(argc, argv);
-	}
+		handle_more_args(argc, argv, &temp_stack);
 	ft_check_errors(temp_stack, argc);
 	initialize_stacks(&stack_a, &stack_b, temp_stack);
 	ft_initialize_list(stack_a, temp_stack, argc - 1);
