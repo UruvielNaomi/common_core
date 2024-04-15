@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   index.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 09:17:56 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/28 09:32:11 by Naomi            ###   ########.fr       */
+/*   Created: 2024/03/29 13:40:25 by Naomi             #+#    #+#             */
+/*   Updated: 2024/04/04 14:08:58 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_pa(int *stack_a, int *stack_b)
+void	ft_index_update(t_list **stack)
 {
-	int	temp_a;
-	int	temp_b;
-	int i;
+	t_list	*temp;
+	int		i;
 
-	temp_a = stack_a[0];
-	temp_b = stack_b[0];
-
-	stack_a[0] = stack_a[1];
-
+	temp = *stack;
+	i = 0;
+	while (temp != NULL)
+	{
+		temp->index = i;
+		i++;
+		temp = temp->next;
+	}
 }
 
-void	ft_pb(int *stack_a, int *stack_b)
+void	ft_index_size_update(t_list **stack, t_track *track)
 {
-	
+	t_list	*temp;
+	int		i;
+
+	temp = *stack;
+	i = 0;
+	while (temp != NULL)
+	{
+		temp->index = i;
+		i++;
+		temp = temp->next;
+	}
+	track->size = i;
 }

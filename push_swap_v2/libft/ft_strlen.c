@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/28 08:55:54 by Naomi            ###   ########.fr       */
+/*   Created: 2023/10/24 10:18:33 by nstacia           #+#    #+#             */
+/*   Updated: 2024/04/10 16:30:23 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
-# include "ft_printf/ft_printf.h"
-# include "libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
+size_t	ft_strlen(const char *str)
+{
+	int	a;
 
-int		check_stack(int *array, int size);
-
-void	ft_check_2(int *stack_a);
-void	ft_check_3(int *stack_a);
-
-#endif
+	a = 0;
+	while (str[a])
+		a++;
+	return (a);
+}

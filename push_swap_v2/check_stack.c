@@ -1,43 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse.c                                          :+:      :+:    :+:   */
+/*   check_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 09:14:55 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/28 09:42:43 by Naomi            ###   ########.fr       */
+/*   Created: 2024/03/28 12:23:14 by Naomi             #+#    #+#             */
+/*   Updated: 2024/04/10 13:06:35 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rb(int *stack_b, int len)
+int	ft_check_stack_asc(t_list **stack)
 {
-	int	temp;
-	int i;
+	t_list	*current;
 
-	temp = stack_b[0];
-	i = 0;
-	while (i < len - 2)
+	current = *stack;
+	while (current != NULL && current->next != NULL)
 	{
-		stack_b[i] = stack_b[i + 1];
-		i++;
+		if (current->value > current->next->value)
+			return (1);
+		current = current->next;
 	}
-	stack_b[len - 1] = temp;
+	return (0);
 }
 
-void	ft_rrb(int *stack_b, int len)
+int	ft_check_stack_desc(t_list **stack)
 {
-	int	temp;
-	int i;
+	t_list	*current;
 
-	temp = stack_b[len - 1];
-	i = len - 1;
-	while (i >= 0)
+	current = *stack;
+	while (current != NULL && current->next != NULL)
 	{
-		stack_b[i] = stack_b[i - 1];
-		i--;
+		if (current->value < current->next->value)
+			return (1);
+		current = current->next;
 	}
-	stack_b[0] = temp;
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:52:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/15 09:12:52 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/15 10:16:18 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	init_stacks(t_list ***stack_a, t_list ***stack_b, int *temp_stack)
 	*stack_a = initialize_stack();
 	if (!*stack_a)
 	{
-		ft_printf("Error\n");
+		ft_printf("Error, stack a\n");
 		exit(1);
 	}
 	*stack_b = initialize_stack();
@@ -50,7 +50,7 @@ void	init_stacks(t_list ***stack_a, t_list ***stack_b, int *temp_stack)
 	{
 		free(*stack_a);
 		free(temp_stack);
-		ft_printf("Error\n");
+		ft_printf("Error, stack b\n");
 		exit(1);
 	}
 }

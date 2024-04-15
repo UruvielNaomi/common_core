@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   print.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 13:18:10 by Naomi             #+#    #+#             */
-/*   Updated: 2024/03/21 13:18:12 by Naomi            ###   ########.fr       */
+/*   Created: 2024/04/04 15:37:01 by Naomi             #+#    #+#             */
+/*   Updated: 2024/04/05 11:28:39 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../minitalk.h"
+#include "push_swap.h"
 
-int	ft_atoi(const char *str)
+void	ft_print_stack(t_list **stack)
 {
-	int	i;
-	int	result;
-	int	sign;
+	t_list	*temp;
 
-	i = 0;
-	result = 0;
-	sign = 1;
-	while ((str[i] == ' ') || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-' | str[i] == '+')
+	temp = *stack;
+	while (temp != NULL)
 	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
+		ft_printf("%d ", temp->value);
+		temp = temp->next;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		result = result * 10 + (str[i] - '0');
-		i++;
-	}
-	return (sign * result);
+	ft_printf("\n");
 }
