@@ -88,16 +88,17 @@ Many mistakes when using a while loop and argc. all up to date for now.
 
 DATE: 10/4/2024
 Problem: Must accept input as ./push_swap "10 8 12" and ./push_swap 10 8 12.
-Solved: no
+Solved: yes
 Changed:
-Incorporated split but now problem with argv vs split array.
+Added str_join before split to mimic the behaviour of the first string in argv being the programs name, so i did not have to alter all the other functions. 
 
 --------------------------------------------------------------------------------
 
-DATE: 
-Problem:
-Solved: 
+DATE: 15/04/2024
+Problem: when a stack of 3 is in descending, it unnecessarily rotates and reverse rotates once. 
+Solved: yes
 Changed:
+made if condition for every option since 3! = 6, so not too much to check all separate.
 
 --------------------------------------------------------------------------------
 

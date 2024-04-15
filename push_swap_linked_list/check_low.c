@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:39:38 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 11:29:10 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/15 09:58:22 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	ft_check_3(t_list **stack_a, t_track *track)
 	{
 		ft_sa(stack_a);
 		ft_rra(stack_a);
+		return ;
 	}
 	ft_search_lowest(stack_a, track);
 	if (track->lowest_index == 1 && \
@@ -35,18 +36,13 @@ void	ft_check_3(t_list **stack_a, t_track *track)
 	else if (track->lowest_index == 2 && \
 		(*stack_a)->value < (*stack_a)->next->value)
 		ft_rra(stack_a);
+	else if (track->lowest_index == 1 && \
+		(*stack_a)->value > (*stack_a)->next->next->value)
+		ft_ra(stack_a);
 	else
 	{
-		ft_move_lowest_down_a(stack_a, track);
-		if (ft_check_stack_desc(stack_a) == 0)
-		{
-			ft_sa(stack_a);
-			ft_rra(stack_a);
-		}
-		else if ((*stack_a)->value < (*stack_a)->next->value)
-		{
-			ft_rra(stack_a);
-		}
+		ft_sa(stack_a);
+		ft_ra(stack_a);
 	}
 }
 
