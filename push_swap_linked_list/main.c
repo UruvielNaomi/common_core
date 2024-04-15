@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:48:41 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/10 17:32:57 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/15 08:43:49 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ int	main(int argc, char **argv)
 		return (1);
 	if (argc == 2)
 	{
-		
+		argv[1] = ft_strjoin("push_swap ", argv[1]);
 		array = ft_split(argv[1], ' ');
 		argc = count_digits(array);
 		ft_check_numeric(argc, array);
 		temp_stack = ft_initialize_temp_stack(argc, array);
-		ft_free_array(array);
+		ft_free_array(array, argv[1]);
 	}
 	else
 	{

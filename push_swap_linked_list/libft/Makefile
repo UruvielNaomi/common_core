@@ -6,7 +6,7 @@
 #    By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 11:44:29 by nstacia           #+#    #+#              #
-#    Updated: 2024/04/10 17:34:01 by Naomi            ###   ########.fr        #
+#    Updated: 2024/04/15 08:31:32 by Naomi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ SRCS =	ft_atoi.c \
 		ft_lstadd_back.c \
 		ft_lstnew.c \
 		ft_split.c \
+		ft_strjoin.c \
 		ft_strlen.c \
 	
 OBJS = ${SRCS:.c=.o}
