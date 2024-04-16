@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:42:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 08:54:34 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 09:05:40 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void	ft_search_lowest(t_list **stack, t_track *track)
 	track->lowest_value = temp->value;
 	track->lowest_index = temp->index;
 	if (track->size_b % 2 == 0)
-		track->border = track->size_b / 2;
+		track->border_b = track->size_b / 2;
 	else
-		track->border = track->size_b / 2 + 1;
+		track->border_b = track->size_b / 2 + 1;
 	while (temp != NULL)
 	{
 		if (temp->value < track->lowest_value)
@@ -37,7 +37,7 @@ void	ft_search_lowest(t_list **stack, t_track *track)
 
 void	ft_move_lowest_down(t_list **stack, t_track *track)
 {
-	if (track->lowest_index < track->border)
+	if (track->lowest_index < track->border_b)
 	{
 		while (track->lowest_index != -1)
 		{
@@ -57,7 +57,7 @@ void	ft_move_lowest_down(t_list **stack, t_track *track)
 
 void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 {
-	if (track->lowest_index < track->border)
+	if (track->lowest_index < track->border_b)
 	{
 		while (track->lowest_index != -1)
 		{
@@ -77,7 +77,7 @@ void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 
 void	ft_move_lowest_up(t_list **stack, t_track *track)
 {
-	if (track->lowest_index < track->border)
+	if (track->lowest_index < track->border_b)
 	{
 		while (track->lowest_index != 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 08:55:29 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 10:18:18 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,19 @@ typedef struct s_track
 {
 	int	size_a;
 	int	size_b;
-	int	border;
+	int	border_a;
+	int	border_b;
 	int	lowest_value;
 	int	lowest_index;
-	int	border;
-	int	close_value;
-	int	close_index;
+	int	close_tot_op_a;
+	int	close_tot_op_b;
 	int	close_tot_op;
 	int	close_dif;
+	int	least_tot_op;
+	int	pc_value_a; // needed?
+	int	pc_index_a;
+	int	pc_value_b; // needed?
+	int	pc_index_b;
 }	t_track;
 
 int		check_doubles(int *stack, int len);
