@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:38:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/15 13:14:57 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 08:54:34 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_move_back(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	ft_index_size_update(stack_b, track);
-	while (track->size != 0)
+	ft_index_size_update_b(stack_b, track);
+	while (track->size_b != 0)
 		ft_pa(stack_a, stack_b, track);
 }
 

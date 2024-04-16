@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 13:18:59 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 11:50:05 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 08:53:33 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,15 @@ void	ft_search_bottom(t_list **stack_a, t_list **stack_b, t_track *track)
 
 void	ft_divide_stack_b(t_track *track)
 {
-	if (track->size % 2 == 0)
+	if (track->size_b % 2 == 0)
 	{
-		track->j = track->size / 2;
-		track->k = track->size / 2;
+		track->j = track->size_b / 2;
+		track->k = track->size_b / 2;
 	}
 	else
 	{
-		track->j = track->size / 2;
-		track->k = track->size / 2 + 1;
+		track->j = track->size_b / 2;
+		track->k = track->size_b / 2 + 1;
 	}
 }
 
@@ -111,7 +111,7 @@ ft_printf("Size bottom: %d\n", track->k);
 	ft_printf("Found number bottom: %d\n", track->topval_bot);
 	ft_printf("Difference: %d\n", track->dif_bot);
 	ft_printf("Location: %d\n", track->loc_bot);
-	ft_printf("Stack size B: %d\n\n", track->size);
+	ft_printf("Stack size B: %d\n\n", track->size_b);
 
 	ft_printf("\nStack A: ");
 	ft_print_stack(stack_a);

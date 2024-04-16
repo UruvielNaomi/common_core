@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:45:08 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/15 15:43:18 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 08:53:33 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	ft_calculate_rotations_b(t_list *temp_a, t_track *track)
 	if (track->close_index > track->border) // number is in the bottom, rrb needed
 	{
 		if (location == 1) // getal is groter dan to be pushed, rrb until last index
-			track->close_tot_op = track->size - track->close_index - 1;
+			track->close_tot_op = track->size_b - track->close_index - 1;
 		else // getal is kleiner en moet naar de eerste plek, rrb until last index + 1 extra rotatie
-			track->close_tot_op = track->size - track->close_index;
+			track->close_tot_op = track->size_b - track->close_index;
 	}
 	else
 	{
@@ -89,5 +89,7 @@ void	ft_find_fastest(t_list **stack_a, t_list **stack_b, t_track *track)
 	// is het getal groter of kleiner
 	// is het getal in de bovenste of onderste helft.
 	// bereken aantal rb of ra nodig en sla op.
+	// sla waardes op in placeholders.
+	// vergelijk placebolders??
 	// ga naar volgende 
 }
