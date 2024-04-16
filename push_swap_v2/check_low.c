@@ -6,18 +6,18 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:39:38 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/15 09:58:22 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 11:29:48 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_check_2(t_list **stack_a)
+void	ft_check_2(t_list **stack_a, t_track *track)
 {
 	if ((*stack_a)->value > (*stack_a)->next->value)
 	{
 		ft_sa(stack_a);
-		ft_index_update(stack_a);
+		ft_index_update_a(stack_a, track);
 	}
 }
 

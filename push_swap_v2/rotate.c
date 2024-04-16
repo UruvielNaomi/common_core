@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nstacia <nstacia@student.42.fr>            +#+  +:+       +#+        */
+/*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:08:48 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/03 13:20:33 by nstacia          ###   ########.fr       */
+/*   Updated: 2024/04/16 11:36:47 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_rb(t_list **stack_b)
+void	ft_rb(t_list **stack_b, t_track *track)
 {
 	t_list	*temp;
 
@@ -22,11 +22,11 @@ void	ft_rb(t_list **stack_b)
 	*stack_b = (*stack_b)->next;
 	temp->next = NULL;
 	ft_lstadd_back(stack_b, temp);
-	ft_index_update(stack_b);
+	ft_index_update_b(stack_b, track);
 	ft_printf("rb\n");
 }
 
-void	ft_rrb(t_list **stack_b)
+void	ft_rrb(t_list **stack_b, t_track *track)
 {
 	t_list	*temp;
 	t_list	*temp_back;
@@ -43,12 +43,12 @@ void	ft_rrb(t_list **stack_b)
 	temp_back = temp;
 	prev->next = NULL;
 	temp_back->next = *stack_b;
-	ft_index_update(stack_b);
+	ft_index_size_update_b(stack_b, track);
 	*stack_b = temp_back;
 	ft_printf("rrb\n");
 }
 
-void	ft_ra(t_list **stack_a)
+void	ft_ra(t_list **stack_a, t_track *track)
 {
 	t_list	*temp;
 
@@ -58,11 +58,11 @@ void	ft_ra(t_list **stack_a)
 	*stack_a = (*stack_a)->next;
 	temp->next = NULL;
 	ft_lstadd_back(stack_a, temp);
-	ft_index_update(stack_a);
+	ft_index_update_a(stack_a, track);
 	ft_printf("ra\n");
 }
 
-void	ft_rra(t_list **stack_a)
+void	ft_rra(t_list **stack_a, t_track *track)
 {
 	t_list	*temp;
 	t_list	*temp_back;
@@ -79,7 +79,7 @@ void	ft_rra(t_list **stack_a)
 	temp_back = temp;
 	prev->next = NULL;
 	temp_back->next = *stack_a;
-	ft_index_update(stack_a);
+	ft_index_update_a(stack_a, track);
 	*stack_a = temp_back;
 	ft_printf("rra\n");
 }

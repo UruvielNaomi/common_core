@@ -6,7 +6,7 @@
 #    By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 13:26:35 by nstacia           #+#    #+#              #
-#    Updated: 2024/04/15 14:17:10 by Naomi            ###   ########.fr        #
+#    Updated: 2024/04/16 11:23:04 by Naomi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ SOURCES =	check_low.c \
 			print.c \
 			push_swap.c \
 			push.c \
+			rotate_a.c \
+			rotate_b.c \
 			rotate.c \
 			search.c \
 			swap.c \
