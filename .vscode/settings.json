@@ -61,6 +61,7 @@
     "stdlib.h": "c",
     "stdio.h": "c",
     "push_swap.h": "c",
-    "__locale": "c"
+    "__locale": "c",
+    "unistd.h": "c"
   }
 }

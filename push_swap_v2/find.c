@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:45:08 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 10:17:20 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 10:22:58 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,19 @@ void	ft_calculate_rotations_a(t_list *temp_a, t_track *track)
 
 void	ft_calculate_rotations_b(t_list *temp_a, t_list *temp_b, t_track *track)
 {
-	int	location;
-	
-	location = 0; 
+	track->location = 0; 
 	if (temp_b->value > temp_a->value)
-		location = 1; // het getal moet naar de laatste plek
+		track->location = 1; // het getal moet naar de laatste plek
 	if (temp_b->index > track->border_b) // number is in the bottom, rrb needed
 	{
-		if (location == 1) // getal is groter dan to be pushed, rrb until last index
+		if (track->location == 1) // getal is groter dan to be pushed, rrb until last index
 			track->close_tot_op_b = track->size_b - temp_b->index - 1;
 		else // getal is kleiner en moet naar de eerste plek, rrb until last index + 1 extra rotatie
 			track->close_tot_op_b = track->size_b - temp_b->index;
 	}
 	else
 	{
-		if (location == 1) // getal is groter dan to be pushed
+		if (track->location == 1) // getal is groter dan to be pushed
 			track->close_tot_op_b = temp_b->index + 1;
 		else
 			track->close_tot_op_b = temp_b->index;
@@ -57,6 +55,7 @@ void	ft_find_closest(t_list *temp_a, t_list *temp_b, t_track *track)
 		{
 			track->pc_index_a = temp_a->index; // location a
 			track->pc_index_b = temp_b->index; // location b
+			track->fin_location = track->location;
 		}
 	}
 	else
