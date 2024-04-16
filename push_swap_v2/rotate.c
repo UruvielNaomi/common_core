@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 14:08:48 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 11:36:47 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 11:42:03 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_rb(t_list **stack_b, t_track *track)
 	*stack_b = (*stack_b)->next;
 	temp->next = NULL;
 	ft_lstadd_back(stack_b, temp);
-	ft_index_update_b(stack_b, track);
+	ft_index_size_update_b(stack_b, track);
 	ft_printf("rb\n");
 }
 

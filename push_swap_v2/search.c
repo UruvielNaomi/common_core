@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:42:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 09:05:40 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 11:43:16 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	ft_move_lowest_down(t_list **stack, t_track *track)
 	{
 		while (track->lowest_index != -1)
 		{
-			ft_rb(stack);
+			ft_rb(stack, track);
 			track->lowest_index--;
 		}
 	}
@@ -49,7 +49,7 @@ void	ft_move_lowest_down(t_list **stack, t_track *track)
 	{
 		while (track->lowest_index < track->size_b - 1)
 		{
-			ft_rrb(stack);
+			ft_rrb(stack, track);
 			track->lowest_index++;
 		}
 	}
@@ -61,7 +61,7 @@ void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 	{
 		while (track->lowest_index != -1)
 		{
-			ft_ra(stack);
+			ft_ra(stack, track);
 			track->lowest_index--;
 		}
 	}
@@ -69,7 +69,7 @@ void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 	{
 		while (track->lowest_index < track->size_b - 1)
 		{
-			ft_rra(stack);
+			ft_rra(stack, track);
 			track->lowest_index++;
 		}
 	}
@@ -81,7 +81,7 @@ void	ft_move_lowest_up(t_list **stack, t_track *track)
 	{
 		while (track->lowest_index != 0)
 		{
-			ft_ra(stack);
+			ft_ra(stack, track);
 			track->lowest_index--;
 		}
 	}
@@ -89,7 +89,7 @@ void	ft_move_lowest_up(t_list **stack, t_track *track)
 	{
 		while (track->lowest_index != track->size_b)
 		{
-			ft_rra(stack);
+			ft_rra(stack, track);
 			track->lowest_index++;
 		}
 	}
