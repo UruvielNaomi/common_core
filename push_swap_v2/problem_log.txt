@@ -117,7 +117,7 @@ if statement was incorrect. when rotating to the last position if statement was 
 --------------------------------------------------------------------------------
 
 DATE: 18/04/2024
-Problem: code works but it never seems to favor any other element than [0] from stack_a to be pushed.
+Problem: code works but it never seems to favor any other element than [0] from stack_a to be pushed. least amount of operations needs to be updated somewhere, but not sure where. favours a higher number?? dont understand.
 Solved: no 
 Changed:
 problem is we focus on the difference in value between to be pushed and not on total amount of operations. need to adjust find fasted function completely.
