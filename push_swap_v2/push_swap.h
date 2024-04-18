@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 11:37:37 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 11:49:46 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void	ft_rra(t_list **stack_a, t_track *track);
 void	ft_rb(t_list **stack_b, t_track *track);
 void	ft_rrb(t_list **stack_b, t_track *track);
 void	ft_sa(t_list **stack_a);
+void	ft_sb(t_list **stack_b);
 void	ft_search_lowest(t_list **stack_b, t_track *track);
 void	ft_sort_stack(t_list **stack_a, t_list **stack_b, t_track *track);
 void	free_stack(t_list **stack);

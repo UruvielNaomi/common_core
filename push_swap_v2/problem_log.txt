@@ -105,6 +105,50 @@ made if condition for every option since 3! = 6, so not too much to check all se
 DATE: 15/04/2024
 Problem: When array size is bigger than 200 random numbers, nr of operations is too big. change algorithm.
 Solved: no
+Changed: created a v2, working on finding the most cheap number to push before pushing something from a to b
+
+--------------------------------------------------------------------------------
+
+DATE: 16/04/2024
+Problem: size of stack_b is not being updated correctly: check all functions that use track->size_b and a for security
+Solved: yes
+Changed:
+if statement was incorrect. when rotating to the last position if statement was if index is < size, but it should be if index is < size - 1.
+--------------------------------------------------------------------------------
+
+DATE: 18/04/2024
+Problem: code works but it never seems to favor any other element than [0] from stack_a to be pushed.
+Solved: no 
+Changed:
+problem is we focus on the difference in value between to be pushed and not on total amount of operations. need to adjust find fasted function completely.
+
+--------------------------------------------------------------------------------
+ 
+DATE: 
+Problem: 
+Solved: 
 Changed:
 
 --------------------------------------------------------------------------------
+ 
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+ 
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+ 
+DATE: 
+Problem: 
+Solved: 
+Changed:
+
+--------------------------------------------------------------------------------
+ 

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 11:33:16 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 11:30:50 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/16 11:49:38 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,27 @@ void	ft_sa(t_list **stack_a)
 	(*stack_a)->next = temp;
 	(*stack_a)->index = 0;
 	ft_printf("sa\n");
+}
+
+void	ft_sb(t_list **stack_b)
+{
+	t_list	*temp;
+
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+		return ;
+	temp = *stack_b;
+	*stack_b = (*stack_b)->next;
+	if ((*stack_b)->next != NULL)
+	{
+		temp->next = (*stack_b)->next;
+		(*stack_b)->next->index = 2;
+	}
+	else
+		temp->next = NULL;
+	temp->index = 1;
+	(*stack_b)->next = temp;
+	(*stack_b)->index = 0;
+	ft_printf("sb\n");
 }
 
 /*
