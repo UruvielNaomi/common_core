@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:15:31 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/21 15:54:45 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/21 16:04:56 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_rotate_a(t_list **stack_a, t_track *track)
 {
-	if (track->fin_index_a >= track->border_a) // number is in the bottom
+	if (track->fin_index_a >= track->border_a)
 		ft_rrotate_to_first_a(stack_a, track);
 	else
 		ft_rotate_to_first_a(stack_a, track);
@@ -22,9 +22,9 @@ void	ft_rotate_a(t_list **stack_a, t_track *track)
 
 void	ft_rotate_b(t_list **stack_b, t_track *track)
 {
-	if (track->fin_index_b >= track->border_b) // number is in the bottom
+	if (track->fin_index_b >= track->border_b)
 	{
-		if (track->fin_location == 1) // closest needs to be at bottom of stack_b
+		if (track->fin_location == 1)
 			ft_rrotate_to_last_b(stack_b, track);
 		else
 			ft_rrotate_to_first_b(stack_b, track);
