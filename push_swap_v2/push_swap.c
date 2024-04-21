@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:38:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/18 09:10:12 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/21 15:54:53 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,6 @@ void	ft_push_2(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	ft_pb(stack_a, stack_b, track);
 	ft_pb(stack_a, stack_b, track);
-	if ((*stack_b)->value < (*stack_b)->next->value)
-		ft_rb(stack_b, track);
 }
 
 void	ft_push_swap(t_list **stack_a, t_list **stack_b, int size)

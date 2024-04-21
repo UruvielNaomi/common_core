@@ -6,97 +6,73 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:45:08 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/21 11:43:15 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/21 15:33:30 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_push_top(t_list **stack_a, t_list **stack_b, t_track *track)
+void	ft_find_fastest(t_track *track)
 {
-	track->pc_index_a = (*stack_a)->index;
-	track->pc_index_b = (*stack_b)->index;
-	track->least_tot_op = 1;
-	track->fin_location = 0;
-	ft_printf("test\n");
-}
-
-void	ft_calculate_rotations_a(t_list *temp_a, t_track *track)
-{
-	if (temp_a->index >= track->border_a) // number is in bottom half
-		track->close_tot_op_a = track->size_a - temp_a->index;
-	else
-		track->close_tot_op_a = temp_a->index;
-}
-
-void	ft_calculate_rotations_b(t_list *temp_a, t_list *temp_b, t_track *track)
-{
-	track->location = 0;
-	if (temp_b->value > temp_a->value)
-		track->location = 1; // closest to last
-	if (temp_b->index >= track->border_b) // number is in the bottom, rrb needed
+	ft_calculate_rotations_a(track);
+	ft_calculate_rotations_b(track);
+	track->close_tot_op = track->close_tot_op_a + track->close_tot_op_b + 1;
+	if (track->close_tot_op < track->least_tot_op)
 	{
-		if (track->location == 1) // closest bigger than to be pushed, rrb until last index
-			track->close_tot_op_b = track->size_b - (temp_b->index + 1);
-		else // closest is smaller, move to top: rrb until last index + 1
-			track->close_tot_op_b = track->size_b - temp_b->index;
-	}
-	else
-	{
-		if (track->location == 1) // getal is groter dan to be pushed
-			track->close_tot_op_b = temp_b->index + 1;
-		else
-			track->close_tot_op_b = temp_b->index;
+		track->fin_index_a = track->pc_index_a;
+		track->fin_index_b = track->pc_index_b;
+		track->fin_location = track->location;
+		track->least_tot_op = track->close_tot_op;
 	}
 }
 
 void	ft_find_closest(t_list *temp_a, t_list *temp_b, t_track *track)
 {
-		track->close_dif = ft_calculate_difference(temp_a, temp_b);
-		ft_calculate_rotations_b(temp_a, temp_b, track);
-		ft_calculate_rotations_a(temp_a, track);
-		track->close_tot_op = track->close_tot_op_a + track->close_tot_op_b + 1;
-		if (track->close_tot_op < track->least_tot_op)
-		{
-			track->pc_index_a = temp_a->index;
-			track->pc_index_b = temp_b->index;
-			track->fin_location = track->location;
-			track->least_tot_op = track->close_tot_op;
-		}
+	track->close_dif = ft_calculate_difference(temp_a, temp_b);
+	track->close_val_a = temp_a->value;
+	track->close_val_b = temp_b->value;
+	track->pc_index_a = temp_a->index;
+	track->pc_index_b = temp_b->index;
 }
 
-int	ft_calculate_difference(t_list *temp_a, t_list *temp_b)
+void	ft_push_top(t_list **stack_a, t_list **stack_b, t_track *track)
 {
-	int	result;
-
-	result = temp_a->value - temp_b->value;
-	if (result < 0)
-		result *= -1;
-	return (result);
+	track->fin_index_a = (*stack_a)->index;
+	track->fin_index_b = (*stack_b)->index;
+	//track->least_tot_op = 1;
+	track->fin_location = 0;
+	ft_printf("test\n");
 }
 
-void	ft_find_fastest(t_list **stack_a, t_list **stack_b, t_track *track)
+void	ft_find_location(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	t_list	*temp_a;
 	t_list	*temp_b;
-	int initial_dif;
 
 	temp_a = (*stack_a);
+	temp_b = (*stack_b);
 	track->least_tot_op = INT_MAX;
-	if (ft_check_stack_desc(stack_b) == 0 && (*stack_a)->value < (*stack_b)->value)
+	if (ft_check_stack_0(temp_b, temp_a) == 0 && temp_a->value < temp_b->value)
 		ft_push_top(stack_a, stack_b, track);
 	else
 	{
 		while (temp_a != NULL)
 		{
 			temp_b = (*stack_b);
-			initial_dif = ft_calculate_difference(temp_a, temp_b);
+			track->close_dif = ft_calculate_difference(temp_a, temp_b);
 			while (temp_b != NULL)
 			{
-				if (ft_calculate_difference(temp_a, temp_b) <= initial_dif)
+				if (ft_calculate_difference(temp_a, temp_b) <= track->close_dif)
 					ft_find_closest(temp_a, temp_b, track);
 				temp_b = temp_b->next;
 			}
+			ft_printf("closest value a = %d\n", track->close_val_a);
+			ft_printf("closest index a = %d\n", track->pc_index_a);
+			ft_printf("closest value b = %d\n", track->close_val_b);
+			ft_printf("closest index b = %d\n\n", track->pc_index_b);
+			ft_find_fastest(track);
+			ft_printf("final closest index a = %d\n", track->fin_index_a);
+			ft_printf("final closest index b = %d\n", track->fin_index_b);
 			temp_a = temp_a->next;
 		}
 	}
@@ -168,7 +144,7 @@ int	ft_calculate_difference(t_list *temp_a, t_list *temp_b)
 	return (result);
 }
 
-void	ft_find_fastest(t_list **stack_a, t_list **stack_b, t_track *track)
+void	ft_find_location(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	t_list	*temp_a;
 	t_list	*temp_b;

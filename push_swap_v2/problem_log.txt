@@ -118,30 +118,31 @@ if statement was incorrect. when rotating to the last position if statement was 
 
 DATE: 18/04/2024
 Problem: code works but it never seems to favor any other element than [0] from stack_a to be pushed. least amount of operations needs to be updated somewhere, but not sure where. favours a higher number?? dont understand.
-Solved: yes 
+Solved: yes
 Changed:
-check if stack_b is desc and if stack_a[0] is lower, just push.
-forgot to reset stack_b after inner while loop, fixed.
+forgot to reset stack_b after inner while loop.
 
 --------------------------------------------------------------------------------
  
 DATE: 21/04/2024
 Problem: Currently calculating for EVERY number in the list total operations and choosing that one, but that does not sort. need to find correct location in B and only for that location count operations. then compare those to all others.
-Solved: no
+Solved: yes
 Changed:
+moved counting operations to outside innerloop.
+--------------------------------------------------------------------------------
+ 
+DATE: 21/04/2024
+Problem: if stack_b is descing and stack_a is lower it wil do unnecessary rotations/wrong order.
+Solved: yes
+Changed:
+made extra function that checked if stack_b was descending and if last value of b is higher, then its okay to just push.
 
 --------------------------------------------------------------------------------
  
-DATE: 
-Problem: 
-Solved: 
-Changed:
-
---------------------------------------------------------------------------------
- 
-DATE: 
-Problem: 
-Solved: 
+DATE: 21/04/2024
+Problem: example: if track size = 3, border is 2, problematic for splitting size inhalf.
+also not taking into calculating if during find lowest if the index = same as border. need to add that to either < or > (need to make sure pick right one.)
+Solved: unsure?
 Changed:
 
 --------------------------------------------------------------------------------

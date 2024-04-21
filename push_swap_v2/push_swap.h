@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 11:49:46 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/21 15:33:06 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,15 @@ typedef struct s_track
 	int	close_tot_op_b;
 	int	close_tot_op;
 	int	close_dif;
+	int	close_val_a;
+	int	close_val_b;
 	int	least_tot_op;
 	int	pc_index_a;
 	int	pc_index_b;
 	int	location;
 	int	fin_location;
+	int	fin_index_a;
+	int	fin_index_b;
 }	t_track;
 
 int		ft_calculate_difference(t_list *temp_a, t_list *temp_b);
@@ -45,8 +49,11 @@ int		check_doubles(int *stack, int len);
 int		check_temp_stack(int *stack, int len);
 int		ft_check_stack_asc(t_list **stack);
 int		ft_check_stack_desc(t_list **stack);
+int		ft_check_stack_0(t_list *temp_b, t_list *temp_a);
 int		*ft_initialize_temp_stack(int argc, char **argv);
 
+void	ft_calculate_rotations_a(t_track *track);
+void	ft_calculate_rotations_b(t_track *track);
 void	ft_check_2(t_list **stack_a, t_track *track);
 void	ft_check_3(t_list **stack_a, t_track *track);
 void	ft_check_4(t_list **stack_a, t_list **stack_b, t_track *track);
@@ -54,7 +61,9 @@ void	ft_check_5(t_list **stack_a, t_list **stack_b, t_track *track);
 void	ft_check_numeric(int argc, char **argv);
 void	ft_divide_stack_b(t_track *track);
 void	ft_check_errors(int *temp_stack, int argc);
-void	ft_find_fastest(t_list **stack_a, t_list **stack_b, t_track *track);
+void	ft_find_closest(t_list *temp_a, t_list *temp_b, t_track *track);
+void	ft_find_fastest(t_track *track);
+void	ft_find_location(t_list **stack_a, t_list **stack_b, t_track *track);
 void	ft_free_all(int *temp_stack, t_list **stack_a, t_list **stack_b);
 void	ft_free_array(char **array, char *str);
 void	ft_index_update_a(t_list **stack, t_track *track);

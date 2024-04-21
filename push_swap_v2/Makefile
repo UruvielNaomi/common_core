@@ -6,11 +6,12 @@
 #    By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/03 13:26:35 by nstacia           #+#    #+#              #
-#    Updated: 2024/04/16 11:23:04 by Naomi            ###   ########.fr        #
+#    Updated: 2024/04/21 13:55:38 by Naomi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SOURCES =	check_low.c \
+SOURCES =	calculate.c \
+			check_low.c \
 			check_stack.c \
 			check_temp_stack.c \
 			find.c \
