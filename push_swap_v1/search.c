@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:42:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 09:05:40 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/18 14:00:08 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_search_lowest(t_list **stack, t_track *track)
 	ft_index_size_update_b(&temp, track);
 	track->lowest_value = temp->value;
 	track->lowest_index = temp->index;
-	if (track->size_b % 2 == 0)
-		track->border_b = track->size_b / 2;
+	if (track->size % 2 == 0)
+		track->border = track->size / 2;
 	else
-		track->border_b = track->size_b / 2 + 1;
+		track->border = track->size / 2 + 1;
 	while (temp != NULL)
 	{
 		if (temp->value < track->lowest_value)
@@ -37,7 +37,7 @@ void	ft_search_lowest(t_list **stack, t_track *track)
 
 void	ft_move_lowest_down(t_list **stack, t_track *track)
 {
-	if (track->lowest_index < track->border_b)
+	if (track->lowest_index < track->border)
 	{
 		while (track->lowest_index != -1)
 		{
@@ -47,7 +47,7 @@ void	ft_move_lowest_down(t_list **stack, t_track *track)
 	}
 	else
 	{
-		while (track->lowest_index < track->size_b - 1)
+		while (track->lowest_index < track->size - 1)
 		{
 			ft_rrb(stack);
 			track->lowest_index++;
@@ -57,7 +57,7 @@ void	ft_move_lowest_down(t_list **stack, t_track *track)
 
 void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 {
-	if (track->lowest_index < track->border_b)
+	if (track->lowest_index < track->border)
 	{
 		while (track->lowest_index != -1)
 		{
@@ -67,7 +67,7 @@ void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 	}
 	else
 	{
-		while (track->lowest_index < track->size_b - 1)
+		while (track->lowest_index < track->size - 1)
 		{
 			ft_rra(stack);
 			track->lowest_index++;
@@ -77,7 +77,7 @@ void	ft_move_lowest_down_a(t_list **stack, t_track *track)
 
 void	ft_move_lowest_up(t_list **stack, t_track *track)
 {
-	if (track->lowest_index < track->border_b)
+	if (track->lowest_index < track->border)
 	{
 		while (track->lowest_index != 0)
 		{
@@ -87,7 +87,7 @@ void	ft_move_lowest_up(t_list **stack, t_track *track)
 	}
 	else
 	{
-		while (track->lowest_index != track->size_b)
+		while (track->lowest_index != track->size)
 		{
 			ft_rra(stack);
 			track->lowest_index++;

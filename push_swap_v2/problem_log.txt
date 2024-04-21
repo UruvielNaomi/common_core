@@ -118,15 +118,16 @@ if statement was incorrect. when rotating to the last position if statement was 
 
 DATE: 18/04/2024
 Problem: code works but it never seems to favor any other element than [0] from stack_a to be pushed. least amount of operations needs to be updated somewhere, but not sure where. favours a higher number?? dont understand.
-Solved: no 
+Solved: yes 
 Changed:
-problem is we focus on the difference in value between to be pushed and not on total amount of operations. need to adjust find fasted function completely.
+check if stack_b is desc and if stack_a[0] is lower, just push.
+forgot to reset stack_b after inner while loop, fixed.
 
 --------------------------------------------------------------------------------
  
-DATE: 
-Problem: 
-Solved: 
+DATE: 21/04/2024
+Problem: Currently calculating for EVERY number in the list total operations and choosing that one, but that does not sort. need to find correct location in B and only for that location count operations. then compare those to all others.
+Solved: no
 Changed:
 
 --------------------------------------------------------------------------------

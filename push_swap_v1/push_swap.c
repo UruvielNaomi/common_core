@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 10:38:25 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 08:54:34 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/18 14:01:18 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_move_back(t_list **stack_a, t_list **stack_b, t_track *track)
 {
 	ft_index_size_update_b(stack_b, track);
-	while (track->size_b != 0)
+	while (track->size != 0)
 		ft_pa(stack_a, stack_b, track);
 }
 
@@ -41,7 +41,8 @@ void	ft_push_2(t_list **stack_a, t_list **stack_b, t_track *track)
 void	ft_push_swap(t_list **stack_a, t_list **stack_b, int size)
 {
 	t_track	track;
-
+	ft_printf("Stack A before:\n");
+	ft_print_stack(stack_a);
 	if (size == 1)
 		return ;
 	if (size == 2)
@@ -57,6 +58,8 @@ void	ft_push_swap(t_list **stack_a, t_list **stack_b, int size)
 		ft_push_2(stack_a, stack_b, &track);
 		ft_insertion(stack_a, stack_b, &track);
 	}
+	ft_printf("Stack A after:\n");
+	ft_print_stack(stack_a);
 }
 
 /*

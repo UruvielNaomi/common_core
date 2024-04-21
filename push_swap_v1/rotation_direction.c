@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 14:24:20 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/16 08:53:33 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/18 13:59:34 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_rotate_to_first(t_list **stack_b, t_track *track)
 
 void	ft_rrotate_to_last(t_list **stack_b, t_track *track)
 {
-	while (track->loc_bot < track->size_b)
+	while (track->loc_bot < track->size)
 	{
 		ft_rrb(stack_b);
 		track->loc_bot++;
@@ -41,7 +41,7 @@ void	ft_rrotate_to_last(t_list **stack_b, t_track *track)
 
 void	ft_rrotate_to_first(t_list **stack_b, t_track *track)
 {
-	while (track->loc_bot < track->size_b + 1)
+	while (track->loc_bot < track->size + 1)
 	{
 		ft_rrb(stack_b);
 		track->loc_bot++;
