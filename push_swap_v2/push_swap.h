@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 17:49:46 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/21 15:33:06 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/24 12:09:23 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_track
 	int	fin_location;
 	int	fin_index_a;
 	int	fin_index_b;
+	int	op_count_b;
 }	t_track;
 
 int		ft_calculate_difference(t_list *temp_a, t_list *temp_b);

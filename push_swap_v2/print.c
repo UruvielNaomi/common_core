@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 15:37:01 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/05 11:28:39 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/24 11:26:09 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_print_stack(t_list **stack)
 		ft_printf("%d ", temp->value);
 		temp = temp->next;
 	}
-	ft_printf("\n");
+	ft_printf("\n\n");
 }

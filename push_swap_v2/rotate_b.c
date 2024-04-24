@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 10:51:01 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/24 11:20:23 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/24 12:12:11 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,24 +32,18 @@ void	ft_rotate_to_first_b(t_list **stack_b, t_track *track)
 
 void	ft_rrotate_to_last_b(t_list **stack_b, t_track *track)
 {
-	while (track->fin_index_b < track->size_b)
+	while (track->op_count_b > 0)
 	{
-		ft_printf("final index b = %d\n", track->fin_index_b);
-		ft_printf("size b = %d\n", track->size_b);
-		ft_printf("border = %d\n", track->border_b);
 		ft_rrb(stack_b, track);
-		track->fin_index_b++;
+		track->op_count_b--;
 	}
 }
 
 void	ft_rrotate_to_first_b(t_list **stack_b, t_track *track)
 {
-	while (track->fin_index_b <= track->size_b)
+	while (track->op_count_b > 0)
 	{
-		ft_printf("final index b = %d\n", track->fin_index_b);
-		ft_printf("size b = %d\n", track->size_b);
-		ft_printf("border = %d\n", track->border_b);
 		ft_rrb(stack_b, track);
-		track->fin_index_b++;
+		track->op_count_b--;
 	}
 }
