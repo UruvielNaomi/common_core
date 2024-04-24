@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:45:08 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/24 12:11:46 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/24 12:21:34 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_find_fastest(t_track *track)
 {
 	ft_calculate_rotations_a(track);
 	ft_calculate_rotations_b(track);
-	track->close_tot_op = track->close_tot_op_a + track->close_tot_op_b; // removed + 1
+	track->close_tot_op = track->close_tot_op_a + track->close_tot_op_b;
 	if (track->close_tot_op <= track->least_tot_op)
 	{
 		track->fin_index_a = track->pc_index_a;
