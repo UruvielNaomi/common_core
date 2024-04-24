@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:42:42 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/21 15:54:20 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/21 16:24:32 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_search_lowest(t_list **stack, t_track *track)
 		}
 		temp = temp->next;
 	}
+	//ft_printf("lowest value = %d\n", track->lowest_value);
+	//ft_printf("index = %d\n", track->lowest_index);
 }
 
 void	ft_move_lowest_down(t_list **stack, t_track *track)

@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 13:15:31 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/21 16:04:56 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/21 16:37:34 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,6 @@ void	ft_insert_sort(t_list **stack_a, t_list **stack_b, t_track *track)
 	ft_calculate_borders(track);
 	ft_find_location(stack_a, stack_b, track);
 	ft_action(stack_a, stack_b, track);
+	ft_printf("Stack B after a push:\n");
+	ft_print_stack(stack_b);
 }
