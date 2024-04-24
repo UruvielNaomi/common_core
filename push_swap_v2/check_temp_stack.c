@@ -6,7 +6,7 @@
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 13:21:15 by Naomi             #+#    #+#             */
-/*   Updated: 2024/04/15 10:34:49 by Naomi            ###   ########.fr       */
+/*   Updated: 2024/04/24 12:32:31 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	check_doubles(int *stack, int len)
 		{
 			if (stack[i] == stack[j])
 			{
-				ft_printf("Error: doubles\n");
+				ft_printf("Error\n");
 				return (1);
 			}
 			j++;
@@ -78,7 +78,7 @@ void	ft_check_numeric(int argc, char **argv)
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
 			{
-				ft_printf("Error, not numeric\n");
+				ft_printf("Error\n");
 				exit (1);
 			}
 			j++;

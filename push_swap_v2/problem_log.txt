@@ -170,3 +170,5 @@ Changed: problems regarding size of stack b being uneven or even to count operat
 
     50 random numbers:
 ARG="98 26 67 22 86 -98 -78 -82 87 -91 53 8 -69 74 -20 36 -92 -56 47 -67 94 81 -12 38 -51 -70 -32 -35 -1 -83 -66 -64 -30 56 90 -74 61 46 93 72 41 -65 -4 97 30 9 -57 33 43 -85"; ./push_swap $ARG | ./checker_Mac $ARG
+
+ARG="1 5 2 4 3"; ./push_swap $ARG | ./checker_Mac $ARG
