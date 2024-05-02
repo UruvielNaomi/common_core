@@ -13,9 +13,9 @@ int main() {
     ft_printf("\nReturn value: %d\n\n", result);
 
     // Testing %x and %X
-    result = ft_printf("%x", 255);
+    result = ft_printf("%x", 27201);
     ft_printf("\nReturn value: %d\n\n", result);
-    result = ft_printf("%X", 255);
+    result = ft_printf("%X", 27201);
     ft_printf("\nReturn value: %d\n\n", result);
 
     // Testing %i and %d
@@ -32,7 +32,7 @@ int main() {
     int variable = 42;
     result = ft_printf("%p", (void*)&variable);
     ft_printf("\nReturn value: %d\n\n", result);
-    
+
     // Testing %%
     result = ft_printf("%%");
     ft_printf("\nReturn value: %d\n\n", result);
