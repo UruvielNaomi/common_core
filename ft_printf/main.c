@@ -6,38 +6,36 @@ int main() {
 
     // Testing %c
     result = ft_printf("%c", 'A');
-    printf("\nReturn value: %d\n", result);
+    ft_printf("\nReturn value: %d\n\n", result);
 
     // Testing %s
     result = ft_printf("%s", "Hello, World!");
-    printf("\nReturn value: %d\n", result);
+    ft_printf("\nReturn value: %d\n\n", result);
 
     // Testing %x and %X
     result = ft_printf("%x", 255);
-    printf("\nReturn value: %d\n", result);
-
+    ft_printf("\nReturn value: %d\n\n", result);
     result = ft_printf("%X", 255);
-    printf("\nReturn value: %d\n", result);
+    ft_printf("\nReturn value: %d\n\n", result);
 
     // Testing %i and %d
     result = ft_printf("%i", 42);
-    printf("\nReturn value: %d\n", result);
-
+    ft_printf("\nReturn value: %d\n\n", result);
     result = ft_printf("%d", -42);
-    printf("\nReturn value: %d\n", result);
+    ft_printf("\nReturn value: %d\n\n", result);
 
     // Testing %u
     result = ft_printf("%u", 123);
-    printf("\nReturn value: %d\n", result);
+    ft_printf("\nReturn value: %d\n\n", result);
 
     // Testing %p
     int variable = 42;
     result = ft_printf("%p", (void*)&variable);
-    printf("\nReturn value: %d\n", result);
-
+    ft_printf("\nReturn value: %d\n\n", result);
+    
     // Testing %%
     result = ft_printf("%%");
-    printf("\nReturn value: %d\n", result);
+    ft_printf("\nReturn value: %d\n\n", result);
 
     return 0;
 }
@@ -45,8 +43,7 @@ int main() {
 
 /*
 make       
-cc -o test_main main.c ft_printf.c -L. -lftprintf
-./test_main
+gcc main.c ft_printf.a -o main
 
 cc: command for compiler.
 
