@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 09:57:37 by Naomi             #+#    #+#             */
-/*   Updated: 2024/05/09 13:19:49 by Naomi            ###   ########.fr       */
+/*   Created: 2024/05/09 10:39:51 by Naomi             #+#    #+#             */
+/*   Updated: 2024/05/09 13:06:32 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int main(int argc, char **argv) 
+void	ft_destroy_mutex(pthread_mutex_t *forks, int total_philosophers)
 {
-	int				total_philosophers;
-	pthread_t		*philosophers;
-	pthread_mutex_t	*forks;
+	int i;
 
-	total_philosophers = ft_atoi(argv[1]);
-	ft_init_all(**argv, philosophers, forks, total_philosophers);
-	ft_init_fork(forks, total_philosophers);
-	ft_init_philosophers(philosophers, total_philosophers, forks);
-	ft_destroy_mutex(forks, total_philosophers);
-	ft_free_all(philosophers, forks);
-	return (0);
+	i = 0;
+	while (i < total_philosophers)
+	{
+		pthread_mutex_destroy(&forks[i]);
+		i++;
+	}
+}
+
+void	ft_free_all(pthread_t *philosophers, pthread_mutex_t *forks)
+{
+	free(philosophers);
+	free(forks);
 }
