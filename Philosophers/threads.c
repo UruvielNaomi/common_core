@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   threads.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/09 09:57:37 by Naomi             #+#    #+#             */
-/*   Updated: 2024/05/16 09:47:29 by Naomi            ###   ########.fr       */
+/*   Created: 2024/05/16 10:17:27 by Naomi             #+#    #+#             */
+/*   Updated: 2024/05/16 10:20:20 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int main(int argc, char **argv) 
+void	ft_join_threads(pthread_t **philosophers, int total_philosophers)
 {
-	int				total_philosophers;
-	pthread_t		*philosophers;
-	pthread_mutex_t	*forks;
+	int i;
 
-	total_philosophers = ft_atoi(argv[1]);
-	ft_init_all(**argv, philosophers, forks, total_philosophers);
-	ft_destroy_mutex(forks, total_philosophers);
-	ft_free_all(philosophers, forks);
-	return (0);
+	i = 0;
+	while (i < total_philosophers)
+	{
+		pthread_join(philosophers[i], NULL);
+		i++;
+	}
 }
