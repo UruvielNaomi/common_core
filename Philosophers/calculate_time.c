@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   calculate_time.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Naomi <Naomi@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 13:18:37 by Naomi             #+#    #+#             */
-/*   Updated: 2024/05/09 10:03:56 by Naomi            ###   ########.fr       */
+/*   Created: 2024/05/16 14:45:24 by Naomi             #+#    #+#             */
+/*   Updated: 2024/05/16 15:45:31 by Naomi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stddef.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
+#include "philosophers.h"
 
-typedef struct s_list
+long calculate_elapsed_time(struct timeval start, struct timeval end) 
 {
-	int				value;
-	int				index;
-	struct s_list	*next;
-}				t_list;
+	long	sec_diff;
+    long	mic_sec_diff;
+    long	elapsed_mil_sec;
 
-int		ft_atoi(const char *str, int *temp_stack);
-
-#endif
+    sec_diff = end.tv_sec - start.tv_sec;
+    mic_sec_diff = end.tv_usec - start.tv_usec;
+    elapsed_mil_sec = (sec_diff * 1000) + (mic_sec_diff / 1000);
+    return (elapsed_mil_sec);
+}
